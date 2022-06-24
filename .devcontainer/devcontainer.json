@@ -1,6 +1,6 @@
 // For format details, see https://aka.ms/vscode-remote/devcontainer.json
 {
-  "name": "cal-itp/desk-to-hubspot",
+  "name": "cal-itp/crm-helpdesk",
   "dockerComposeFile": [
     "compose.yml"
   ],
