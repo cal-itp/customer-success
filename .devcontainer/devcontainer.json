@@ -1,0 +1,34 @@
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json
+{
+  "name": "cal-itp/desk-to-hubspot",
+  "dockerComposeFile": [
+    "compose.yml"
+  ],
+  "service": "dev",
+  "runServices": [
+    "dev"
+  ],
+  "workspaceFolder": "/home/jovyan/work",
+  "postStartCommand": [],
+  "postAttachCommand": [
+    "/bin/bash",
+    ".devcontainer/postAttach.sh"
+  ],
+  // Set *default* container specific settings.json values on container create.
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.profiles.linux": {
+      "bash": {
+        "path": "/bin/bash"
+      }
+    }
+  },
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "eamodio.gitlens",
+    "mhutchie.git-graph",
+    "esbenp.prettier-vscode"
+  ]
+}

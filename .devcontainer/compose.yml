@@ -1,0 +1,14 @@
+name: desk-to-hubspot
+version: "3.8"
+
+services:
+  dev:
+    image: jupyter/scipy-notebook:notebook-6.4.12
+    command: start-notebook.sh --NotebookApp.token=''
+    working_dir: /home/jovyan/work
+    environment:
+      - GRANT_SUDO=yes
+      - DOCKER_STACKS_JUPYTER_CMD=notebook
+    user: root
+    volumes:
+      - ../:/home/jovyan/work
