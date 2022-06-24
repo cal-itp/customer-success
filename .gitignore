@@ -1,2 +1,2 @@
-data/desk/*.json
-data/hubspot/*.csv
+desk-to-hubspot/data/desk/*.json
+desk-to-hubspot/data/hubspot/*.csv
