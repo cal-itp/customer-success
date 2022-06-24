@@ -1,20 +1,26 @@
-# Desk to Hubspot conversion
+# CRM / Helpdesk
 
-This repo contains a Jupyter Notebook that converts exported Teamwork Desk data
-into a format for import into Hubspot.
+This repository contains customer service and CRM tasks and related code.
 
-## Getting started
+## Desk to Hubspot Conversion
+
+> A Jupyter Notebook that converts exported Teamwork Desk data into a format for
+import into Hubspot.
 
 1. Clone the repository
 
 ```bash
-git clone https://github.com/cal-itp/desk-to-hubspot
+git clone https://github.com/cal-itp/crm-helpdesk
 ```
 
-1. Download the [Desk export data from Drive](https://drive.google.com/drive/folders/10QsUGgBR8SfjeVzZUQqEYyn1pFgI6J4t), place the files in the repository directory `/data/desk`
+1. Download the [Desk export data from Drive](https://drive.google.com/drive/folders/10QsUGgBR8SfjeVzZUQqEYyn1pFgI6J4t)
+
+1. Place the files in the repository directory [`desk-to-hubspot/data/desk`](desk-to-hubspot/data/desk/)
 
 1. (Recommended) `Rebuild and Reopen` the devcontainer for this repository
 
 1. (Alternate) Install dependencies from `requirements.txt` in your preferred Python environment.
 
-1. Open the [notebook](transform.ipynb) and run all cells to produce output in `/data/hubspot`
+1. Open the [notebook](desk-to-hubspot/convert.ipynb) and run all cells
+
+1. Look for CSV output in [`desk-to-hubspot/data/hubspot`](/desk-to-hubspot/data/hubspot/)
