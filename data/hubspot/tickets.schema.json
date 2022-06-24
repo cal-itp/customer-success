@@ -1,0 +1,17 @@
+{
+    // use ticket.customerId to get to customer
+    "contact_first_name": "customer.firstName",
+    "contact_last_name": "customer.lastName",
+    "contact_email": "customer.email",
+    "contact_job_title": "customer.jobTitle",
+    // use ticket.customerId to get to customer, then customer.company
+    "company_name": "company.name",
+    "company_domain_name": "company.website",
+    // use the ticket.ticketStatusID to map to status names
+    "ticket_status": "ticket.ticketStatusID",
+    "ticket_name": "ticket.subject",
+    // hardcode to the only HubSpot pipeline (Support Pipeline)
+    "ticket_pipeline": "Support Pipeline",
+    // use the ticket.assignedToID to map to the agent's email address
+    "ticket_owner": "user.email"
+}

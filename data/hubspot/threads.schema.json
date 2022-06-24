@@ -1,0 +1,7 @@
+{
+    "note_body": "thread.body",
+    "note_activity_date": "thread.createdAt",
+    "ticket_status": "ticket.ticketStatusID",
+    "ticket_name": "ticket.subject",
+    "ticket_pipeline": "Support Pipeline"
+}
