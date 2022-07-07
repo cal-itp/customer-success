@@ -1,6 +1,6 @@
 ---
 name: Hubspot Feature Request OR Question
-about: The CRM’s primary function is to elevate Cal-ITP’s relational communication and outreach efforts by establishing basic agency profiles and contact records that detail past and current communication activities such as emails, phone calls, deals, and tickets. The CRM provides users an opportunity to have a detailed understanding of an agency’s relationship to Cal-ITP efforts, with this knowledge users can have more coordinated communication and develop stronger relationships to build better outcomes.
+about: The CRM’s primary function is to elevate Cal-ITP’s relational communication and outreach efforts
 title: '[Feature]'
 labels: ["Feature", "Question"]
 assignees: ''
