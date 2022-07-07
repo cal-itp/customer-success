@@ -1,0 +1,52 @@
+name: Hubspot Feature Request
+description: File a feature request or question
+title: "[Feature Request]: "
+labels: "Feature"
+assignees:
+body:
+  - type: markdown
+    attributes:
+      value: |
+       ### Let Olivia, Provvidenza, and Anthony know if you have any additional questions.
+  - type: input
+    id: Date
+    attributes:
+      label: Date
+      description: Enter in the date of the request
+      placeholder: 06/12/22
+    validations:
+      required: false
+  - type: dropdown
+    id: Feature or Question
+    attributes:
+      label: Feature or Question
+      description: Select whether this is a feature request, a question about Hubspot, or other
+      options:
+        - Feature
+        - Question
+    validations:
+      required: true
+  - type: textarea
+    id: response
+    attributes:
+      label: Response
+      description: Use this space to ask your question or describe your request.
+      render: shelll
+    validations:
+      required: true
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case
+      description: Please briefly describe so the CRM support team can adequately address your need(s)
+      render: shelll
+    validations:
+      required: true
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Additional Info
+      description: Please briefly describe anything else that would help the CRM support team with your request
+      render: shelll
+    validations:
+      required: true
