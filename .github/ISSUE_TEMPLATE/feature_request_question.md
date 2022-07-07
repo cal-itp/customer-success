@@ -1,5 +1,5 @@
 ---
-name: Hubspot Feature Request OR Question
+name: Hubspot Feature Request
 about: The CRM’s primary function is to elevate Cal-ITP’s relational communication and outreach efforts
 title: '[Feature]'
 labels: ["Feature", "Question"]
