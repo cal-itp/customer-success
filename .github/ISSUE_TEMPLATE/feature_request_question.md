@@ -10,10 +10,6 @@ assignees: ''
 
 Enter in today's date, using the folliowing format 06/10/22
 
-## Name 
-
-Add your full name
-
 ## Request Type
 
 Select whether this is a feature request, a question about Hubspot, or other
