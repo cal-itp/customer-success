@@ -2,7 +2,6 @@ name: Hubspot Feature Request
 description: File a feature request or question
 title: "[Feature Request]: "
 labels: "Feature"
-assignees:
 body:
   - type: markdown
     attributes:
@@ -35,7 +34,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: use-case
+    id: use case
     attributes:
       label: Use Case
       description: Please briefly describe so the CRM support team can adequately address your need(s)
@@ -43,7 +42,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: additional-info
+    id: additional info
     attributes:
       label: Additional Info
       description: Please briefly describe anything else that would help the CRM support team with your request
