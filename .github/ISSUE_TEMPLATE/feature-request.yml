@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-       Let Olivia, Provvidenza, and Anthony know if you have any additional questions.
+       ### Let Olivia, Provvidenza, and Anthony know if you have any additional questions.
   - type: input
     id: Date
     attributes:
@@ -16,7 +16,7 @@ body:
     validations:
       required: false
   - type: dropdown
-    id: Feature or Question
+    id: feature-or-question
     attributes:
       label: Feature or Question
       description: Select whether this is a feature request, a question about Hubspot, or other
@@ -34,7 +34,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: use case
+    id: use-case
     attributes:
       label: Use Case
       description: Please briefly describe so the CRM support team can adequately address your need(s)
@@ -42,7 +42,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: additional info
+    id: additional-info
     attributes:
       label: Additional Info
       description: Please briefly describe anything else that would help the CRM support team with your request
