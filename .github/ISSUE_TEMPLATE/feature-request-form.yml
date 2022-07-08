@@ -18,10 +18,18 @@ body:
     validations:
       required: true
   - type: textarea
-    id: response
+    id: request
     attributes:
-      label: Response
+      label: Request
       description: Use this space to ask your question or describe your request.
+      render: shelll
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Is this request related to a problem? 
+      description: Use this space to describe the problem you are having.
       render: shelll
     validations:
       required: true
