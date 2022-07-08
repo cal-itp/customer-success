@@ -1,0 +1,61 @@
+name: Hubspot Property Request Form
+description: File a property request for Hubspot
+title: "[Property Request]: "
+labels: "Property"
+body:
+  - type: markdown
+    attributes:
+      value: |
+       ### Properties in Hubspot are considered fields in most other platforms. They are attached to each Hubspot Object and can be completely customized.
+  - type: input
+    id: property-name
+    attributes:
+      label: Name of Property
+      description: What should we call this new property?
+      placeholder: Ex: Company Type
+      validations:
+        required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is the problem that this is solving?
+      description: Use this space to describe the problem you are solving with this custom property
+      render: shelll
+    validations:
+      required: true
+  - type: dropdown
+    id: object-association
+    attributes:
+      label: Object Association
+      description: What object do you want this new property associated withe in Hubspot
+      options:
+        - Contacts
+        - Companies
+        - Deals
+        - Tickets
+        - Other
+  - type: input
+    id: implementation
+    attributes:
+      label: When does this property need to be implemented?
+      description: Add a date for implementation
+      placeholder: Ex: 8/1/22
+      validations:
+        required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Not sure what you need?
+      description: The CRM team can schedule time to determine the best property for your needs? Let us know!
+      render: shelll
+    validations:
+      required: true
+  - type: dropdown
+    id: question
+    attributes:
+      label: Not sure what you need?
+      description: The CRM team can schedule time to determine the best property for your needs? Let us know!
+      options:
+        - Yes
+        - No
+        - Unsure
