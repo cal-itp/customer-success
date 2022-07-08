@@ -39,7 +39,7 @@ body:
     attributes:
       label: When does this property need to be implemented?
       description: Add a date for implementation
-      placeholder: Ex: 8/1/22
+      placeholder: 8/1/22
       validations:
         required: true
   - type: textarea
