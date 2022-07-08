@@ -7,14 +7,6 @@ body:
     attributes:
       value: |
        ### Let Olivia, Provvidenza, and Anthony know if you have any additional questions.
-  - type: input
-    id: Date
-    attributes:
-      label: Date
-      description: Enter in the date of the request
-      placeholder: 06/12/22
-    validations:
-      required: false
   - type: dropdown
     id: feature-or-question
     attributes:
