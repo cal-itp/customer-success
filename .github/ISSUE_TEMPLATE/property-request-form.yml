@@ -12,7 +12,7 @@ body:
     attributes:
       label: Name of Property
       description: What should we call this new property?
-      placeholder: Ex: Company Type
+      placeholder: ex Company Type
       validations:
         required: true
   - type: textarea
