@@ -8,15 +8,15 @@ body:
       value: |
        ### Properties in Hubspot are considered fields in most other platforms. They are attached to each Hubspot Object and can be completely customized.
   - type: input
-    id: property-name
+    id: custom-property-name
     attributes:
-      label: Name of Property
+      label: Name of Custom Property
       description: What should we call this new property?
       placeholder: ex Company Type
       validations:
         required: true
   - type: textarea
-    id: problem
+    id: what-problem
     attributes:
       label: What is the problem that this is solving?
       description: Use this space to describe the problem you are solving with this custom property
@@ -35,23 +35,15 @@ body:
         - Tickets
         - Other
   - type: input
-    id: implementation
+    id: implementation-date
     attributes:
       label: When does this property need to be implemented?
       description: Add a date for implementation
       placeholder: 8/1/22
       validations:
         required: true
-  - type: textarea
-    id: question
-    attributes:
-      label: Not sure what you need?
-      description: The CRM team can schedule time to determine the best property for your needs? Let us know!
-      render: shelll
-    validations:
-      required: true
   - type: dropdown
-    id: question
+    id: questions
     attributes:
       label: Not sure what you need?
       description: The CRM team can schedule time to determine the best property for your needs? Let us know!
