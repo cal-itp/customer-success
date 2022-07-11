@@ -13,8 +13,6 @@ body:
       label: Name of Custom Property
       description: What should we call this new property?
       placeholder: ex Company Type
-      validations:
-        required: true
   - type: textarea
     id: what-problem
     attributes:
@@ -40,14 +38,12 @@ body:
       label: When does this property need to be implemented?
       description: Add a date for implementation
       placeholder: 8/1/22
-      validations:
-        required: true
   - type: dropdown
     id: questions
     attributes:
       label: Not sure what you need?
       description: The CRM team can schedule time to determine the best property for your needs? Let us know!
       options:
-        - Yes
-        - No
-        - Unsure
+        - "Yes"
+        - "No"
+        - "Unsure"
