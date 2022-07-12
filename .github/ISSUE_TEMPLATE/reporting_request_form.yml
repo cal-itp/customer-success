@@ -1,4 +1,4 @@
-name: "Hubspot Reporting Request Form"
+name: "Hubspot Reporting Request form"
 description: "File a Reporting request for Hubspot"
 title: "[Reporting Request]: "
 labels: "Reporting"
@@ -11,7 +11,7 @@ body:
     id: data
     attributes:
       label: What kind of data are you looking for?
-      description: Use as much detail as possible, so we can determine if the data can be matched.
+      description: Use as much detail as possible, so we can determine if the data can be found and reported.
       render: shell 
 - type: checkboxes
   id: report-cadence
@@ -22,6 +22,4 @@ body:
       - label: Monthly
       - label: Quarterly
       - label: Yearly
-      - label: Other  
-  - type: markdown
-  - type: markdown
+      - label: Other
