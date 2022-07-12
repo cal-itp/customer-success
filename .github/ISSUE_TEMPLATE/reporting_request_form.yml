@@ -1,0 +1,27 @@
+name: Hubspot Reporting Request Form
+description: File a Reporting request for Hubspot
+title: "[Reporting Request]: "
+labels: "Reporting"
+body:
+  - type: markdown
+    attributes:
+      value: |
+       ### Add what reporting  Reporting you need in Hubspot.
+  - type: textarea
+    id: data
+    attributes:
+      label: What kind of data are you looking for?
+      description: Use as much detail as possible, so we can determine if the data can be matched.
+      render: shell 
+- type: checkboxes
+  id: report-cadence
+  attributes:
+    label: When would you like to receive this report?
+    description: You may select more than one. As fo July 2022, there is not enough data to support weekly reports.
+    options:
+      - label: Monthly
+      - label: Quarterly
+      - label: Yearly
+      - label: Other  
+  - type: markdown
+  - type: markdown
