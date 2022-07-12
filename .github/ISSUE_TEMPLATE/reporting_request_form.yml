@@ -1,5 +1,5 @@
-name: Hubspot Reporting Request
-description: File a Reporting request for Hubspot
+name: "Hubspot Reporting Request Form"
+description: "File a Reporting request for Hubspot"
 title: "[Reporting Request]: "
 labels: "Reporting"
 body:
