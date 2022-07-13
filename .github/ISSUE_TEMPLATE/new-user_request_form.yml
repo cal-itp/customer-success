@@ -6,4 +6,10 @@ body:
   - type: markdown
     attributes:
       value: |
-       ### Add who the new user would be in Hubspot
+       ### Need a new meember to be added to Hubspot? Fill the form below
+  - type: input
+    id: new-user
+    attributes:
+      label: What is the new user email address?
+      description: Please add the email they will use for outreach in Hubspot
+      placeholder: yourname@companyname.com
