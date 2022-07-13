@@ -1,0 +1,9 @@
+name: "New User Request form"
+description: "Add a new user to Hubspot"
+title: "[New User Request]: "
+labels: "new-user"
+body:
+  - type: markdown
+    attributes:
+      value: |
+       ### Add who the new user would be in Hubspot
