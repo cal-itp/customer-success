@@ -8,8 +8,46 @@ body:
       value: |
        ### Need a new member to be added to Hubspot? Fill the form below
   - type: input
-    id: new-user
+    id: email
     attributes:
       label: Email address
       description: Please add the email they will use for outreach in Hubspot
       placeholder: yourname@companyname.com
+      validations:
+        required: true
+  - type: input
+    id: name
+    attributes:
+      label: Full name
+      description: First and last name
+      placeholder: John Smith
+      validations:
+        required: true
+  - type: checkboxes
+    id: use-case
+    attributes:
+      label: What do you I want to do in Hubspot 
+      description: Select all that apply
+      options:
+        - label: Email contacts at transit agencies
+        - label: Batch email contacts from multiple agencies
+        - label: Access a Deals pipeline _(payments, data assessments, etc.)_
+        - label: Respond to support tickets
+        - label: Not sure
+  - type: markdown
+    attributes:
+      value: |
+       ### **If you selected Deals pipeline and are interested in creating a new pipeline, please Slack @Anthony Rollins or email anthony@compiler.la
+  - type: dropdown
+    id: training
+    attributes:
+      label: Do you need training on how to use Hubspot?
+      options:
+        - Yes
+        - No
+        - Not sure
+      validations:
+        required: true
+      
+      
+      
