@@ -19,7 +19,7 @@ body:
       label: When would you like to receive this report?
       description: As fo July 2022, there is not enough data to support weekly reports.
       options:
-        - label: Monthly
-        - label: Quarterly
-        - label: Yearly
-        - label: Other
+        - "Monthly"
+        - "Quarterly"
+        - "Yearly"
+        - "Other"
