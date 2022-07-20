@@ -1,7 +1,7 @@
 name: Feature Request Form
 description: File a feature request or question
 title: "[Feature Request]: "
-labels: "Feature"
+labels: "feature"
 body:
   - type: markdown
     attributes:
