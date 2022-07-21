@@ -1,0 +1,13 @@
+name: Question Request Form
+description: File a question for the CRM
+title: "[Question]: "
+labels: "question"
+body:
+  - type: textarea
+    id: request
+    attributes:
+      label: What is your question?
+      description: Use this space to ask your question about the CRM.
+      render: shelll
+    validations:
+      required: true
