@@ -4,6 +4,7 @@ title: "[Feature Request]: "
 labels: "feature"
 body:
   - type: markdown
+    label: feature-note
     attributes:
       value: |
        ### Let Olivia, Provvidenza, and or Anthony know if you have any additional questions.
