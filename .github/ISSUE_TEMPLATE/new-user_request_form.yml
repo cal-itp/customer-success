@@ -15,6 +15,8 @@ body:
       label: Email address
       description: Please add the email they will use for outreach in Hubspot
       placeholder: yourname@companyname.com
+    validations:
+      required: true
   - type: input
     id: name
     attributes:
@@ -24,7 +26,7 @@ body:
   - type: checkboxes
     id: use-case
     attributes:
-      label: What do you I want to do in Hubspot 
+      label: What do you I want to do in Hubspot
       description: Select all that apply
       options:
         - label: Email contacts at transit agencies
@@ -44,5 +46,3 @@ body:
         - "Yes"
         - "No"
         - "Not sure"
-      
-      
