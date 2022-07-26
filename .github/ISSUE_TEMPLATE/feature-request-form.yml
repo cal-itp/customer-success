@@ -12,7 +12,6 @@ body:
     attributes:
       label: Feature Request
       description: Use this space to ask your question or describe your request.
-      render: shelll
     validations:
       required: true
   - type: textarea
@@ -20,7 +19,6 @@ body:
     attributes:
       label: Is this request related to a problem?
       description: Use this space to describe the problem you are having.
-      render: shelll
     validations:
       required: true
   - type: textarea
@@ -28,7 +26,6 @@ body:
     attributes:
       label: Use Case
       description: Please briefly describe so the CRM support team can adequately address your need(s)
-      render: shelll
     validations:
       required: true
   - type: textarea
@@ -36,6 +33,5 @@ body:
     attributes:
       label: Additional Info
       description: Please briefly describe anything else that would help the CRM support team with your request
-      render: shelll
     validations:
       required: true

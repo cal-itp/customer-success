@@ -18,7 +18,6 @@ body:
     attributes:
       label: What is the problem that this is solving?
       description: Use this space to describe the problem you are solving with this custom property
-      render: shelll
     validations:
       required: true
   - type: dropdown

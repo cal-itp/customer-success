@@ -8,6 +8,5 @@ body:
     attributes:
       label: What is your question?
       description: Use this space to ask your question about the CRM.
-      render: shelll
     validations:
       required: true
