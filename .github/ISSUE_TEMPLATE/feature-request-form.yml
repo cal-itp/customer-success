@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-       ### Let Olivia, Provvidenza, and or Anthony know if you have any additional questions.
+       ### Let Olivia, Provvidenza, and or Anthony know if you have any additional questions
   - type: textarea
     id: request
     attributes:
@@ -18,7 +18,7 @@ body:
   - type: textarea
     id: problem
     attributes:
-      label: Is this request related to a problem? 
+      label: Is this request related to a problem?
       description: Use this space to describe the problem you are having.
       render: shelll
     validations:
