@@ -1,7 +1,8 @@
 name: Question Request Form
 description: File a question for the CRM
 title: "[Question]: "
-labels: "question"
+labels:
+   - "question"
 body:
   - type: textarea
     id: request

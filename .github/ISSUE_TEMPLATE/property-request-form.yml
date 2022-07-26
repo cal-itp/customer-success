@@ -1,7 +1,8 @@
 name: Property Request Form
 description: File a property request for Hubspot
 title: "[Property Request]: "
-labels: "property"
+labels:
+  - "property"
 body:
   - type: markdown
     attributes:

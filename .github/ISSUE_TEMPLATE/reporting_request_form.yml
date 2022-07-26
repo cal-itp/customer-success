@@ -1,7 +1,8 @@
 name: "Reporting Request form"
 description: "File a Reporting request for Hubspot"
 title: "[Reporting Request]: "
-labels: "reporting"
+labels:
+  - "reporting"
 body:
   - type: markdown
     attributes:

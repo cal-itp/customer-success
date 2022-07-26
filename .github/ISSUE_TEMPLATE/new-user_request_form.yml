@@ -1,7 +1,8 @@
 name: "New User Request form"
 description: "Add a new user to Hubspot"
 title: "[New User Request]: "
-labels: "new-user"
+labels:
+  - "new-user"
 assignees: "anthonyrollins"
 body:
   - type: markdown
