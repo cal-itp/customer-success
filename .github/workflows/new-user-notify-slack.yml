@@ -7,7 +7,7 @@ on:
 jobs:
   new-user-notify-slack:
     runs-on: ubuntu-latest
-    if: contains(github.event.issue.labels.*.name, "new-user")
+    if: contains(github.event.issue.labels.*.name, 'new-user')
     steps:
       - name: Slack notification
         uses: rtCamp/action-slack-notify@v2
