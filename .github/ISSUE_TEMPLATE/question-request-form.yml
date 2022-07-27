@@ -1,6 +1,6 @@
 name: Question Request Form
 description: File a question for the CRM
-title: "[Question]: "
+title: "Question: "
 labels:
    - "question"
 body:
