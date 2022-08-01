@@ -1,0 +1,49 @@
+name: "Deals Pipeline Request Form"
+description: Request a deals pipeline to Hubspot
+title: "[Deals Pipeline Request]: "
+labels:
+  - "deals-pipeline"
+body:
+  - type: markdown
+    attributes:
+      value: |
+       ### If you need a pipeline...
+  - type: input
+    id: pipeline
+    attributes:
+      label: Deals Pipeline Request
+      description: Name of the Deals Pipeline
+      placeholder: Ex. Data Assessment Outreach, Payments Outreach, etc.
+    validations:
+      required: true
+  - type: input
+    id: access
+    attributes:
+      label: Access
+      description: Who needs access?
+      placeholder: Please add all email addresses
+    validations:
+      required: true
+  - type: textarea
+    id: Problem
+    attributes:
+      label: What problem are you trying to solve for?
+      description: Input as much detail as possible.
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: What is the goal of the pipeline are you trying to solve for?
+      description: Input as much detail as possible.
+    validations:
+      required: true
+  - type: dropdown
+    id: usage
+    attributes:
+      label: Have you used an exisiting pipeline in Hubspot?
+      description: Payments pipeline, Data Assessment Outreach, etc.
+      options:
+        - Yes
+        - No
+        - Unsure
