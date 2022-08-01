@@ -44,6 +44,6 @@ body:
       label: Have you used an exisiting pipeline in Hubspot?
       description: Payments pipeline, Data Assessment Outreach, etc.
       options:
-        - Yes
-        - No
-        - Unsure
+        - "Yes"
+        - "No"
+        - "Unsure"
