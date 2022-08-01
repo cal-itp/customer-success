@@ -21,7 +21,7 @@ body:
     attributes:
       label: Access
       description: Who needs access? Please add all email addresses
-      placeholder: Ex: john@gmail.com, maria@gmail.com
+      placeholder: Ex: john@gmail.com and maria@gmail.com
     validations:
       required: true
   - type: textarea
