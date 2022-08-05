@@ -1,19 +1,12 @@
 // For format details, see https://aka.ms/vscode-remote/devcontainer.json
 {
   "name": "cal-itp/crm-helpdesk",
-  "dockerComposeFile": [
-    "compose.yml"
-  ],
-  "service": "dev",
-  "runServices": [
-    "dev"
-  ],
-  "workspaceFolder": "/home/jovyan/work",
+  "dockerComposeFile": ["../compose.yml"],
+  "service": "docs",
+  "runServices": ["docs"],
+  "workspaceFolder": "/crm-helpdesk",
   "postStartCommand": [],
-  "postAttachCommand": [
-    "/bin/bash",
-    ".devcontainer/postAttach.sh"
-  ],
+  "postAttachCommand": [],
   // Set *default* container specific settings.json values on container create.
   "settings": {
     "terminal.integrated.defaultProfile.linux": "bash",
@@ -27,6 +20,7 @@
   "extensions": [
     "ms-python.python",
     "ms-python.vscode-pylance",
+    "DavidAnson.vscode-markdownlint",
     "eamodio.gitlens",
     "mhutchie.git-graph",
     "esbenp.prettier-vscode"
