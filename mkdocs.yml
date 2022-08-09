@@ -1,0 +1,62 @@
+site_name: "cal-itp/crm-helpdesk: documentation"
+repo_url: https://github.com/cal-itp/crm-helpdesk
+edit_uri: edit/main/docs
+site_url: https://docs.calitp.org/crm-helpdesk
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: amber
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: amber
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+extra:
+  analytics:
+    provider: google
+    property: G-SZB618VNBZ
+
+plugins:
+  - search
+  - awesome-pages
+  - redirects:
+      redirect_maps:
+
+extra_css:
+  - https://use.fontawesome.com/releases/v5.13.0/css/all.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - codehilite:
+      linenums: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.smartsymbols
+  - meta
+  - toc:
+      # insert a blank space before the character
+      permalink: " ¶"
+  - smarty

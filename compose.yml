@@ -1,8 +1,19 @@
-name: crm-helpdesk
-version: "3.8"
+name: cal-itp/crm-helpdesk
 
 services:
-  dev:
+  docs:
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    image: cal-itp/crm-helpdesk:docs
+    entrypoint: []
+    command: sleep infinity
+    ports:
+      - "8000"
+    volumes:
+      - ./:/crm-helpdesk
+
+  notebooks:
     image: jupyter/scipy-notebook:notebook-6.4.12
     command: start-notebook.sh --NotebookApp.token=''
     working_dir: /home/jovyan/work
