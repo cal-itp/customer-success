@@ -37,7 +37,7 @@ plugins:
       redirect_maps:
 
 extra_css:
-  - https://use.fontawesome.com/releases/v5.13.0/css/all.css
+  - https://use.fontawesome.com/releases/v6.1.2/css/all.css
 
 markdown_extensions:
   - admonition
