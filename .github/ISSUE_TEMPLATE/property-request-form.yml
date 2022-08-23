@@ -25,12 +25,30 @@ body:
     id: object-association
     attributes:
       label: Object Association
-      description: What object do you want this new property associated withe in Hubspot
+      description: What object do you want this new property associated with in Hubspot
       options:
         - Contacts
         - Companies
         - Deals
         - Tickets
+        - Other
+  - type: input
+    id: maintaining
+    attributes:
+      label: Who is responsible for updating and maintaining this property?
+      description: Describe the person(s) responsible for maintaining this property. Add any additional details on existing data that should be imported into the CRM.
+      placeholder: John and Jim with Cal-ITP will maintain this property. We have exisiting data we would like imported in.
+  - type: dropdown
+    id: updating-cadence
+    attributes:
+      label: Updating Cadence
+      description: How often will this property be updated?
+      options:
+        - Daily
+        - Weekly
+        - Monthly
+        - Quarterly
+        - Yearly
         - Other
   - type: input
     id: implementation-date
