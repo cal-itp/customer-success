@@ -6,7 +6,9 @@ site_url: https://docs.calitp.org/crm-helpdesk
 theme:
   name: material
   features:
+    - navigation.expand
     - navigation.tabs
+    - toc.integrate
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
