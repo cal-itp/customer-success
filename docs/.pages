@@ -1,2 +1,9 @@
 nav:
-  - Home: README.md
+  - getting-started
+  - contacts
+  - conversations
+  - marketing
+  - sales
+  - service
+  - automations
+  - admin
