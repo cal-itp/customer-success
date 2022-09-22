@@ -1,6 +1,6 @@
 name: "CRM Record Update"
 description: Update a record inside Hubspot
-title: "[Deals Pipeline Request]: "
+title: "[CRM Record Update]: "
 labels:
   - "crm-update"
 body:
