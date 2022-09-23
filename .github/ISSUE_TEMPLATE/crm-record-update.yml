@@ -1,0 +1,10 @@
+name: "CRM Record Update"
+description: Update a record inside Hubspot
+title: "[CRM Record Update]: "
+labels:
+  - "crm-update"
+body:
+  - type: markdown
+    attributes:
+      value: |
+       ### Due to sensitive information, please submit your crm record request through Hubspot's Service Desk pipeline; [Internal Support](https://app.hubspot.com/contacts/5519226/objects/0-5/views/all/board). You won't need to submit this issue, as you should submit this request through Hubspot.
