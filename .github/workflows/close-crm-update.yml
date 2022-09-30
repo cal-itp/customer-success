@@ -1,0 +1,18 @@
+name: Auto-close CRM Record Update issues
+
+on:
+  issues:
+    types: [opened, transferred]
+
+jobs:
+  triage:
+    if: contains(github.event.issue.labels.*.name, 'crm-update')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comment and close
+        uses: peter-evans/close-issue@v2
+        with:
+          comment: |
+            This issue is being closed automatically and will not be addressed further.
+
+            Please submit your CRM Record Update to the HubSpot [Internal Support](https://app.hubspot.com/contacts/5519226/objects/0-5/views/all/board) Service Desk pipeline.
