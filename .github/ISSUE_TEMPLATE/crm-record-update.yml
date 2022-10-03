@@ -8,3 +8,12 @@ body:
     attributes:
       value: |
        ### Due to sensitive information, please submit your crm record request through Hubspot's Service Desk pipeline; [Internal Support](https://app.hubspot.com/contacts/5519226/objects/0-5/views/all/board). You won't need to submit this issue, as you should submit this request through Hubspot.
+  - type: dropdown
+    id: submit
+    attributes:
+      label: I will submit this issue through Hubspot Internal Support
+      description: Use Hubspot Internal Support, not Support Pipeline
+      options:
+        - "Yes"
+        - "No"
+        - "Unsure"
