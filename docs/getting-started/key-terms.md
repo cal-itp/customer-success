@@ -2,7 +2,7 @@
 
 ## Records
 
-Records are the base of Hubspot, and what we build out from, plainly, our records top line is the transit provider or organization and contains all the activity that has occurred with that organization. Creating records enables us to find information on organization or provider’s relationships. Once created, you can store information such as individual contact information, tickets, documents, meeting notes, last activity and any custom properties we have assigned. Records are continually updated and maintained by all users whether that be updating contact information, merged agencies or activity that would be relevant to other user’s understanding and workflows.
+Records are the base of Hubspot, and are apart of all objects with Hubspot. Our records top line is the transit provider or organization and contains all the activity that has occurred with that organization. Creating records enables us to find information on organization or provider’s relationships. Once created, you can store information such as individual contact information, documents, meeting notes, last activity and any custom properties we have assigned. R Records are continually updated and maintained by all users whether that be updating contact information, merged agencies or activity that would be relevant to other user’s understanding and workflows.
 
 ## Objects
 
