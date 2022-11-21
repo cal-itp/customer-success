@@ -8,4 +8,4 @@ Contacts have the ability to be further refined using custom properties, such as
 | ----------- | -------------------------------------------------------------------------------------------------------------- |
 | `job_role`       | Dropdown multi-select field to determine the contacts role at the company; _Data_, _Executive_, _Grants_, etc.  |
 
-[How to create a custom property](docs.calitp.org){ .md-button .md-button--primary }
+[How to create a custom property](https://docs.calitp.org){ .md-button .md-button--primary }
