@@ -1,4 +1,4 @@
-# Logging Emails
+# How to Log Emails
 
 Logging emails is an important function within Hubspot. This keeps a record of all communication with an agency or organization so that CAL-ITP team members can be kept up to date on agency relationships. There are a few ways to log emails in Hubspot:
 
