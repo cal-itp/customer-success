@@ -10,8 +10,8 @@ Type "anthony"**
 
 ![](https://colony-recorder.s3.amazonaws.com/files/2022-05-10/bdb36af1-2274-4897-88c0-e67997f4c4c3/stack_animation.webp)
 
-!!!
-    Note. You can search by first name, last name and email.**
+!!! Note
+    You can search by first name, last name and email.
 
 **3. Click this link.**
 

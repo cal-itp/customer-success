@@ -1,7 +1,6 @@
 # Hubspot: How to log a call
 
 !!! Note
-
    The purpose of the CRM is to have a centralized location for all communication with agencies we work with. Logging calls is an important way to track communication.
 
 **1. Navigate to <https://app.hubspot.com/contacts/5519226/objects/0-1/views/all/list?redirectFrom=crm-records-ui>**
@@ -56,7 +55,7 @@
 
 ![](https://image.scribehow-prod.com/bMrIKaCnCEbN4EWK3JU-hYZr2NPJOOMdzIR1LEBi8hM/zoom:0.46901172529313234/enlarge:true/crop:1194:672:nowe:1219:616/wm:0.8:nowe:255:132:0.17857142857142858/aHR0cHM6Ly9jb2xvbnktcmVjb3JkZXIuczMuYW1hem9uYXdzLmNvbS9maWxlcy8yMDIyLTA5LTEzL2U0NTA1YzA3LTI3OTMtNGU1Ni04YTg0LWY4NWI1ZDk2YWEyYy9hc2NyZWVuc2hvdC5qcGVn)
 
-**15. Press [[cmd]] + [[a]]**
+**15. Press cmd + e**
 
 **16. Type "Add call details here."**
 
