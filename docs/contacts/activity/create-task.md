@@ -1,7 +1,7 @@
 # Create a Task
 
 !!! Note
-    There are several ways to create a task, including from within the tasks index page, an object index page, an individual record, or by automating through a deal phase. The following will demonstrate how to create a task starting from within the task index page.**
+    There are several ways to create a task, including from within the tasks index page, an object index page, an individual record, or by automating through a deal phase. The following will demonstrate how to create a task starting from within the task index page.
 
 **1. Navigate to <https://www.hubspot.com/>**
 

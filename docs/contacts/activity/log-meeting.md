@@ -1,4 +1,4 @@
-# Hubspot: Log a meeting
+# Log a meeting
 
 **1. Navigate to <https://app.hubspot.com/contacts/5519226/objects/0-1/views/all/list>**
 
