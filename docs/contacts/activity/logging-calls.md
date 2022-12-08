@@ -1,7 +1,8 @@
 # Hubspot: How to log a call
 
 !!! Note
-   The purpose of the CRM is to have a centralized location for all communication with agencies we work with. Logging calls is an important way to track communication.
+
+    The purpose of the CRM is to have a centralized location for all communication with agencies we work with. Logging calls is an important way to track communication.
 
 **1. Navigate to <https://app.hubspot.com/contacts/5519226/objects/0-1/views/all/list?redirectFrom=crm-records-ui>**
 
