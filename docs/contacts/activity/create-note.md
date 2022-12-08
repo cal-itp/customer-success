@@ -1,7 +1,7 @@
 # How to create a note for a contact record
 
 !!! Note
-    Below showcases how to add a note to a contact record, but this workflow can be used to also add a note to company.
+    Below showcases how to add a note to a contact record, but this workflow can be used to also add a note to a company record.
 
 **1. Navigate to <https://app.hubspot.com/contacts/5519226/objects/0-1/views/all/list>**
 
