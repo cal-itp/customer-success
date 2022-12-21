@@ -1,6 +1,6 @@
 # Custom Properties
 
-Like contacts, companies also have the ability to be defined by more specific custom properties, some examples include Caltrans district number or the type of organization a company may be. Similarly, this additional information allows us to filter and generate specific lists or knowledge based on those characteristics. Custom properties can be added as we develop workflows over time.
+Like contacts, companies also have the ability to be defined by more specific custom properties; some examples include Caltrans district number or the type of organization a company may be. This additional information allows us to filter and generate specific lists or knowledge based on those characteristics. Custom properties can be added as we develop workflows over time.
 
 ## Current Custom Properties attached to Company profiles
 
