@@ -20,7 +20,7 @@ Each record contains contact information for the agency and individuals at that 
 
 ## Use Cases for CRM Management
 
-Is a company record named after the official name of an organization, any “d/b/a” (doing business as) name it might have, the name of the service it provides, or any other branding it might be well known by?
+_Is a company record named after the official name of an organization, any “d/b/a” (doing business as) name it might have, the name of the service it provides, or any other branding it might be well known by?_
 
 Scenario examples:<br>
 
