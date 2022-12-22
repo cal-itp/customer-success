@@ -1,6 +1,6 @@
 # Deal Pipelines
 
-Pipelines reflect different initiatives and document where we are in the process with transit providers. The charts below indicate the uses of our current pipelines. Pipelines can be added when a new workflow would benefit from this action. New pipelines can be created by open up an [issue one Github](https://github.com/cal-itp/crm-helpdesk/issues/new?assignees=&labels=deals-pipeline&template=deals-pipelines-request-form.yml&title=%5BDeals+Pipeline+Request%5D%3A+) using our deals pipeline template.
+Pipelines reflect different initiatives and document where we are in the process with transit providers. The charts below indicate the uses of our current pipelines. Pipelines can be added when a new workflow would benefit from this action. New pipelines can be created by opening an [issue on Github](https://github.com/cal-itp/crm-helpdesk/issues/new?assignees=&labels=deals-pipeline&template=deals-pipelines-request-form.yml&title=%5BDeals+Pipeline+Request%5D%3A+) using our deals pipeline template.
 
 Current list of Deal pipelines are created (as of 12/13/22)
 
