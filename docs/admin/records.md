@@ -8,7 +8,7 @@ When working with the CRM you may find that records need to be updated, merged o
 
 ### How are records created
 
-Records are created through two processes:, data imports, and when a user establishes communication with a contact at a new organization not yet recorded in the CRM. At this time, most new records will be emerging automatically from new communication over historical documents.
+Records are created through two processes: data imports and when a user establishes communication with a contact at a new organization not yet recorded in the CRM. At this time, most new records will be emerging automatically from new communication over historical documents.
 
 ### Creating a new company record
 
