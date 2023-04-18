@@ -19,9 +19,9 @@ body:
   - type: input
     id: access
     attributes:
-      label: Access
-      description: Who needs access? Please add all email addresses.
-      placeholder: "Ex: john@gmail.com, maria@gmail.com"
+      label: Who needs access?
+      description: Please add all first and last names.
+      placeholder: "Ex: John Smith, Maria Johnson"
     validations:
       required: true
   - type: textarea
@@ -34,10 +34,16 @@ body:
   - type: textarea
     id: goal
     attributes:
-      label: What is the goal of the pipeline are you trying to solve for?
+      label: What is the goal of the pipeline you are trying to solve for?
       description: Input as much detail as possible.
     validations:
       required: true
+  - type: input
+    id: stages
+    attributes:
+      label: What stages would you like in the pipeline?
+      description: Stages in Hubspot are considered as statuses
+      placeholder: Ex. To-Do, In Progress, Review, Done, etc.
   - type: dropdown
     id: usage
     attributes:
