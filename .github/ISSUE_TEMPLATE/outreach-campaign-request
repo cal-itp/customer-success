@@ -1,0 +1,67 @@
+name: "Outreach Campaign Request Form"
+description: Request the Customer Success team conduct an outreach campaign on a specific subject matter
+title: "[Outreach Campaign Request]: "
+labels:
+  - "communications"
+body:
+  - type: markdown
+    attributes:
+      value: |
+       ### If you have an idea or need for a campaign...
+  - type: input
+    id: subject
+    attributes:
+      label: Subject Matter of Campaign
+      description: Briefly describe the nature of the campaign
+      placeholder: Ex. GTFS-RT Outreach, Payments Outreach, etc.
+    validations:
+      required: true
+  - type: input
+    id: access
+    attributes:
+      label: Which teams are involved in this campaign
+      description: Please add all team names.
+      placeholder: "Ex: Transit Data Quality, Project Scheduler"
+    validations:
+      required: true
+  - type: dropdown
+    id: timeline
+    attributes:
+      label: Does this campaign have a specific deadline associated with it?
+      description: Let us know if this campaign has any important deadlines to be aware of.
+      options:
+        - "Yes"
+        - "No"
+        - "Unsure"
+  - type: textarea
+    id: Reason
+    attributes:
+      label: What is the reason for conducting this campaign?
+      description: Input as much detail as possible.
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: What is the goal of this campaign?
+      description: Input as much detail as possible.
+    validations:
+      required: true
+  - type: dropdown
+    id: interview
+    attributes:
+      label: Does your campaign request to hold interviews with the customers?
+      description: Are interviews held or not.
+      options:
+        - "Yes"
+        - "No"
+        - "Unsure"
+  - type: dropdown
+    id: pipeline
+    attributes:
+      label: Do you envision needing a pipeline for this campaign?
+      description: Pipelines are often used to track campaigns.
+      options:
+        - "Yes"
+        - "No"
+        - "Unsure"
