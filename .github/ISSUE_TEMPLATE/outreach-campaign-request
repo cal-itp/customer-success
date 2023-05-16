@@ -27,7 +27,7 @@ body:
   - type: dropdown
     id: timeline
     attributes:
-      label: Does this campaign have a specific deadline associated with it?
+      label: Does this campaign have a specific deadline and/or timeline associated with it?
       description: Let us know if this campaign has any important deadlines to be aware of.
       options:
         - "Yes"
@@ -45,6 +45,14 @@ body:
     attributes:
       label: What is the goal of this campaign?
       description: Input as much detail as possible.
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: Who does this campaign target?
+      description: Input as much detail as possible.
+      placeholder: Ex. All transit agencies, 5311 agencies, etc.
     validations:
       required: true
   - type: dropdown
