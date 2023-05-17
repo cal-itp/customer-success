@@ -48,7 +48,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: goal
+    id: target
     attributes:
       label: Who does this campaign target?
       description: Input as much detail as possible.
