@@ -35,7 +35,7 @@ body:
   - type: checkboxes
     id: company-type
     attributes:
-      label: If the Object Association is Company: Which company type does this information apply to?
+      label: If you chose Company in the question above, which company type does this information apply to?
       description: Most custom properties only apply to one type of company, such as a transit agency or a vendor. Please select which company type this property is applicable for. You may select more than one option. **If your property is not associated with a company, please select N/A.**
       options:
         - label: Transit Agency
@@ -45,7 +45,7 @@ body:
   - type: checkboxes
     id: pipeline-type
     attributes:
-      label: If the Object Association is Deal: Which pipeline does this information apply to?
+      label: If you chose Deal in the question above, which pipeline does this information apply to?
       description: Most custom properties only apply to one specific pipeline, such as the Payments Pipeline or the Software for Scheduling Pipeline. Please select which pipeline this property is applicable for. You may select more than one option. **If your property is not associated with Deals, please select N/A.**
       options:
         - label: Payments Pipeline
