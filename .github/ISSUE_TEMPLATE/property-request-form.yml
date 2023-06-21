@@ -32,12 +32,39 @@ body:
         - Deals
         - Tickets
         - Other
+  - type: checkboxes
+    id: company-type
+    attributes:
+      label: If you chose Company in the question above, which company type does this information apply to?
+      description: Most custom properties only apply to one type of company, such as a transit agency or a vendor. Please select which company type this property is applicable for. You may select more than one option. **If your property is not associated with a company, please select N/A.**
+      options:
+        - label: Transit Agency
+        - label: Vendor
+        - label: N/A
+        - label: Unsure
+  - type: checkboxes
+    id: pipeline-type
+    attributes:
+      label: If you chose Deal in the question above, which pipeline does this information apply to?
+      description: Most custom properties only apply to one specific pipeline, such as the Payments Pipeline or the Software for Scheduling Pipeline. Please select which pipeline this property is applicable for. You may select more than one option. **If your property is not associated with Deals, please select N/A.**
+      options:
+        - label: Payments Pipeline
+        - label: Contract Outreach
+        - label: MDIP Outreach
+        - label: GRaaS
+        - label: Cubic/Umo API Key Outreach
+        - label: Cal-ITP Benefits
+        - label: Software for Scheduling
+        - label: Payments Dashboard
+        - label: Relevant Pipeline has not been created yet
+        - label: N/A
+        - label: Unsure
   - type: input
     id: maintaining
     attributes:
       label: Who is responsible for updating and maintaining this property?
       description: Describe the person(s) responsible for maintaining this property. Add any additional details on existing data that should be imported into the CRM.
-      placeholder: John and Jim with Cal-ITP will maintain this property. We have exisiting data we would like imported in.
+      placeholder: John and Jim with Cal-ITP will maintain this property. We have existing data we would like imported in.
   - type: dropdown
     id: updating-cadence
     attributes:
