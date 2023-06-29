@@ -1,0 +1,52 @@
+name: Cohort Request Form
+description: Request a transit agency be added to the cohort list
+title: "[Cohort Request]: "
+labels:
+  - "feature"
+body:
+  - type: markdown
+    attributes:
+      value: |
+       ### Let Olivia or Laney know if you have any additional questions.
+  - type: textarea
+    id: agency-name
+    attributes:
+      label: What is the name of the agency?
+      description: Please provide the full agency name and acronym if known.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why do you believe they should be added?
+      description: This is just to get a bit of background, this information will not be used to accept or deny an agency.
+    validations:
+      required: true
+  - type: textarea
+    id: current-communication
+    attributes:
+      label: Who currently communicates with this agency?
+      description: If no one is currently communicating with this agency, explain why. 
+    validations:
+      required: true
+  - type: textarea
+    id: future-communication
+    attributes:
+      label: Do you know if there will be increased communication with this agency in the future?
+      description: 
+    validations:
+      required: true
+  - type: textarea
+    id: current-contacts
+    attributes:
+      label: What contacts from this agency should we be in touch with?
+      description: 
+    validations:
+      required: true
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: Do you have any additional comments?
+      description: 
+    validations:
+      required: true
