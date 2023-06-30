@@ -29,7 +29,7 @@ body:
       description: If no one is currently communicating with this agency, explain why. 
     validations:
       required: true
-  - type: textarea
+  - type: input
     id: future-communication
     attributes:
       label: Do you know if there will be increased communication with this agency in the future?
