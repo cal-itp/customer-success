@@ -2,7 +2,7 @@ name: Cohort Request Form
 description: Request a transit agency be added to the cohort list
 title: "[Cohort Request]: "
 labels:
-  - "feature"
+  - "cohort"
 body:
   - type: markdown
     attributes:
