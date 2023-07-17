@@ -1,8 +1,8 @@
-# CRM Maintenance #
+# CRM Maintenance 
 In an effort to ensure our CRM data is kept up to date and free of excess clutter, the CRM team conducts weekly, monthly and quarterly maintenance. 
 We encourage users to make basic updates to any missing or incorrect information they find in Hubspot records. However, if further assistance is needed, users are encouraged to open a ticket in the [internal support pipeline](https://app.hubspot.com/contacts/5519226/objects/0-5/views/all/board). 
 
-## Reviews ##
+## Reviews 
 **Weekly** 
 * Review new records
 * Review duplicate records
