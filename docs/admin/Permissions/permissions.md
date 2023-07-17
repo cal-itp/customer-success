@@ -11,6 +11,7 @@ Hubspot Super Admins have access to create a new user and change user permission
 - Vyki Englert
 - Olivia Ramacier
 - Laney Mangan
+- Provvidenza Catalano
 - Cal-ITP BOT (bot@calitp.org)
 
 ## Current Deals Pipeline access
@@ -21,3 +22,8 @@ Hubspot Super Admins have access to create a new user and change user permission
 | 2022 Transit Data Check-In | **Compiler**: Anthony Rollins, Laney Mangan, Olivia Ramacier, Scott Frazier<br> **Rebel**: Erika Ehmsen<br> **Jarvus**: Holly Giang<br> **Cal-ITP / Caltrans**: Evan Siroky, Hunter Owens |
 | Contract Outreach | **Compiler**: Anthony Rollins, Laney Mangan, Olivia Ramacier, Scott Frazier<br> **Rebel**: Erika Ehmsen<br> **Cal-ITP / Caltrans**: Hunter Owens |
 | MDIP Outreach | **Compiler**: Anthony Rollins, Laney Mangan, Olivia Ramacier, Scott Frazier<br> **Cal-ITP / Caltrans**: Hunter Owens |
+|GRaaS | **Available to all Cal-ITP Hubspot Users**| 
+|Cubic Umo IQ API Keys | **Available to all Cal-ITP Hubspot Users**|
+|Cal-ITP Benefits | **Available to all Cal-ITP Hubspot Users**|
+| Payments Dashboard | **Compiler**: Super Admins<br> **Jarvus**: India Kea, Holly Giang, Liz Lin, Jameelah Young, Charlie Costanzo<br> **Cal-ITP / Caltrans**: Gillian Gillett, Hunter Owens |
+| Software for Scheduling | **Compiler**: Super Admins<br> **Jarvus**: Liz Lin, Julia Schaumburg<br> **Cal-ITP / Caltrans**: Gillian Gillett, Evan Siroky, Hunter Owens, Elizabeth Sall
