@@ -2,7 +2,7 @@
 
 The service tab contains our ticketing system. Tickets are items that require specific action and need to be tracked internally. Tickets can be sourced from emails, the conversation tab, forms or calls.  
 
-**Current Ticketing Systems**
+## Current Ticketing Systems
 
 **Internal Support Pipeline:** Cal-ITP Hubspot users can submit a ticket for the CRM team to address. Currently, the Internal Support Pipeline is used to track multiple ticketing purposes. See chart below for a breakdown of the different types of internal support tickets. 
 
