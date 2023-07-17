@@ -1,10 +1,10 @@
 # Permissions
 
-Hubspot Super Admins have access to create a new user and change user permission settings throughout. As of 12/22/2022 there are no custom permission roles in the Cal-ITP Hubspot account, besides Hubspot standard roles of Super Admin, and members.
+Hubspot Super Admins have access to create a new user and change users permissions settings throughout. There are no permission roles in the Cal-ITP Hubspot account, and permissions determined by the Super Admins. 
 
 - [Training Guide: Invite a User to Hubspot](/admin/permissions/invite-a-user)
 
-## Current Super Admins (as of 12/19/22)
+## Current Super Admins (as of 07/17/23)
 
 - Anthony Rollins
 - Kegan Maher
