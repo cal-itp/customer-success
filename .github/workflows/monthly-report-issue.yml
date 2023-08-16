@@ -1,0 +1,35 @@
+name: Create Monthly Report issue
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 16:16 UTC on the 2nd of every month
+    - cron: 16 16 2 * *
+
+jobs:
+  create-monthly-report-issue:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      # Get last month's name as a variable
+      # https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#setting-an-output-parameter
+      - id: set_output
+        run: |
+          echo "month=$(date -d 'last month' +%B)" >> $GITHUB_OUTPUT
+
+      - id: create_issue
+        uses: imjohnbo/issue-bot@v3
+        with:
+          labels: reporting
+          title: Customer Success ${{steps.set_output.outputs.month}} Monthly Report
+          body: |
+            [${{steps.set_output.outputs.month}} Report](#)
+
+            ## To-Do
+
+            - [ ] Update metrics for ${{steps.set_output.outputs.month}}
+          pinned: false
+          close-previous: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
