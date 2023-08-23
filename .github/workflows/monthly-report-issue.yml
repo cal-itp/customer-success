@@ -21,10 +21,11 @@ jobs:
       - id: create_issue
         uses: imjohnbo/issue-bot@v3
         with:
+          assignees: AnthonyRollins
           labels: reporting
           title: Customer Success ${{steps.set_output.outputs.month}} Monthly Report
           body: |
-            [${{steps.set_output.outputs.month}} Report](#)
+            [${{steps.set_output.outputs.month}} Report](https://docs.google.com/presentation/d/1lhhYUdt4KoLNO6TzuSN-lWwv3sgOBMoc_drhXgCChGY/copy)
 
             ## To-Do
 
