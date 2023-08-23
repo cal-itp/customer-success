@@ -1,14 +1,14 @@
-name: cal-itp/crm-helpdesk
+name: cal-itp/customer-success
 
 services:
   docs:
     build:
       context: .
       dockerfile: .devcontainer/Dockerfile
-    image: cal-itp/crm-helpdesk:docs
+    image: cal-itp/customer-success:docs
     entrypoint: []
     command: sleep infinity
     ports:
       - "8000"
     volumes:
-      - ./:/crm-helpdesk
+      - ./:/customer-success

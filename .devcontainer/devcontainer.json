@@ -1,10 +1,10 @@
 // For format details, see https://aka.ms/vscode-remote/devcontainer.json
 {
-  "name": "cal-itp/crm-helpdesk",
+  "name": "cal-itp/customer-success",
   "dockerComposeFile": ["../compose.yml"],
   "service": "docs",
   "runServices": ["docs"],
-  "workspaceFolder": "/crm-helpdesk",
+  "workspaceFolder": "/customer-success",
   "postStartCommand": [],
   "postAttachCommand": [],
   // Set *default* container specific settings.json values on container create.

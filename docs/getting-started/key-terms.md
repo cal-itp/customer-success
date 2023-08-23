@@ -10,4 +10,4 @@ Objects are categories of information. Hubspot builds out from four main categor
 
 ## Properties
 
-Properties are the fields within an object. For example, if our object is contacts, our properties would be name, email address, phone number, etc. Properties can also be customized. You can add a new property to Hubspot through the [request a new property template](https://github.com/cal-itp/crm-helpdesk/issues/new?assignees=&labels=property&template=property-request-form.yml&title=%5BProperty+Request%5D%3A+) in Github.
+Properties are the fields within an object. For example, if our object is contacts, our properties would be name, email address, phone number, etc. Properties can also be customized. You can add a new property to Hubspot through the [request a new property template](https://github.com/cal-itp/customer-success/issues/new?assignees=&labels=property&template=property-request-form.yml&title=%5BProperty+Request%5D%3A+) in Github.
