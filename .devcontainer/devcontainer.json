@@ -1,28 +1,28 @@
 // For format details, see https://aka.ms/vscode-remote/devcontainer.json
 {
-  "name": "cal-itp/crm-helpdesk",
+  "name": "cal-itp/customer-success",
   "dockerComposeFile": ["../compose.yml"],
   "service": "docs",
   "runServices": ["docs"],
-  "workspaceFolder": "/crm-helpdesk",
+  "workspaceFolder": "/customer-success",
   "postStartCommand": [],
   "postAttachCommand": [],
-  // Set *default* container specific settings.json values on container create.
-  "settings": {
-    "terminal.integrated.defaultProfile.linux": "bash",
-    "terminal.integrated.profiles.linux": {
-      "bash": {
-        "path": "/bin/bash"
-      }
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.profiles.linux": {
+          "bash": {
+            "path": "/bin/bash"
+          }
+        }
+      },
+      "extensions": [
+        "DavidAnson.vscode-markdownlint",
+        "eamodio.gitlens",
+        "mhutchie.git-graph",
+        "esbenp.prettier-vscode"
+      ]
     }
-  },
-  // Add the IDs of extensions you want installed when the container is created.
-  "extensions": [
-    "ms-python.python",
-    "ms-python.vscode-pylance",
-    "DavidAnson.vscode-markdownlint",
-    "eamodio.gitlens",
-    "mhutchie.git-graph",
-    "esbenp.prettier-vscode"
-  ]
+  }
 }

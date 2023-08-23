@@ -1,25 +1,14 @@
-name: cal-itp/crm-helpdesk
+name: customer-success
 
 services:
   docs:
     build:
       context: .
       dockerfile: .devcontainer/Dockerfile
-    image: cal-itp/crm-helpdesk:docs
+    image: cal-itp/customer-success:docs
     entrypoint: []
     command: sleep infinity
     ports:
       - "8000"
     volumes:
-      - ./:/crm-helpdesk
-
-  notebooks:
-    image: jupyter/scipy-notebook:notebook-6.4.12
-    command: start-notebook.sh --NotebookApp.token=''
-    working_dir: /home/jovyan/work
-    environment:
-      - GRANT_SUDO=yes
-      - DOCKER_STACKS_JUPYTER_CMD=notebook
-    user: root
-    volumes:
-      - ../:/home/jovyan/work
+      - ./:/customer-success

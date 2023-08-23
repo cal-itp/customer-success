@@ -2,7 +2,7 @@
 
 !!! Note
 
-    To request access to Hubspot you can complete a request in Github by filling out a [new user request form](https://github.com/cal-itp/crm-helpdesk/issues/new?assignees=anthonyrollins&labels=new-user&template=new-user_request_form.yml&title=%5BNew+User+Request%5D%3A+)
+    To request access to Hubspot you can complete a request in Github by filling out a [new user request form](https://github.com/cal-itp/customer-success/issues/new?assignees=anthonyrollins&labels=new-user&template=new-user_request_form.yml&title=%5BNew+User+Request%5D%3A+)
 
 !!! Note
 

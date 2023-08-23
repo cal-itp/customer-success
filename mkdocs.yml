@@ -1,7 +1,7 @@
-site_name: "Cal-ITP CRM Guide"
-repo_url: https://github.com/cal-itp/crm-helpdesk
+site_name: "Cal-ITP Customer Success Guide"
+repo_url: https://github.com/cal-itp/customer-success
 edit_uri: edit/main/docs
-site_url: https://docs.calitp.org/crm-helpdesk
+site_url: https://docs.calitp.org/customer-success
 
 theme:
   name: material

@@ -1,6 +1,6 @@
-FROM python:3.10
+FROM python:3.11
 
-WORKDIR /crm-helpdesk
+WORKDIR /customer-success
 
 COPY docs/requirements.txt docs/requirements.txt
 RUN pip install -r docs/requirements.txt
