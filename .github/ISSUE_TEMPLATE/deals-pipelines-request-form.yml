@@ -48,7 +48,7 @@ body:
     id: maintenance
     attributes:
       label: Who will be responsible for maintaining this pipeline in Hubspot?
-      description: Use individauls name(s) or team responsible for updating this pipeline
+      description: Describe the person(s) or team responsible for maintaining this property.
       placeholder: Ex. Customer Success, Data Quality team, or Anthony and Jane.
   - type: dropdown
     id: usage
