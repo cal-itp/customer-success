@@ -38,7 +38,7 @@ jobs:
       - name: Deploy Preview to Netlify
         run: |
           netlify deploy \
-            --alias="${GITHUB_REPOSITORY#*/}-${{ github.event.number }}"
+            --alias="${GITHUB_REPOSITORY#*/}-${{ github.event.number }}" \
             --auth=${{ secrets.NETLIFY_AUTH_TOKEN }} \
             --dir="site" \
             --site=${{ secrets.NETLIFY_PREVIEW_APP_SITE_ID }}
