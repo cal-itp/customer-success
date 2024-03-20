@@ -38,11 +38,10 @@ jobs:
       - name: Deploy Preview to Netlify
         run: |
           netlify deploy \
-            --dir="site" \
             --alias="${GITHUB_REPOSITORY#*/}-${{ github.event.number }}"
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_PREVIEW_APP_SITE_ID }}
+            --auth=${{ secrets.NETLIFY_AUTH_TOKEN }} \
+            --dir="site" \
+            --site=${{ secrets.NETLIFY_PREVIEW_APP_SITE_ID }}
 
       - name: Add Netlify link PR comment
         uses: actions/github-script@v7
