@@ -2,9 +2,9 @@
 {
   "name": "cal-itp/customer-success",
   "dockerComposeFile": ["../compose.yml"],
-  "service": "docs",
-  "runServices": ["docs"],
-  "workspaceFolder": "/customer-success",
+  "service": "dev",
+  "runServices": ["dev"],
+  "workspaceFolder": "/home/calitp/customer-success",
   "postStartCommand": [],
   "postAttachCommand": [],
   "customizations": {
@@ -20,8 +20,12 @@
       "extensions": [
         "DavidAnson.vscode-markdownlint",
         "eamodio.gitlens",
+        "esbenp.prettier-vscode",
         "mhutchie.git-graph",
-        "esbenp.prettier-vscode"
+        "ms-python.python",
+        "ms-python.black-formatter",
+        "ms-python.flake8",
+        "SimonSiefke.svg-preview"
       ]
     }
   }
