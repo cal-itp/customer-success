@@ -17,3 +17,6 @@ WORKDIR /home/$USER/customer-success
 
 COPY docs/requirements.txt docs/requirements.txt
 RUN pip install -r docs/requirements.txt
+
+COPY qr_codes/requirements.txt qr_codes/requirements.txt
+RUN pip install -r qr_codes/requirements.txt
