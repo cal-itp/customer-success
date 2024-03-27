@@ -10,6 +10,20 @@
       "request": "launch",
       "module": "mkdocs",
       "args": ["serve", "--dev-addr", "0.0.0.0:8000"]
+    },
+    {
+      "name": "QR Code",
+      "type": "python",
+      "request": "launch",
+      "cwd": "${workspaceRoot}/qr_codes",
+      "program": "main.py",
+      "args": [
+        "https://www.calitp.org",
+        "calitp.org.png",
+        "--color=#ffffff",
+        "--background=#046b99",
+        "--size=6"
+      ]
     }
   ]
 }
