@@ -1,14 +1,14 @@
 name: customer-success
 
 services:
-  docs:
+  dev:
     build:
       context: .
       dockerfile: .devcontainer/Dockerfile
-    image: cal-itp/customer-success:docs
+    image: cal-itp/customer-success:dev
     entrypoint: []
     command: sleep infinity
     ports:
       - "8000"
     volumes:
-      - ./:/customer-success
+      - ./:/home/calitp/customer-success

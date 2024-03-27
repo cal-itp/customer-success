@@ -1,1 +1,3 @@
 .DS_Store
+qr_codes/*.png
+!qr_codes/calitp.org.png
