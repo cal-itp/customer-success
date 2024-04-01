@@ -25,7 +25,7 @@ jobs:
           labels: reporting
           title: Customer Success ${{steps.set_output.outputs.month}} Monthly Report
           body: |
-            [${{steps.set_output.outputs.month}} Report](https://docs.google.com/presentation/d/1lhhYUdt4KoLNO6TzuSN-lWwv3sgOBMoc_drhXgCChGY/copy)
+            [${{steps.set_output.outputs.month}} Report](https://www.canva.com/design/DAF9eaWedp8/AaJVpaWQGFB5JeLTXiErUQ/edit?utm_content=DAF9eaWedp8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
             ## To-Do
 
