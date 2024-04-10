@@ -55,9 +55,9 @@ body:
       label: Do you want to recieve a test email?
       description: The CS team can send a test email before publishing
       options:
-        - Yes
-        - No
-        - Not sure
+        - "Yes"
+        - "No"
+        - "Not sure"
     validations:
       required: true
   - type: textarea
