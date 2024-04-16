@@ -1,0 +1,34 @@
+name: Create Monthly D5 update issue
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 16:16 UTC on the 1st of every month
+    - cron: 16 16 1 * *
+
+jobs:
+  create-monthly-d5-issue:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      # Get last month's name as a variable
+      # https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#setting-an-output-parameter
+      - id: set_output
+        run: |
+          echo "month=$(date -d 'last month' +%B)" >> $GITHUB_OUTPUT
+
+      - id: create_issue
+        uses: imjohnbo/issue-bot@v3
+        with:
+          assignees: "o-ram, laneymangan" 
+          labels: reporting
+          title: Send monthly update to D5 for ${{steps.set_output.outputs.month}}
+          body: |
+            ## To-Do
+
+            - [ ] Inform D5 transit reps of any updates regarding district agencies or relevant Cal-ITP news from ${{steps.set_output.outputs.month}}
+          pinned: false
+          close-previous: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
