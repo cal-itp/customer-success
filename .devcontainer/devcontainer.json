@@ -25,6 +25,7 @@
         "ms-python.python",
         "ms-python.black-formatter",
         "ms-python.flake8",
+        "ms-toolsai.jupyter",
         "SimonSiefke.svg-preview",
         "tamasfe.even-better-toml"
       ]
