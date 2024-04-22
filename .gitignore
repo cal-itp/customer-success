@@ -1,4 +1,5 @@
 .DS_Store
+.env
 *.egg-info
 qr_codes/*.png
 !qr_codes/calitp.org.png
