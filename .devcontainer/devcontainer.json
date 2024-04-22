@@ -25,7 +25,8 @@
         "ms-python.python",
         "ms-python.black-formatter",
         "ms-python.flake8",
-        "SimonSiefke.svg-preview"
+        "SimonSiefke.svg-preview",
+        "tamasfe.even-better-toml"
       ]
     }
   }

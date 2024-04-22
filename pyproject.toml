@@ -1,0 +1,38 @@
+[project]
+name = "customer-success"
+description = "Administrative tasks for Cal-ITP's Customer Success team"
+version = "1.0.0"
+readme = "README.md"
+license = { file = "LICENSE" }
+classifiers = ["Programming Language :: Python :: 3 :: Only"]
+requires-python = ">=3.11"
+dependencies = []
+
+[project.urls]
+code = "https://github.com/cal-itp/customer-success"
+tracker = "https://github.com/cal-itp/customer-success/issues"
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "build",
+    "flake8",
+    "pre-commit"
+]
+qr_codes = [
+    "pypng==0.20220715.0",
+    "qrcode[pil]==7.4.2",
+    "typing_extensions==4.10.0"
+]
+
+[build-system]
+requires = ["setuptools>=65"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 127
+target-version = ['py311']
+include = '\.pyi?$'
+
+[tool.setuptools]
+packages = []
