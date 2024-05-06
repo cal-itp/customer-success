@@ -1,5 +1,5 @@
 [project]
-name = "customer-success"
+name = "calitp-cs"
 description = "Administrative tasks for Cal-ITP's Customer Success team"
 version = "1.0.0"
 readme = "README.md"
@@ -18,6 +18,11 @@ dev = [
     "build",
     "flake8",
     "pre-commit"
+]
+hubspot = [
+    "hubspot-api-client==9.0.0",
+    "ipykernel",
+    "pandas==2.2.2"
 ]
 qr_codes = [
     "pypng==0.20220715.0",
