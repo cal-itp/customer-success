@@ -7,7 +7,7 @@ body:
   - type: markdown
     attributes:
       value: |
-       ### This issue template can be used to request that the CS team send out an ad hoc email blast when Cal-ITP has noteworthy news to share. The process for preparing an email blast is [detailed in this document](https://docs.google.com/document/d/1FZBgW3vASHcPKmdD38V3zexcBNtyz-jZnjHQcwf4HBU/edit).
+        ### This issue template can be used to request that the CS team send out an ad hoc email blast when Cal-ITP has noteworthy news to share. The process for preparing an email blast is [detailed in this document](https://docs.google.com/document/d/1FZBgW3vASHcPKmdD38V3zexcBNtyz-jZnjHQcwf4HBU/edit).
   - type: input
     id: email-copy
     attributes:
@@ -19,7 +19,7 @@ body:
   - type: markdown
     attributes:
       value: |
-       _If no, the CS team will wait to take action on this issue until told that the copy is final_
+        _If no, the CS team will wait to take action on this issue until told that the copy is final_
   - type: checkboxes
     id: information
     attributes:
@@ -44,7 +44,7 @@ body:
   - type: input
     id: date
     attributes:
-      label: What should we send the email?
+      label: When should we send the email?
       description: Input the exact date or month
       placeholder: ex April 9th 2024
     validations:
@@ -57,6 +57,18 @@ body:
       options:
         - "Yes"
         - "No"
+        - "Not sure"
+    validations:
+      required: true
+  - type: dropdown
+    id: test
+    attributes:
+      label: Who should receive this email?
+      description: The CS team can work with you to determine the best audience to receive this email
+      options:
+        - "Transit Agencies"
+        - "Vendors"
+        - "Custom"
         - "Not sure"
     validations:
       required: true
