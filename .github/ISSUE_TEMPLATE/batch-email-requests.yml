@@ -61,7 +61,7 @@ body:
     validations:
       required: true
   - type: dropdown
-    id: test
+    id: email
     attributes:
       label: Who should receive this email?
       description: The CS team can work with you to determine the best audience to receive this email
