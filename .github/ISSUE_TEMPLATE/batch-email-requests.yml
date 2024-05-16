@@ -16,15 +16,19 @@ body:
       placeholder: ex https://docs.google.com/
     validations:
       required: true
-  - type: markdown
+  - type: dropdown
+    id: content
     attributes:
-      value: |
-        _If no, the CS team will wait to take action on this issue until told that the copy is final_
+      label: Is the email copy finalized?
+      description: If no, the CS team will wait to take action on this issue until told that the copy is final
+      options:
+        - "Yes"
+        - "No"
   - type: checkboxes
     id: information
     attributes:
       label: Confirm that the linked document above provides the following pieces of information
-      description: Select all the apply.
+      description: Select all that apply.
       options:
         - label: Clear subject line
         - label: Pre-header (Optional, this is the line that shows up below the Subject Line in your mobile inbox. If your email has no pre-header, check this box anyway)
