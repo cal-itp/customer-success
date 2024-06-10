@@ -27,7 +27,7 @@ hubspot = [
 qr_codes = [
     "pypng==0.20220715.0",
     "qrcode[pil]==7.4.2",
-    "typing_extensions==4.12.1"
+    "typing_extensions==4.12.2"
 ]
 
 [build-system]
