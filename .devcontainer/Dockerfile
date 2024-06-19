@@ -16,6 +16,7 @@ RUN python -m pip install --upgrade pip
 WORKDIR /home/$USER/customer-success
 
 COPY pyproject.toml pyproject.toml
+COPY data/ data/
 RUN pip install -e .[dev,hubspot,qr_codes]
 
 COPY docs/requirements.txt docs/requirements.txt

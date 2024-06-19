@@ -3,4 +3,5 @@
 *.egg-info
 qr_codes/*.png
 !qr_codes/calitp.org.png
-hubspot/data
+**/data/*.*
+!data/*.py
