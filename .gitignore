@@ -5,3 +5,4 @@ qr_codes/*.png
 !qr_codes/calitp.org.png
 **/data/*.*
 !data/*.py
+last_note_id
