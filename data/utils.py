@@ -3,8 +3,17 @@ import pandas as pd
 
 
 def hubspot_to_df(response: Any) -> pd.DataFrame:
-    """Helper converts a Hubspot response with `{ 'results': [ {...}, {...}, ...] }` into a DataFrame of records."""
-    return pd.json_normalize(response.to_dict(), "results")
+    """
+    Helper converts a Hubspot response or list of responses like:
+
+       `{ 'results': [ {...}, {...}, ...] }`
+
+    into a DataFrame of records.
+    """
+    if not isinstance(response, list):
+        response = [response]
+
+    return pd.concat([pd.json_normalize(r.to_dict(), "results") for r in response])
 
 
 def write_json_records(df: pd.DataFrame, file_path: str):
