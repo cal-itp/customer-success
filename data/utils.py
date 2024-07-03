@@ -4,6 +4,25 @@ from typing import Any
 import pandas as pd
 
 
+def hubspot_get_all_pages(hubspot_api, page_size=10, **kwargs) -> list:
+    """Repeatedly call the `get_page` method of the given Hubspot API until all responses are received.
+
+    Extra kwargs are passed through to the `get_page` method.
+    """
+    kwargs["limit"] = page_size
+    pages = []
+
+    response = hubspot_api.get_page(**kwargs)
+    pages.append(response)
+
+    while response.paging:
+        kwargs["after"] = response.paging.next.after
+        response = hubspot_api.get_page(**kwargs)
+        pages.append(response)
+
+    return pages
+
+
 def hubspot_to_df(response: Any) -> pd.DataFrame:
     """
     Converts a Hubspot response like:
