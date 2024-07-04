@@ -1,7 +1,13 @@
 from pathlib import Path
-from typing import Any
+from typing import Any, Generator
 
 import pandas as pd
+
+
+def chunk_list(input_list: list, chunk_size: int) -> Generator[list, None, None]:
+    """Yield successive sublists of max size chunk_size from the input list."""
+    for i in range(0, len(input_list), chunk_size):
+        yield input_list[i : i + chunk_size]
 
 
 def hubspot_get_all_pages(hubspot_api, page_size=10, **kwargs) -> list:
