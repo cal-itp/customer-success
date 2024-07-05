@@ -6,7 +6,7 @@ from hubspot import HubSpot
 from hubspot.crm.objects import BatchReadInputSimplePublicObjectId
 import pandas as pd
 
-from data.utils import chunk_list, hubspot_get_all_pages, hubspot_to_df, write_json_records
+from data.utils import chunk_list, hubspot_get_all_pages, hubspot_to_df, write_json_records, HubspotUserApi
 
 
 ACCESS_TOKEN = os.environ["HUBSPOT_ACCESS_TOKEN"]
@@ -27,6 +27,7 @@ hubspot_notes_api = hubspot.crm.objects.notes.basic_api
 hubspot_objects_api = hubspot.crm.objects.basic_api
 hubspot_objects_batch_api = hubspot.crm.objects.batch_api
 hubspot_properties_api = hubspot.crm.properties.core_api
+hubspot_users_api = HubspotUserApi(access_token=ACCESS_TOKEN)
 
 
 def get_last_note_id():
@@ -171,12 +172,26 @@ def join_users(notes: pd.DataFrame) -> pd.DataFrame:
         return notes
 
     user_props = ["hs_given_name", "hs_family_name"]
-    users_responses = hubspot_get_all_pages(
-        hubspot_objects_api, page_size=PAGE_SIZE, object_type="users", properties=user_props
-    )
-    users = hubspot_to_df(users_responses)  # noqa: F841
+    responses = hubspot_get_all_pages(hubspot_users_api, page_size=100, properties=user_props)
+    users = hubspot_to_df(responses)
 
-    # TODO: map note creator to user, getting first/last name
+    if users is not None and len(users) > 0:
+        # keep only the columns we want, and rename
+        users = users[["id", "properties.hs_family_name", "properties.hs_given_name"]].rename(
+            columns={
+                "id": "id_user",
+                "properties.hs_family_name": "last",
+                "properties.hs_given_name": "first",
+            }
+        )
+        # construct the full name, drop individual columns
+        users["name_user"] = users.agg("{0[first]} {0[last]}".format, axis=1)
+        users = users[["id_user", "name_user"]]
+        users.reset_index(drop=True, inplace=True)
+
+        # merge back with the notes DataFrame
+        notes = notes.merge(users, how="left", on="id_user")
+        notes.reset_index(drop=True, inplace=True)
 
     return notes
 
