@@ -59,7 +59,12 @@ def get_notes() -> pd.DataFrame:
 def preprocess_notes(notes: pd.DataFrame) -> pd.DataFrame:
     # rename vendor association column
     # weird name, maybe because it is a custom association type?
-    notes[ASSOCIATION_COLUMNS_VENDORS] = notes["associations.p5519226_vendors.results"]
+    if "associations.p5519226_vendors.results" in notes.columns:
+        notes[ASSOCIATION_COLUMNS_VENDORS] = notes["associations.p5519226_vendors.results"]
+
+    # fill in missing association columns
+    add_cols = [col for col in ASSOCIATION_COLUMNS if col not in notes.columns]
+    notes[add_cols] = pd.NA
 
     # select only the columns needed for later
     cols = {
@@ -72,7 +77,7 @@ def preprocess_notes(notes: pd.DataFrame) -> pd.DataFrame:
     }
     notes = notes[cols.keys()]
     # and rename some for simplicity
-    notes = notes.rename(columns=cols)
+    notes = notes.rename(columns=cols, errors="ignore")
 
     # drop notes without a body
     notes = notes.dropna(subset=["body"])
@@ -99,22 +104,36 @@ def preprocess_notes(notes: pd.DataFrame) -> pd.DataFrame:
     # and we want to pull the value from "id" into its own column in the DataFrame
 
     # .apply(pd.Series) converts the value to a DataFrame with a column for each key in the dict (id, type)
-    # ["id"] keeps only the column we need
-    # .concat puts the columns into a single DataFrame
-    id_company = notes[ASSOCIATION_COLUMNS_COMPANIES].apply(pd.Series)["id"]
-    notes = pd.concat([notes, id_company], axis=1).rename(columns={"id": "id_company"})
+    id_company = notes[ASSOCIATION_COLUMNS_COMPANIES].apply(pd.Series)
+    if "id" in id_company:
+        # ["id"] keeps only the column we need
+        # .concat puts the columns into a single DataFrame
+        notes = pd.concat([notes, id_company["id"]], axis=1).rename(columns={"id": "id_company"}, errors="ignore")
+    else:
+        # add the column if it wasn't present
+        notes["id_company"] = pd.NA
 
-    id_vendor = notes[ASSOCIATION_COLUMNS_VENDORS].apply(pd.Series)["id"]
-    notes = pd.concat([notes, id_vendor], axis=1).rename(columns={"id": "id_vendor"})
+    # .apply(pd.Series) converts the value to a DataFrame with a column for each key in the dict (id, type)
+    id_vendor = notes[ASSOCIATION_COLUMNS_VENDORS].apply(pd.Series)
+    if "id" in id_vendor:
+        # ["id"] keeps only the column we need
+        # .concat puts the columns into a single DataFrame
+        notes = pd.concat([notes, id_vendor["id"]], axis=1).rename(columns={"id": "id_vendor"}, errors="ignore")
+    else:
+        # add the column if it wasn't present
+        notes["id_vendor"] = pd.NA
 
     # remove now-expanded columns and clean up index
-    notes = notes.drop(columns=ASSOCIATION_COLUMNS)
+    notes = notes.drop(columns=ASSOCIATION_COLUMNS, errors="ignore")
     notes.reset_index(drop=True, inplace=True)
 
     return notes
 
 
 def join_companies(notes: pd.DataFrame) -> pd.DataFrame:
+    if len(notes) == 0:
+        return notes
+
     note_company_ids = [{"id": id} for id in set(notes["id_company"].dropna())]
     responses = []
 
@@ -125,24 +144,30 @@ def join_companies(notes: pd.DataFrame) -> pd.DataFrame:
 
     companies = hubspot_to_df(responses)
 
-    # filter to only Transit Agency companies
-    companies = companies.loc[companies["properties.company_type"].eq("Transit Agency")]
-    # keep only the columns we want, and rename
-    companies = companies[["id", "properties.name"]].rename(columns={"id": "id_company", "properties.name": "name_company"})
-    companies.reset_index(drop=True, inplace=True)
+    if companies is not None and len(companies) > 0:
+        # filter to only Transit Agency companies
+        companies = companies.loc[companies["properties.company_type"].eq("Transit Agency")]
+        # keep only the columns we want, and rename
+        companies = companies[["id", "properties.name"]].rename(
+            columns={"id": "id_company", "properties.name": "name_company"}
+        )
+        companies.reset_index(drop=True, inplace=True)
 
-    # merge back with the notes DataFrame
-    # left join since some notes are associated with vendors and not companies
-    # so want to keep all the notes
-    notes = notes.merge(companies, how="left", on="id_company")
-    notes.reset_index(drop=True, inplace=True)
-    # drop notes where there was a company ID but no company name (e.g. the note's company was not a Transit Agency)
-    notes.drop(notes[(~notes["id_company"].isna()) & (notes["name_company"].isna())].index, inplace=True)
+        # merge back with the notes DataFrame
+        # left join since some notes are associated with vendors and not companies
+        # so want to keep all the notes
+        notes = notes.merge(companies, how="left", on="id_company")
+        notes.reset_index(drop=True, inplace=True)
+        # drop notes where there was a company ID but no company name (e.g. the note's company was not a Transit Agency)
+        notes.drop(notes[(~notes["id_company"].isna()) & (notes["name_company"].isna())].index, inplace=True)
 
     return notes
 
 
 def join_users(notes: pd.DataFrame) -> pd.DataFrame:
+    if len(notes) == 0:
+        return notes
+
     user_props = ["hs_given_name", "hs_family_name"]
     users_responses = hubspot_get_all_pages(
         hubspot_objects_api, page_size=PAGE_SIZE, object_type="users", properties=user_props
@@ -155,6 +180,9 @@ def join_users(notes: pd.DataFrame) -> pd.DataFrame:
 
 
 def join_vendors(notes: pd.DataFrame) -> pd.DataFrame:
+    if len(notes) == 0:
+        return notes
+
     note_vendor_ids = [{"id": id} for id in set(notes["id_vendor"].dropna())]
     responses = []
 
@@ -165,15 +193,16 @@ def join_vendors(notes: pd.DataFrame) -> pd.DataFrame:
 
     vendors = hubspot_to_df(responses)
 
-    # keep only the columns we want, and rename
-    vendors = vendors[["id", "properties.vendor_name"]].rename(
-        columns={"id": "id_vendor", "properties.vendor_name": "name_vendor"}
-    )
-    vendors.reset_index(drop=True, inplace=True)
+    if vendors is not None and len(vendors) > 0:
+        # keep only the columns we want, and rename
+        vendors = vendors[["id", "properties.vendor_name"]].rename(
+            columns={"id": "id_vendor", "properties.vendor_name": "name_vendor"}
+        )
+        vendors.reset_index(drop=True, inplace=True)
 
-    # merge back with the notes DataFrame
-    notes = notes.merge(vendors, how="left", on="id_vendor")
-    notes.reset_index(drop=True, inplace=True)
+        # merge back with the notes DataFrame
+        notes = notes.merge(vendors, how="left", on="id_vendor")
+        notes.reset_index(drop=True, inplace=True)
 
     return notes
 
