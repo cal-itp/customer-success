@@ -1,6 +1,8 @@
 from dataclasses import dataclass
 import json
 
+from bs4 import BeautifulSoup
+
 from notes.download import NOTES_PATH
 
 
@@ -24,3 +26,12 @@ def read_notes_json() -> list[Note]:
     notes_data = json.loads(NOTES_PATH.read_text())
 
     return [Note(**note) for note in notes_data]
+
+
+def process_notes(notes: list[Note]) -> list[Note]:
+    for note in notes:
+        # collapse all text from the HTML body, joining distinct elements with a space
+        # strip extra whitespace, and place inner newlines within a blockquote
+        note.body = BeautifulSoup(note.body, "html.parser").get_text(" ").strip().replace("\n", ">\n")
+
+    return notes
