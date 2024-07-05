@@ -40,4 +40,4 @@ target-version = ['py311']
 include = '\.pyi?$'
 
 [tool.setuptools]
-packages = ["data"]
+packages = ["data", "notes"]

@@ -17,7 +17,7 @@ WORKDIR /home/$USER/customer-success
 
 COPY pyproject.toml pyproject.toml
 COPY data/ data/
-RUN pip install -e .[dev,hubspot,qr_codes]
+COPY notes/ notes/
 
 COPY docs/requirements.txt docs/requirements.txt
 RUN pip install -r docs/requirements.txt
