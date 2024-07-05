@@ -10,9 +10,11 @@ from data.utils import chunk_list, hubspot_get_all_pages, hubspot_to_df, write_j
 
 
 ACCESS_TOKEN = os.environ["HUBSPOT_ACCESS_TOKEN"]
-LAST_NOTE_PATH = Path("last_note_id")
 MAX_PAGES = int(os.environ.get("HUBSPOT_MAX_PAGES", sys.maxsize))
 PAGE_SIZE = int(os.environ.get("HUBSPOT_PAGE_SIZE", 10))
+
+LAST_NOTE_PATH = Path("last_note_id")
+NOTES_PATH = Path("data/notes.json")
 
 ASSOCIATION_TYPES = ["companies", "vendors"]
 ASSOCIATION_COLUMNS = [f"associations.{assoc}.results" for assoc in ASSOCIATION_TYPES]
@@ -215,4 +217,4 @@ if __name__ == "__main__":
     notes = join_users(notes)
     notes = join_vendors(notes)
 
-    write_json_records(notes, "notes.json")
+    write_json_records(notes, NOTES_PATH.name)
