@@ -1,4 +1,5 @@
 from pathlib import Path
+import sys
 from typing import Any, Generator
 
 import pandas as pd
@@ -10,7 +11,7 @@ def chunk_list(input_list: list, chunk_size: int) -> Generator[list, None, None]
         yield input_list[i : i + chunk_size]
 
 
-def hubspot_get_all_pages(hubspot_api, page_size=10, **kwargs) -> list:
+def hubspot_get_all_pages(hubspot_api, page_size=10, max_pages=sys.maxsize, **kwargs) -> list:
     """Repeatedly call the `get_page` method of the given Hubspot API until all responses are received.
 
     Extra kwargs are passed through to the `get_page` method.
@@ -21,7 +22,7 @@ def hubspot_get_all_pages(hubspot_api, page_size=10, **kwargs) -> list:
     response = hubspot_api.get_page(**kwargs)
     pages.append(response)
 
-    while response.paging:
+    while response.paging and len(pages) < max_pages:
         kwargs["after"] = response.paging.next.after
         response = hubspot_api.get_page(**kwargs)
         pages.append(response)

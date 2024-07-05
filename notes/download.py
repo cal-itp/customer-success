@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+import sys
 
 from hubspot import HubSpot
 from hubspot.crm.objects import BatchReadInputSimplePublicObjectId
@@ -10,7 +11,8 @@ from data.utils import chunk_list, hubspot_get_all_pages, hubspot_to_df, write_j
 
 ACCESS_TOKEN = os.environ["HUBSPOT_ACCESS_TOKEN"]
 LAST_NOTE_PATH = Path("last_note_id")
-PAGE_SIZE = int(os.environ["HUBSPOT_PAGE_SIZE"])
+MAX_PAGES = int(os.environ.get("HUBSPOT_MAX_PAGES", sys.maxsize))
+PAGE_SIZE = int(os.environ.get("HUBSPOT_PAGE_SIZE", 10))
 
 ASSOCIATION_TYPES = ["companies", "vendors"]
 ASSOCIATION_COLUMNS = [f"associations.{assoc}.results" for assoc in ASSOCIATION_TYPES]
@@ -41,7 +43,12 @@ def get_notes() -> pd.DataFrame:
     last_note_id = get_last_note_id()
 
     notes_responses = hubspot_get_all_pages(
-        hubspot_notes_api, page_size=PAGE_SIZE, after=last_note_id, properties=note_props, associations=ASSOCIATION_TYPES
+        hubspot_notes_api,
+        page_size=PAGE_SIZE,
+        max_pages=MAX_PAGES,
+        after=last_note_id,
+        properties=note_props,
+        associations=ASSOCIATION_TYPES,
     )
 
     update_last_note_id(notes_responses[-1].results[-1].id)
