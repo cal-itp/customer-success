@@ -24,6 +24,9 @@ hubspot = [
     "ipykernel",
     "pandas==2.2.2"
 ]
+notes = [
+    "beautifulsoup4==4.12.3"
+]
 qr_codes = [
     "pypng==0.20220715.0",
     "qrcode[pil]==7.4.2",
