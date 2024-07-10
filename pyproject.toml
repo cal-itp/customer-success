@@ -17,11 +17,11 @@ dev = [
     "black",
     "build",
     "flake8",
+    "ipykernel",
     "pre-commit"
 ]
 hubspot = [
     "hubspot-api-client==9.0.0",
-    "ipykernel",
     "pandas==2.2.2",
     "requests==2.32.3"
 ]
