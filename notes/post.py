@@ -33,5 +33,7 @@ def process_notes(notes: list[Note]) -> list[Note]:
         # collapse all text from the HTML body, joining distinct elements with a space
         # strip extra whitespace, and place inner newlines within a blockquote
         note.body = BeautifulSoup(note.body, "html.parser").get_text(" ").strip().replace("\n", ">\n")
+        # convert from Unix timestamp milliseconds to Unix timestamp seconds for Slack's date formatting
+        note.created_at = int(int(note.created_at) / 1000)
 
     return notes
