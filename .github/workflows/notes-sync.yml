@@ -1,0 +1,75 @@
+name: Sync new Hubspot notes to Slack
+
+on:
+  workflow_dispatch:
+    inputs:
+      page_size:
+        description: Page size for API requests
+        required: false
+        default: 10
+        type: number
+      max_pages:
+        description: Maximum number of pages to request
+        required: false
+        default: 1
+        type: number
+      last_note_id:
+        description: The ID of the last note that was processed
+        required: false
+        type: string
+      slack_channel:
+        description: The ID of the Cal-ITP Slack channel to post the message(s) to
+        type: string
+        required: false
+  schedule:
+    # every hour at HH:10
+    - cron: 10 * * * *
+
+jobs:
+  sync-notes-to-slack:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: "pyproject.toml"
+
+      - name: Install tooling
+        run: pip install -e .[hubspot,notes]
+
+      - name: Write the last_note_id file
+        if: inputs.last_note_id
+        run: echo ${{ inputs.last_note_id }} > last_note_id
+
+      - name: Download the last_note_id artifact
+        if: github.event.schedule
+        uses: actions/download-artifact@v4
+        with:
+          name: last_note_id
+          path: last_note_id
+
+      - name: Download newer notes
+        run: python notes/download.py
+        env:
+          HUBSPOT_ACCESS_TOKEN: ${{ secrets.HUBSPOT_NOTES_ACCESS_TOKEN }}
+          HUBSPOT_MAX_PAGES: ${{ inputs.max_pages || variables.HUBSPOT_MAX_PAGES }}
+          HUBSPOT_PAGE_SIZE: ${{ inputs.page_size || variables.HUBSPOT_PAGE_SIZE }}
+
+      - name: Post downloaded notes
+        run: python notes/post.py
+        env:
+          SLACK_ACCESS_TOKEN: ${{ secrets.SLACK_ACCESS_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ inputs.slack_channel || variables.SLACK_CHANNEL_ID }}
+
+      - name: Upload last_note_id artifact
+        if: github.event.schedule
+        uses: actions/upload-artifact@v4
+        with:
+          name: last_note_id
+          path: last_note_id
+          overwrite: true
