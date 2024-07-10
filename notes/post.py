@@ -1,11 +1,20 @@
 from dataclasses import dataclass
 import json
+import os
 from typing import Generator
 
 from bs4 import BeautifulSoup
 from slack_sdk.models.blocks import HeaderBlock, SectionBlock, MarkdownTextObject
+from slack_sdk.web import WebClient
+from slack_sdk.web.slack_response import SlackResponse
 
 from notes.download import NOTES_PATH
+
+
+ACCESS_TOKEN = os.environ["SLACK_ACCESS_TOKEN"]
+CHANNEL_ID = os.environ["SLACK_CHANNEL_ID"]
+
+slack = WebClient(token=ACCESS_TOKEN)
 
 
 @dataclass()
@@ -63,3 +72,12 @@ def create_messages(notes: list[Note]) -> Generator[dict, None, None]:
                 SectionBlock(fields=[MarkdownTextObject(text=created_by_text), MarkdownTextObject(text=created_on_text)])
             ],
         )
+
+
+def post_messages(messages: Generator[dict, None, None]) -> list[SlackResponse]:
+    responses = []
+    for message in messages:
+        response = slack.chat_postMessage(**message)
+        responses.append(response)
+
+    return responses
