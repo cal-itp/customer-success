@@ -27,7 +27,8 @@ hubspot_notes_api = hubspot.crm.objects.notes.basic_api
 hubspot_objects_api = hubspot.crm.objects.basic_api
 hubspot_objects_batch_api = hubspot.crm.objects.batch_api
 hubspot_properties_api = hubspot.crm.properties.core_api
-hubspot_users_api = HubspotUserApi(access_token=ACCESS_TOKEN)
+hubspot_users_crm_api = HubspotUserApi(access_token=ACCESS_TOKEN)
+hubspot_users_settings_api = hubspot.settings.users.users_api
 
 
 def get_last_note_id():
@@ -171,22 +172,26 @@ def join_users(notes: pd.DataFrame) -> pd.DataFrame:
     if len(notes) == 0:
         return notes
 
-    user_props = ["hs_given_name", "hs_family_name"]
-    responses = hubspot_get_all_pages(hubspot_users_api, page_size=100, properties=user_props)
-    users = hubspot_to_df(responses)
+    responses_settings = hubspot_get_all_pages(hubspot_users_settings_api, page_size=100)
+    users_settings = hubspot_to_df(responses_settings)
+    users_settings.rename(columns={"email": "properties.hs_email"}, inplace=True)
+
+    user_props = ["hs_searchable_calculated_name", "hs_email"]
+    responses_crm = hubspot_get_all_pages(hubspot_users_crm_api, page_size=100, properties=user_props)
+    users_crm = hubspot_to_df(responses_crm)
+
+    users = users_settings.merge(users_crm, how="inner", on="properties.hs_email")
 
     if users is not None and len(users) > 0:
         # keep only the columns we want, and rename
-        users = users[["id", "properties.hs_family_name", "properties.hs_given_name"]].rename(
+        # id_x is the id from the left side of the join, i.e. the User ID from the HubSpot Portal
+        # hs_searchable_calculated_name is a pre-formed "Firstname Lastname" string for the user
+        users = users[["id_x", "properties.hs_searchable_calculated_name"]].rename(
             columns={
-                "id": "id_user",
-                "properties.hs_family_name": "last",
-                "properties.hs_given_name": "first",
+                "id_x": "id_user",
+                "properties.hs_searchable_calculated_name": "name_user",
             }
         )
-        # construct the full name, drop individual columns
-        users["name_user"] = users.agg("{0[first]} {0[last]}".format, axis=1)
-        users = users[["id_user", "name_user"]]
         users.reset_index(drop=True, inplace=True)
 
         # merge back with the notes DataFrame
