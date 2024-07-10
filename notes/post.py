@@ -8,7 +8,7 @@ from slack_sdk.models.blocks import HeaderBlock, SectionBlock, MarkdownTextObjec
 from slack_sdk.web import WebClient
 from slack_sdk.web.slack_response import SlackResponse
 
-from notes.download import NOTES_PATH
+from notes import NOTES_PATH
 
 
 ACCESS_TOKEN = os.environ["SLACK_ACCESS_TOKEN"]

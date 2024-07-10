@@ -7,6 +7,7 @@ from hubspot.crm.objects import BatchReadInputSimplePublicObjectId
 import pandas as pd
 
 from data.utils import chunk_list, hubspot_get_all_pages, hubspot_to_df, write_json_records, HubspotUserApi
+from notes import NOTES_PATH
 
 
 ACCESS_TOKEN = os.environ["HUBSPOT_ACCESS_TOKEN"]
@@ -14,7 +15,6 @@ MAX_PAGES = int(os.environ.get("HUBSPOT_MAX_PAGES", sys.maxsize))
 PAGE_SIZE = int(os.environ.get("HUBSPOT_PAGE_SIZE", 10))
 
 LAST_NOTE_PATH = Path("last_note_id")
-NOTES_PATH = Path("data/notes.json")
 
 ASSOCIATION_TYPES = ["companies", "vendors"]
 ASSOCIATION_COLUMNS = [f"associations.{assoc}.results" for assoc in ASSOCIATION_TYPES]
