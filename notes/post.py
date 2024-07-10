@@ -81,3 +81,15 @@ def post_messages(messages: Generator[dict, None, None]) -> list[SlackResponse]:
         responses.append(response)
 
     return responses
+
+
+if __name__ == "__main__":
+    notes = read_notes_json()
+
+    notes = process_notes(notes)
+
+    messages = create_messages(notes)
+
+    responses = post_messages(messages)
+
+    assert all([r.status_code == 200 for r in responses])
