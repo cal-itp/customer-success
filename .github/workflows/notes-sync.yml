@@ -42,35 +42,43 @@ jobs:
       - name: Install tooling
         run: pip install -e .[hubspot,notes]
 
-      - name: Write the last_note_id file
+      - name: Get last_note_id from workflow input
         if: inputs.last_note_id
         run: echo ${{ inputs.last_note_id }} > last_note_id
 
-      - name: Download the last_note_id artifact
+      - name: Get last_note_id from repository variable
         if: github.event.schedule
-        uses: actions/download-artifact@v4
-        with:
-          name: last_note_id
-          path: last_note_id
+        run: echo ${{ vars.last_note_id }} > last_note_id
 
       - name: Download newer notes
-        run: python notes/download.py
+        id: download
+        run: |
+          python notes/download.py
+          echo "last_note_id=$(cat last_note_id)" >> $GITHUB_OUTPUT
         env:
           HUBSPOT_ACCESS_TOKEN: ${{ secrets.HUBSPOT_NOTES_ACCESS_TOKEN }}
           HUBSPOT_MAX_PAGES: ${{ inputs.max_pages || vars.HUBSPOT_MAX_PAGES }}
           HUBSPOT_PAGE_SIZE: ${{ inputs.page_size || vars.HUBSPOT_PAGE_SIZE }}
 
-      - name: Post downloaded notes
+      - name: Post a message for each downloaded note
         run: python notes/post.py
         env:
           SLACK_ACCESS_TOKEN: ${{ secrets.SLACK_ACCESS_TOKEN }}
           SLACK_CHANNEL_ID: ${{ inputs.slack_channel || vars.SLACK_CHANNEL_ID }}
           HUBSPOT_INSTANCE_ID: ${{ secrets.HUBSPOT_INSTANCE_ID }}
 
-      - name: Upload last_note_id artifact
+      - uses: actions/github-script@v7
+        name: Update last_note_id repository variable
         if: github.event.schedule
-        uses: actions/upload-artifact@v4
+        env:
+          LAST_NOTE_ID: ${{steps.download.outputs.last_note_id}}
         with:
-          name: last_note_id
-          path: last_note_id
-          overwrite: true
+          script: |
+            const { LAST_NOTE_ID } = process.env;
+
+            github.rest.actions.updateRepoVariable({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              name: "HUBSPOT_LAST_NOTE_ID",
+              value: LAST_NOTE_ID,
+            });
