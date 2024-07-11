@@ -65,6 +65,7 @@ jobs:
         env:
           SLACK_ACCESS_TOKEN: ${{ secrets.SLACK_ACCESS_TOKEN }}
           SLACK_CHANNEL_ID: ${{ inputs.slack_channel || vars.SLACK_CHANNEL_ID }}
+          SLACK_RATE_LIMIT: ${{ vars.SLACK_RATE_LIMIT }}
           HUBSPOT_INSTANCE_ID: ${{ secrets.HUBSPOT_INSTANCE_ID }}
 
       - uses: actions/github-script@v7
