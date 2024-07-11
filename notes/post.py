@@ -12,7 +12,12 @@ from notes import NOTES_PATH
 
 
 ACCESS_TOKEN = os.environ["SLACK_ACCESS_TOKEN"]
-CHANNEL_ID = os.environ["SLACK_CHANNEL_ID"]
+CHANNEL = os.environ["SLACK_CHANNEL_ID"]
+HUBSPOT_INSTANCE = os.environ["HUBSPOT_INSTANCE_ID"]
+
+# Hubspot magic numbers
+COMPANIES = "0-2"
+VENDORS = "2-22517187"
 
 slack = WebClient(token=ACCESS_TOKEN)
 
@@ -54,22 +59,29 @@ def create_messages(notes: list[Note]) -> Generator[dict, None, None]:
     # see https://api.slack.com/reference/surfaces/formatting
 
     for note in notes:
-        target_name = note.name_company or note.name_vendor
-        target_type = "Transit Agency" if note.name_company else "Vendor"
-        header = f"[{target_type}] {target_name}:"
+        if note.name_company:
+            target_name, target_id, target_type, type_id = (note.name_company, note.id_company, "Transit Agency", COMPANIES)
+        else:
+            target_name, target_id, target_type, type_id = (note.name_vendor, note.id_vendor, "Vendor", VENDORS)
 
+        note_id = note.id_note
+        url = f"https://app.hubspot.com/contacts/{HUBSPOT_INSTANCE}/record/{type_id}/{target_id}/view/1?engagement={note_id}"
+
+        header_text = f"[{target_type}] {target_name}:"
         note_text = f"> {note.body}"
         created_by_text = f"*Created by:*\n{note.name_user}"
         date_fmt = f"<!date^{note.created_at}^{{date_long}} at {{time}}|{note.created_at}>"
         created_on_text = f"*Created on:*\n{date_fmt}"
+        link_text = f"<{url}|View in Hubspot>"
 
         yield dict(
-            channel=CHANNEL_ID,
-            text=header,
+            channel=CHANNEL,
+            text=header_text,
             blocks=[
-                HeaderBlock(text=header),
+                HeaderBlock(text=header_text),
                 SectionBlock(text=MarkdownTextObject(text=note_text)),
-                SectionBlock(fields=[MarkdownTextObject(text=created_by_text), MarkdownTextObject(text=created_on_text)])
+                SectionBlock(fields=[MarkdownTextObject(text=created_by_text), MarkdownTextObject(text=created_on_text)]),
+                SectionBlock(text=MarkdownTextObject(text=link_text)),
             ],
         )
 
