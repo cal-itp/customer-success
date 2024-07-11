@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 import json
 import os
+import time
 from typing import Generator
 
 from bs4 import BeautifulSoup
@@ -14,6 +15,7 @@ from notes import NOTES_PATH
 ACCESS_TOKEN = os.environ["SLACK_ACCESS_TOKEN"]
 CHANNEL = os.environ["SLACK_CHANNEL_ID"]
 HUBSPOT_INSTANCE = os.environ["HUBSPOT_INSTANCE_ID"]
+RATE_LIMIT = float(os.environ.get("SLACK_RATE_LIMIT", 1.0))
 
 # Hubspot magic numbers
 COMPANIES = "0-2"
@@ -86,13 +88,11 @@ def create_messages(notes: list[Note]) -> Generator[dict, None, None]:
         )
 
 
-def post_messages(messages: Generator[dict, None, None]) -> list[SlackResponse]:
-    responses = []
+def post_messages(messages: Generator[dict, None, None]) -> Generator[SlackResponse, None, None]:
     for message in messages:
         response = slack.chat_postMessage(**message)
-        responses.append(response)
-
-    return responses
+        yield response
+        time.sleep(RATE_LIMIT)
 
 
 if __name__ == "__main__":
@@ -104,4 +104,5 @@ if __name__ == "__main__":
 
     responses = post_messages(messages)
 
-    assert all([r.status_code == 200 for r in responses])
+    for response in responses:
+        assert response.status_code == 200
