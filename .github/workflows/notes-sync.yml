@@ -48,7 +48,7 @@ jobs:
 
       - name: Get last_note_id from repository variable
         if: github.event.schedule
-        run: echo ${{ vars.last_note_id }} > last_note_id
+        run: echo ${{ vars.HUBSPOT_LAST_NOTE_ID }} > last_note_id
 
       - name: Download newer notes
         id: download
