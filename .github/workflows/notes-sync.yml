@@ -22,8 +22,8 @@ on:
         type: string
         required: false
   schedule:
-    # every hour at HH:35
-    - cron: 35 * * * *
+    # every hour at HH:55
+    - cron: 55 * * * *
 
 jobs:
   sync-notes-to-slack:
@@ -73,6 +73,7 @@ jobs:
         env:
           LAST_NOTE_ID: ${{steps.download.outputs.last_note_id}}
         with:
+          github-token: ${{ secrets.GH_TOKEN_REPO_VARS }}
           script: |
             const { LAST_NOTE_ID } = process.env;
 
