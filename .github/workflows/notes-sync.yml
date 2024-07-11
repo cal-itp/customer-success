@@ -73,6 +73,7 @@ jobs:
         env:
           LAST_NOTE_ID: ${{steps.download.outputs.last_note_id}}
         with:
+          github-token: ${{ secrets.GH_TOKEN_REPO_VARS }}
           script: |
             const { LAST_NOTE_ID } = process.env;
 
