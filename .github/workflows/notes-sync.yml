@@ -22,8 +22,8 @@ on:
         type: string
         required: false
   schedule:
-    # every hour at HH:20
-    - cron: 20 * * * *
+    # every hour at HH:35
+    - cron: 35 * * * *
 
 jobs:
   sync-notes-to-slack:
@@ -48,7 +48,7 @@ jobs:
 
       - name: Get last_note_id from repository variable
         if: github.event.schedule
-        run: echo ${{ vars.last_note_id }} > last_note_id
+        run: echo ${{ vars.HUBSPOT_LAST_NOTE_ID }} > last_note_id
 
       - name: Download newer notes
         id: download
