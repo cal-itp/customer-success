@@ -22,8 +22,8 @@ on:
         type: string
         required: false
   schedule:
-    # every hour at HH:55
-    - cron: 55 * * * *
+    # every hour at HH:25
+    - cron: 25 * * * *
 
 jobs:
   sync-notes-to-slack:
