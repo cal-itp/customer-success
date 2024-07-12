@@ -24,9 +24,7 @@ ASSOCIATION_COLUMNS_VENDORS = ASSOCIATION_COLUMNS[1]
 hubspot = HubSpot(access_token=ACCESS_TOKEN)
 hubspot_companies_api = hubspot.crm.companies.batch_api
 hubspot_notes_api = hubspot.crm.objects.notes.basic_api
-hubspot_objects_api = hubspot.crm.objects.basic_api
 hubspot_objects_batch_api = hubspot.crm.objects.batch_api
-hubspot_properties_api = hubspot.crm.properties.core_api
 hubspot_users_crm_api = HubspotUserApi(access_token=ACCESS_TOKEN)
 hubspot_users_settings_api = hubspot.settings.users.users_api
 
