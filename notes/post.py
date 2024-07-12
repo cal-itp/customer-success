@@ -51,9 +51,13 @@ def process_notes(notes: list[Note]) -> list[Note]:
         # collapse all text from the HTML body, joining distinct elements with a space
         # strip extra whitespace, and place inner newlines within a blockquote
         note.body = BeautifulSoup(note.body, "html.parser").get_text(" ").strip().replace("\n", ">\n")
+        # add the markdown blockquote
+        note.body = "> " + note.body
         # max body size 3000 characters
         if len(note.body) > 3000:
-            note.body = note.body[0:2997] + "..."
+            # take the first 2995 characters, plus 3 for the ellipsis, plus 2 for the markdown blockquote and space
+            # 2995 + 3 + 2 = 3000
+            note.body = note.body[0:2995] + "..."
         # convert from Unix timestamp milliseconds to Unix timestamp seconds for Slack's date formatting
         note.created_at = int(int(note.created_at) / 1000)
 
@@ -73,7 +77,6 @@ def create_messages(notes: list[Note]) -> Generator[dict, None, None]:
         url = f"https://app.hubspot.com/contacts/{HUBSPOT_INSTANCE}/record/{type_id}/{target_id}/view/1?engagement={note_id}"
 
         header_text = f"[{target_type}] {target_name}:"
-        note_text = f"> {note.body}"
         created_by_text = f"*Created by:*\n{note.name_user}"
         date_fmt = f"<!date^{note.created_at}^{{date_long}} at {{time}}|{note.created_at}>"
         created_on_text = f"*Created on:*\n{date_fmt}"
@@ -84,7 +87,7 @@ def create_messages(notes: list[Note]) -> Generator[dict, None, None]:
             text=header_text,
             blocks=[
                 HeaderBlock(text=header_text),
-                SectionBlock(text=MarkdownTextObject(text=note_text)),
+                SectionBlock(text=MarkdownTextObject(text=note.body)),
                 SectionBlock(fields=[MarkdownTextObject(text=created_by_text), MarkdownTextObject(text=created_on_text)]),
                 SectionBlock(text=MarkdownTextObject(text=link_text)),
             ],
