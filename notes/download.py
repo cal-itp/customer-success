@@ -1,3 +1,4 @@
+import logging
 import os
 from pathlib import Path
 import sys
@@ -8,6 +9,8 @@ import pandas as pd
 
 from data.utils import chunk_list, hubspot_get_all_pages, hubspot_to_df, write_json_records, HubspotUserApi
 from notes import NOTES_PATH
+
+logger = logging.getLogger("notes/download")
 
 
 ACCESS_TOKEN = os.environ["HUBSPOT_ACCESS_TOKEN"]
@@ -31,12 +34,16 @@ hubspot_users_settings_api = hubspot.settings.users.users_api
 
 def get_last_note_id():
     try:
-        return LAST_NOTE_PATH.read_text(encoding="utf-8").strip()
+        last_note_id = LAST_NOTE_PATH.read_text(encoding="utf-8").strip()
+        logger.info(f"Read last_note_id: {last_note_id}")
+        return last_note_id
     except FileNotFoundError:
+        logger.warning("File not found: last_note_id")
         return None
 
 
 def update_last_note_id(last_note_id):
+    logger.info(f"Updating last_note_id: {last_note_id}")
     LAST_NOTE_PATH.write_text(str(last_note_id).strip(), encoding="utf-8")
 
 
@@ -52,13 +59,17 @@ def get_notes() -> pd.DataFrame:
         properties=note_props,
         associations=ASSOCIATION_TYPES,
     )
+    notes_df = hubspot_to_df(notes_responses)
+    logger.info(f"Received {len(notes_df)} new notes")
 
     update_last_note_id(notes_responses[-1].results[-1].id)
 
-    return hubspot_to_df(notes_responses)
+    return notes_df
 
 
-def preprocess_notes(notes: pd.DataFrame) -> pd.DataFrame:
+def preprocess_notes(notes: pd.DataFrame, last_note_id: str) -> pd.DataFrame:
+    original_size = len(notes)
+
     # rename vendor association column
     # weird name, maybe because it is a custom association type?
     if "associations.p5519226_vendors.results" in notes.columns:
@@ -129,6 +140,11 @@ def preprocess_notes(notes: pd.DataFrame) -> pd.DataFrame:
     notes = notes.drop(columns=ASSOCIATION_COLUMNS, errors="ignore")
     notes.reset_index(drop=True, inplace=True)
 
+    if original_size != len(notes):
+        logger.info(f"Filtered {original_size} notes to {len(notes)} with matching criteria")
+    else:
+        logger.info(f"All {len(notes)} notes have matching criteria")
+
     return notes
 
 
@@ -154,6 +170,8 @@ def join_companies(notes: pd.DataFrame) -> pd.DataFrame:
             columns={"id": "id_company", "properties.name": "name_company"}
         )
         companies.reset_index(drop=True, inplace=True)
+
+        logger.info(f"Joining {len(companies)} company records to notes")
 
         # merge back with the notes DataFrame
         # left join since some notes are associated with vendors and not companies
@@ -192,6 +210,8 @@ def join_users(notes: pd.DataFrame) -> pd.DataFrame:
         )
         users.reset_index(drop=True, inplace=True)
 
+        logger.info("Joining user records to notes")
+
         # merge back with the notes DataFrame
         notes = notes.merge(users, how="left", on="id_user")
         notes.reset_index(drop=True, inplace=True)
@@ -220,6 +240,8 @@ def join_vendors(notes: pd.DataFrame) -> pd.DataFrame:
         )
         vendors.reset_index(drop=True, inplace=True)
 
+        logger.info(f"Joining {len(vendors)} vendor records to notes")
+
         # merge back with the notes DataFrame
         notes = notes.merge(vendors, how="left", on="id_vendor")
         notes.reset_index(drop=True, inplace=True)
@@ -228,11 +250,13 @@ def join_vendors(notes: pd.DataFrame) -> pd.DataFrame:
 
 
 if __name__ == "__main__":
-    notes = get_notes()
+    logger.info("Starting to download Hubspot notes")
 
     notes = preprocess_notes(notes)
     notes = join_companies(notes)
     notes = join_users(notes)
     notes = join_vendors(notes)
+
+    logger.info(f"Writing {len(notes)} processed notes for the next stage")
 
     write_json_records(notes, NOTES_PATH.name)
