@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 import json
+import logging
 import os
 import time
 from typing import Generator
@@ -10,6 +11,8 @@ from slack_sdk.web import WebClient
 from slack_sdk.web.slack_response import SlackResponse
 
 from notes import NOTES_PATH
+
+logger = logging.getLogger("notes/post")
 
 
 ACCESS_TOKEN = os.environ["SLACK_ACCESS_TOKEN"]
@@ -43,10 +46,13 @@ def read_notes_json() -> list[Note]:
 
     notes_data = json.loads(NOTES_PATH.read_text())
 
+    logging.info(f"Read {len(notes_data)} notes from JSON")
+
     return [Note(**note) for note in notes_data]
 
 
 def process_notes(notes: list[Note]) -> list[Note]:
+    truncated = 0
     for note in notes:
         # collapse all text from the HTML body, joining distinct elements with a space
         # strip extra whitespace, and place inner newlines within a blockquote
@@ -58,9 +64,14 @@ def process_notes(notes: list[Note]) -> list[Note]:
             # take the first 2995 characters, plus 3 for the ellipsis, plus 2 for the markdown blockquote and space
             # 2995 + 3 + 2 = 3000
             note.body = note.body[0:2995] + "..."
+            truncated += 1
         # convert from Unix timestamp milliseconds to Unix timestamp seconds for Slack's date formatting
         note.created_at = int(int(note.created_at) / 1000)
 
+    if truncated > 0:
+        logger.info(f"Truncated {truncated} long note bodies")
+
+    logger.info(f"Processed {len(notes)} notes for message creation")
     return notes
 
 
@@ -72,6 +83,8 @@ def create_messages(notes: list[Note]) -> Generator[dict, None, None]:
             target_name, target_id, target_type, type_id = (note.name_company, note.id_company, "Transit Agency", COMPANIES)
         else:
             target_name, target_id, target_type, type_id = (note.name_vendor, note.id_vendor, "Vendor", VENDORS)
+
+        logger.info(f"Creating [{target_type}] message")
 
         note_id = note.id_note
         url = f"https://app.hubspot.com/contacts/{HUBSPOT_INSTANCE}/record/{type_id}/{target_id}/view/1?engagement={note_id}"
@@ -96,6 +109,7 @@ def create_messages(notes: list[Note]) -> Generator[dict, None, None]:
 
 def post_messages(messages: Generator[dict, None, None]) -> Generator[SlackResponse, None, None]:
     for message in messages:
+        logger.info("Posting message to Slack")
         response = slack.chat_postMessage(**message)
         yield response
         time.sleep(RATE_LIMIT)
@@ -112,3 +126,4 @@ if __name__ == "__main__":
 
     for response in responses:
         assert response.status_code == 200
+        logger.info("Message posted successfully")
