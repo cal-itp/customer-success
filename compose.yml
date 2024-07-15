@@ -7,6 +7,7 @@ services:
       dockerfile: .devcontainer/Dockerfile
     image: cal-itp/customer-success:dev
     entrypoint: []
+    env_file: .env
     command: sleep infinity
     ports:
       - "8000"
