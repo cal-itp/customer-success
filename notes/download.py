@@ -47,9 +47,10 @@ def update_last_note_id(last_note_id):
     LAST_NOTE_PATH.write_text(str(last_note_id).strip(), encoding="utf-8")
 
 
-def get_notes() -> pd.DataFrame:
+def get_notes(last_note_id: str) -> pd.DataFrame:
+    logger.info(f"Requesting notes after: {last_note_id}")
+
     note_props = ["hs_created_by", "hs_createdate", "hs_note_body"]
-    last_note_id = get_last_note_id()
 
     notes_responses = hubspot_get_all_pages(
         hubspot_notes_api,
@@ -91,6 +92,9 @@ def preprocess_notes(notes: pd.DataFrame, last_note_id: str) -> pd.DataFrame:
     notes = notes[cols.keys()]
     # and rename some for simplicity
     notes = notes.rename(columns=cols, errors="ignore")
+
+    # drop the last_note_id if it was included
+    notes = notes.drop(index=notes.loc[notes["id_note"].eq(last_note_id)].index)
 
     # drop notes without a body
     notes = notes.dropna(subset=["body"])
@@ -252,7 +256,10 @@ def join_vendors(notes: pd.DataFrame) -> pd.DataFrame:
 if __name__ == "__main__":
     logger.info("Starting to download Hubspot notes")
 
-    notes = preprocess_notes(notes)
+    last_note_id = get_last_note_id()
+
+    notes = get_notes(last_note_id)
+    notes = preprocess_notes(notes, last_note_id)
     notes = join_companies(notes)
     notes = join_users(notes)
     notes = join_vendors(notes)
