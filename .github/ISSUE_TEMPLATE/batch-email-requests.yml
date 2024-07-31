@@ -28,12 +28,16 @@ body:
     id: information
     attributes:
       label: Confirm that the linked document above provides the following pieces of information
-      description: Select all that apply.
+      description: All must be checked before submitting an issue. If the doc doesn't have all of the items below, please add those items before creating an issue.
       options:
         - label: Clear subject line
+          required: true
         - label: Pre-header (Optional, this is the line that shows up below the Subject Line in your mobile inbox. If your email has no pre-header, check this box anyway)
+          required: true
         - label: A concise body
+          required: true
         - label: A signature at the end of the body (eg, From, The Cal-ITP Team)
+          required: true
   - type: dropdown
     id: sender
     attributes:
