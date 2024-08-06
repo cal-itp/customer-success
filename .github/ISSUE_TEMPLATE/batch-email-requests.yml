@@ -1,0 +1,87 @@
+name: Batch Email Request Form
+description: Request the CS team to send out an batch email
+title: "[Batch Email]: "
+labels:
+  - "email"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### This issue template can be used to request that the CS team send out an ad hoc email blast when Cal-ITP has noteworthy news to share. The process for preparing an email blast is [detailed in this document](https://docs.google.com/document/d/1FZBgW3vASHcPKmdD38V3zexcBNtyz-jZnjHQcwf4HBU/edit).
+  - type: input
+    id: email-copy
+    attributes:
+      label: Provide a link to the email copy
+      description: The link should be a google doc
+      placeholder: ex https://docs.google.com/
+    validations:
+      required: true
+  - type: dropdown
+    id: content
+    attributes:
+      label: Is the email copy finalized?
+      description: If no, the CS team will wait to take action on this issue until told that the copy is final
+      options:
+        - "Yes"
+        - "No"
+  - type: checkboxes
+    id: information
+    attributes:
+      label: Confirm that the linked document above provides the following pieces of information
+      description: All must be checked before submitting an issue. If the doc doesn't have all of the items below, please add those items before creating an issue.
+      options:
+        - label: Clear subject line
+          required: true
+        - label: Pre-header (Optional, this is the line that shows up below the Subject Line in your mobile inbox. If your email has no pre-header, check this box anyway)
+          required: true
+        - label: A concise body
+          required: true
+        - label: A signature at the end of the body (eg, From, The Cal-ITP Team)
+          required: true
+  - type: dropdown
+    id: sender
+    attributes:
+      label: What email address should this be from?
+      description: The CS team will default to hello@ unless specified
+      options:
+        - hello@calitp.org (preferred)
+        - calitp@dot.ca.gov
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: When should we send the email?
+      description: Input the exact date or month
+      placeholder: ex April 9th 2024
+    validations:
+      required: true
+  - type: dropdown
+    id: test
+    attributes:
+      label: Do you want to recieve a test email?
+      description: The CS team can send a test email before publishing
+      options:
+        - "Yes"
+        - "No"
+        - "Not sure"
+    validations:
+      required: true
+  - type: dropdown
+    id: email
+    attributes:
+      label: Who should receive this email?
+      description: The CS team can work with you to determine the best audience to receive this email
+      options:
+        - "Transit Agencies"
+        - "Vendors"
+        - "Custom"
+        - "Not sure"
+    validations:
+      required: true
+  - type: textarea
+    id: test-names
+    attributes:
+      label: Please enter the names of anyone else who should receive a test email, if applicable
+      description: Use this space to enter the first names of everyone who should receive a test email
