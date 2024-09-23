@@ -22,7 +22,7 @@ dev = [
 ]
 hubspot = [
     "hubspot-api-client==9.0.0",
-    "pandas==2.2.2",
+    "pandas==2.2.3",
     "requests==2.32.3"
 ]
 notes = [
