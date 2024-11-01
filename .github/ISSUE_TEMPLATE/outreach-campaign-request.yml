@@ -7,7 +7,7 @@ body:
   - type: markdown
     attributes:
       value: |
-       ### If you have an idea or need for a campaign...
+        ### If you have an idea or need for a campaign...
   - type: input
     id: subject
     attributes:
@@ -25,14 +25,22 @@ body:
     validations:
       required: true
   - type: dropdown
-    id: timeline
+    id: deadline
     attributes:
-      label: Does this campaign have a specific deadline and/or timeline associated with it?
+      label: Does this campaign have a specific deadline/timeline?
       description: Let us know if this campaign has any important deadlines to be aware of.
       options:
         - "Yes"
         - "No"
         - "Unsure"
+  - type: input
+    id: timeline
+    attributes:
+      label: If you do have a timeline, could you please share below
+      description: Please add all relevant dates
+      placeholder: "Ex: December 2, 2024"
+    validations:
+      required: true
   - type: textarea
     id: Reason
     attributes:
