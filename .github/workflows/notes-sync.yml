@@ -22,7 +22,7 @@ on:
         type: string
         required: false
   schedule:
-    # every hour at HH:10
+    # every hour at HH:35
     - cron: 35 * * * *
 
 jobs:
