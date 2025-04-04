@@ -32,7 +32,7 @@ notes = [
 qr_codes = [
     "pypng==0.20220715.0",
     "qrcode[pil]==8.1",
-    "typing_extensions==4.12.2"
+    "typing_extensions==4.13.1"
 ]
 
 [build-system]
