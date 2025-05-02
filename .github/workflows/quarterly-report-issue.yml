@@ -1,0 +1,37 @@
+name: Create Quaterly Report issue
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 16:30 UTC on the 2nd of every 3 months
+    - cron: 30 16 2 */3 *
+
+jobs:
+  create-quarterly-report-issue:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      # Get last month's name as a variable
+      # https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#setting-an-output-parameter
+      - id: set_output
+        run: |
+          echo "month=$(date -d 'last month' +%B)" >> $GITHUB_OUTPUT
+
+      - id: create_issue
+        uses: imjohnbo/issue-bot@v3
+        with:
+          assignees: j-h-sullivan
+          labels: reporting
+          title: Draft and send Quarterly Report for ${{steps.set_output.outputs.month}}
+          body: |
+            ## To-Do
+
+            - [ ] Pull in information from Metabase and Hubspot
+            - [ ] Draft report in Google Doc
+            - [ ] Review from @AnthonyRollins and @o-ram
+            - [ ] Send for design to Colleen
+          pinned: false
+          close-previous: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
