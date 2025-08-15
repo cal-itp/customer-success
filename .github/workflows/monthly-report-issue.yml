@@ -23,9 +23,9 @@ jobs:
         with:
           assignees: AnthonyRollins
           labels: reporting
-          title: Customer Success ${{steps.set_output.outputs.month}} Monthly Report
+          title: Customer Success ${{steps.set_output.outputs.month}} Monthly Report Highlights
           body: |
-            [${{steps.set_output.outputs.month}} Report](https://www.canva.com/design/DAF9eaWedp8/AaJVpaWQGFB5JeLTXiErUQ/edit?utm_content=DAF9eaWedp8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+            [${{steps.set_output.outputs.month}} Report](https://docs.google.com/spreadsheets/d/1FDNOekxKzIrtuxmSrGEwcY9UQFv6OivDEJVph3dQwII/edit?gid=0#gid=0)
 
             ## To-Do
 
