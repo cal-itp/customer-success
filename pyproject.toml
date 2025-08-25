@@ -26,7 +26,7 @@ hubspot = [
     "requests==2.32.5"
 ]
 notes = [
-    "beautifulsoup4==4.13.4",
+    "beautifulsoup4==4.13.5",
     "slack_sdk==3.36.0"
 ]
 qr_codes = [
