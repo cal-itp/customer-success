@@ -21,7 +21,7 @@ jobs:
       - id: create_issue
         uses: imjohnbo/issue-bot@v3
         with:
-          assignees: AnthonyRollins
+          assignees: o-ram
           labels: reporting
           title: Customer Success ${{steps.set_output.outputs.month}} Monthly Report Highlights
           body: |
@@ -29,7 +29,7 @@ jobs:
 
             ## To-Do
 
-            - [ ] Update metrics for ${{steps.set_output.outputs.month}}
+            - [ ] Draft, edit, and send the ${{steps.set_output.outputs.month}} monthly report
           pinned: false
           close-previous: false
         env:
