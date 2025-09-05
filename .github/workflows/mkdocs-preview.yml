@@ -44,7 +44,7 @@ jobs:
             --site=${{ secrets.NETLIFY_PREVIEW_APP_SITE_ID }}
 
       - name: Add Netlify link PR comment
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
