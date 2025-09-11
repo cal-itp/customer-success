@@ -68,7 +68,7 @@ jobs:
           SLACK_RATE_LIMIT: ${{ vars.SLACK_RATE_LIMIT }}
           HUBSPOT_INSTANCE_ID: ${{ secrets.HUBSPOT_INSTANCE_ID }}
 
-      - uses: actions/github-script@v7
+      - uses: actions/github-script@v8
         name: Update last_note_id repository variable
         if: github.event.schedule
         env:
