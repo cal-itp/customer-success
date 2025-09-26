@@ -19,9 +19,9 @@ body:
   - type: input
     id: access
     attributes:
-      label: Which teams are involved in this campaign
+      label: Which teams are involved in this campaign?
       description: Please add all team names.
-      placeholder: "Ex: Transit Data Quality, Project Scheduler"
+      placeholder: "Ex: Transit Data Quality, Payments, Remix, etc"
     validations:
       required: true
   - type: dropdown
@@ -36,7 +36,7 @@ body:
   - type: input
     id: timeline
     attributes:
-      label: If you do have a timeline, could you please share below
+      label: If you do have a timeline, please share below
       description: Please add all relevant dates
       placeholder: "Ex: December 2, 2024"
     validations:
@@ -66,7 +66,7 @@ body:
   - type: dropdown
     id: interview
     attributes:
-      label: Does your campaign request to hold interviews with the customers?
+      label: Does your campaign require interviews with the customers?
       description: Are interviews held or not.
       options:
         - "Yes"
