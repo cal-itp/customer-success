@@ -15,17 +15,17 @@ We use this repo to track all requests, questions and new users for the CRM. You
 | [Reporting Request Form](https://github.com/cal-itp/customer-success/issues/new?assignees=&labels=reporting&template=reporting_request_form.yml&title=%5BReporting+Request%5D%3A+) | Request a new CRM metric and or report. |
 | [Deals Pipeline Request Form](https://github.com/cal-itp/customer-success/issues/new?assignees=&labels=deals-pipeline&template=deals-pipelines-request-form.yml&title=%5BDeals+Pipeline+Request%5D%3A+) | Request a new deals pipeline in the CRM.
 
-| Transit provider                                    | Payments | Benefits | Remix | GTFS-rt | Technical Support: GTFS |
-| --------------------------------------------------- | -------- | -------- | ----- | ------- | ----------------------- |
-| **Monterey-Salinas Transit**                        | ✅       | ✅       | ✅    | \*      | ✅                     |
-| **Santa Barbara Metropolitan Transit District**     | ✅       | ✅       | ✅    | \*      | ✅                     |
-| **Sacramento Regional Transit District**            | ✅       | ✅       | ✅    | \*      | ✅                     |
-| **Nevada County Connects**                          | ✅       | ✅       | ✅    | \*      | ✅                     |
-| **Ventura County Transportation Commission**        | ✅       | ✅       | ✅    | \*      | ✅                     |
-| **San Luis Obispo Regional Transit**                | ✅       | ✅       | ✅    | \*      | ✅                     |
-| **El Dorado Transit Authority**                     | ✅       | ✅       | ✅    | \*      | ✅                     |
-| **Redding Area Bus Authority**                      | ✅       | ✅       | ✅    | \*      | ✅                     |
-| **City of San Luis Obispo**                         | ✅       | ✅       | ✅    | \*      | ✅                     |
-| **City of Roseville**                               | ✅       | ✅       | ✅    | \*      | ✅                     |
-| **Santa Cruz Metropolitan Transit District**        | \*       | \*       | \*     | \*     | \*                      |
-| **Santa Barbara County Association of Governments** | \*       | \*       | \*    | \*      | \*                      |
+| Transit provider                                    | Payments | Benefits | Remix | GTFS-rt |
+| --------------------------------------------------- | -------- | -------- | ----- | ------- |
+| **Monterey-Salinas Transit**                        | ✅       | ✅       | ✅    | \*      |
+| **Santa Barbara Metropolitan Transit District**     | ✅       | ✅       | ✅    | \*      |
+| **Sacramento Regional Transit District**            | ✅       | ✅       | ✅    | \*      |
+| **Nevada County Connects**                          | ✅       | ✅       | ✅    | \*      |
+| **Ventura County Transportation Commission**        | ✅       | ✅       | ✅    | \*      |
+| **San Luis Obispo Regional Transit**                | ✅       | ✅       | ✅    | \*      |
+| **El Dorado Transit Authority**                     | ✅       | ✅       | ✅    | \*      |
+| **Redding Area Bus Authority**                      | ✅       | ✅       | ✅    | \*      |
+| **City of San Luis Obispo**                         | ✅       | ✅       | ✅    | \*      |
+| **City of Roseville**                               | ✅       | ✅       | ✅    | \*      |
+| **Santa Cruz Metropolitan Transit District**        | \*       | \*       | \*    | \*     |
+| **Santa Barbara County Association of Governments** | \*       | \*       | \*    | \*      |
