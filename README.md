@@ -20,6 +20,23 @@ This repo aims to track all tasks related to Customer Success. You can find all 
 | [Outreach Campaign Request Form](https://github.com/cal-itp/customer-success/issues/new?assignees=&labels=communications&projects=&template=outreach-campaign-request.yml&title=%5BOutreach+Campaign+Request%5D%3A+) | Request the Customer Success team conduct an outreach campaign on a specific subject matter
 | [Batch Email Request Form](https://github.com/cal-itp/customer-success/issues/new?assignees=&labels=email&projects=&template=batch-email-requests.yml&title=%5BBatch+Email%5D:+) | Request the Customer Success team to send out a batch email to transit agencies or vendors
 
+## Product Adoption
+
+| Transit provider                                    | Payments | Benefits | Remix | GTFS-rt |
+| --------------------------------------------------- | -------- | -------- | ----- | ------- |
+| **Monterey-Salinas Transit**                        | ✅       | ✅       | ✅    | \*      |
+| **Santa Barbara Metropolitan Transit District**     | ✅       | ✅       | ✅    | \*      |
+| **Sacramento Regional Transit District**            | ✅       | ✅       | ✅    | \*      |
+| **Nevada County Connects**                          | ✅       | ✅       | ✅    | \*      |
+| **Ventura County Transportation Commission**        | ✅       | ✅       | ✅    | \*      |
+| **San Luis Obispo Regional Transit**                | ✅       | ✅       | ✅    | \*      |
+| **El Dorado Transit Authority**                     | ✅       | ✅       | ✅    | \*      |
+| **Redding Area Bus Authority**                      | ✅       | ✅       | ✅    | \*      |
+| **City of San Luis Obispo**                         | ✅       | ✅       | ✅    | \*      |
+| **City of Roseville**                               | ✅       | ✅       | ✅    | \*      |
+| **Santa Cruz Metropolitan Transit District**        | \*       | \*       | \*    | \*     |
+| **Santa Barbara County Association of Governments** | \*       | \*       | \*    | \*      |
+
 ## Resources
 
 ### Customer Success Resources
