@@ -20,22 +20,109 @@ This repo aims to track all tasks related to Customer Success. You can find all 
 | [Outreach Campaign Request Form](https://github.com/cal-itp/customer-success/issues/new?assignees=&labels=communications&projects=&template=outreach-campaign-request.yml&title=%5BOutreach+Campaign+Request%5D%3A+) | Request the Customer Success team conduct an outreach campaign on a specific subject matter
 | [Batch Email Request Form](https://github.com/cal-itp/customer-success/issues/new?assignees=&labels=email&projects=&template=batch-email-requests.yml&title=%5BBatch+Email%5D:+) | Request the Customer Success team to send out a batch email to transit agencies or vendors
 
-## Product Adoption
+## Cal-ITP Product Adoption
 
-| Transit provider                                    | Payments | Benefits | Remix | GTFS-rt |
-| --------------------------------------------------- | -------- | -------- | ----- | ------- |
-| **Monterey-Salinas Transit**                        | ✅       | ✅       | ✅    | \*      |
-| **Santa Barbara Metropolitan Transit District**     | ✅       | ✅       | ✅    | \*      |
-| **Sacramento Regional Transit District**            | ✅       | ✅       | ✅    | \*      |
-| **Nevada County Connects**                          | ✅       | ✅       | ✅    | \*      |
-| **Ventura County Transportation Commission**        | ✅       | ✅       | ✅    | \*      |
-| **San Luis Obispo Regional Transit**                | ✅       | ✅       | ✅    | \*      |
-| **El Dorado Transit Authority**                     | ✅       | ✅       | ✅    | \*      |
-| **Redding Area Bus Authority**                      | ✅       | ✅       | ✅    | \*      |
-| **City of San Luis Obispo**                         | ✅       | ✅       | ✅    | \*      |
-| **City of Roseville**                               | ✅       | ✅       | ✅    | \*      |
-| **Santa Cruz Metropolitan Transit District**        | \*       | \*       | \*    | \*     |
-| **Santa Barbara County Association of Governments** | \*       | \*       | \*    | \*      |
+Below is the full list of all agencies live, ineligible, and upcoming across all Cal-ITP Products. Currently there are four Cal-ITP products, Open loop payments, Cal-ITP Benefits, GTFS Planning and Scheduling (Remix) and GTFS-rt. For additional details on each products, go to [Mobility Marketplace](https://www.camobilitymarketplace.org/)
+
+### Table Options
+
+| Option | Description |
+| ------------ | ----------- |
+| ✅           | Denotes agencies live with that product |
+| ❌           | Denotes agencies ineligble to receive Cal-ITP Benetfits, as the provider doesn't offer a discount program |
+| `non-MSA`      | Denotes agencies that did not use the State of California Master Service Agreement (MSA) for tap to pay. |
+
+### Product definitions
+
+>**Open loop payments**: Fill in<br><br>
+**Benefits**: Fill in<br><br>
+**Remix**: Fill in<br><br>
+**GTFS-rt**: Fill in<br><br>
+
+Last updated: `2/27/2026`
+
+| Transit provider                                                              | Open loop payments | Benefits | Remix | GTFS-rt |
+| ----------------------------------------------------------------------------- | ------------------ | -------- | ----- | ------- |
+| **Alameda-Contra Costa Transit District (AC Transit)**                        | ✅                 | ✅       | ✅    | \-      |
+| **Calaveras Transit Agency**                                                  | ✅                 | ✅       | ✅    | \-      |
+| **Central Contra Costa Transit Authority (County Connection)**                | ✅                 | ✅       | ✅    | \-      |
+| **City and County of San Francisco**                                          | ✅ (non-MSA)       | ✅       | ✅    | \-      |
+| **City of Arvin**                                                             | ✅                 | ✅       | ✅    | \-      |
+| **City of Camarillo**                                                         | ✅                 | ✅       | ✅    | \-      |
+| **City of Santa Maria**                                                       | ✅                 | ✅       | ✅    | \-      |
+| **Cloverdale Transit**                                                        | ✅                 | ✅       | ✅    | \-      |
+| **Lassen Transit Service Agency**                                             | ✅                 | ✅       | ✅    | \-      |
+| **Siskiyou County Transportation Agency**                                     | \*                 | \*       | \*    | \*      |
+| **Central Contra Costa Transit Authority (County Connection)**                | \*                 | \*       | \*    | \*      |
+| **Glenn County Transportation Commission**                                    | ✅                 | ✅       | ✅    | \*      |
+| **El Dorado Transit Authority**                                               | ✅                 | ✅       | ✅    | \*      |
+| **City of Escalon**                                                           | ✅                 | ✅       | ✅    | \*      |
+| **City of Fairfield**                                                         | ✅                 | ✅       | ✅    | \*      |
+| **City of Glendale**                                                          | ✅                 | ✅       | ✅    | \*      |
+| **City of Moorpark**                                                          | ✅                 | ✅       | ✅    | \*      |
+| **City of Ojai**                                                              | ✅                 | ✅       | ✅    | \*      |
+| **City of Petaluma**                                                          | ✅                 | ✅       | ✅    | \*      |
+| **City of Roseville**                                                         | ✅                 | ✅       | ✅    | \*      |
+| **City of San Luis Obispo**                                                   | ✅                 | ✅       | ✅    | \*      |
+| **City of Santa Maria**                                                       | ✅                 | ✅       | ✅    | \*      |
+| **City of Santa Rosa**                                                        | ✅                 | ✅       | ✅    | \*      |
+| **City of Simi Valley**                                                       | ✅                 | ✅       | ✅    | \*      |
+| **City of Thousand Oaks**                                                     | ✅                 | ✅       | ✅    | \*      |
+| **City of Union City**                                                        | ✅                 | ✅       | ✅    | \*      |
+| **City of Vacaville**                                                         | ✅                 | ✅       | ✅    | \*      |
+| **Cloverdale Transit**                                                        | ✅                 | ✅       | ✅    | \*      |
+| **County of Kern**                                                            | ✅                 | ✅       | ✅    | \*      |
+| **County of Nevada**                                                          | ✅                 | ✅       | ✅    | \*      |
+| **County of Sacramento (SCT Link)**                                           | ✅                 | ✅       | ✅    | \*      |
+| **Eastern Contra Costa Transit Authority**                                    | ✅                 | ✅       | ✅    | \*      |
+| **El Dorado Transit Authority**                                               | ✅                 | ✅       | ✅    | \*      |
+| **Glenn County Transportation Commission**                                    | ✅                 | ✅       | ✅    | \*      |
+| **Gold Coast Transit District**                                               | ✅                 | ✅       | ✅    | \*      |
+| **Golden Empire Transit District**                                            | ✅                 | ✅       | ✅    | \*      |
+| **Golden Gate Bridge, Highway & Transportation District**                     | ✅                 | ✅       | ✅    | \*      |
+| **Humboldt Transit Authority**                                                | ✅                 | ✅       | ✅    | \*      |
+| **Imperial County Transportation Commission**                                 | ✅                 | ✅       | ✅    | \*      |
+| **Kings County Area Public Transit Agency**                                   | ✅                 | ✅       | ✅    | \*      |
+| **Lake Transit Authority**                                                    | ✅                 | ✅       | ✅    | \*      |
+| **Lassen Transit Service Agency**                                             | ✅                 | ✅       | ✅    | \*      |
+| **Livermore Amador Valley Transit Authority**                                 | ✅                 | ✅       | ✅    | \*      |
+| **Marin Transit**                                                             | ✅                 | ✅       | ✅    | \*      |
+| **Mendocino Transit Authority**                                               | ✅                 | ✅       | ✅    | \*      |
+| **Metrolink**                                                                 | ✅                 | ✅       | ✅    | \*      |
+| **Monterey-Salinas Transit**                                                  | ✅                 | ✅       | ✅    | \*      |
+| **Napa Valley Transportation Authority (NVTA)**                               | ✅                 | ✅       | ✅    | \*      |
+| **North County Transit District (NCTD)**                                      | ✅                 | ✅       | ✅    | \*      |
+| **Orange County Transportation Authority**                                    | ✅                 | ✅       | ✅    | \*      |
+| **Placer County**                                                             | ✅                 | ✅       | ✅    | \*      |
+| **Redding Area Bus Authority**                                                | ✅                 | ✅       | ✅    | \*      |
+| **Redwood Coast Transit Authority**                                           | ✅                 | ✅       | ✅    | \*      |
+| **Sacramento Regional Transit District (SacRT)**                              | ✅                 | ✅       | ✅    | \*      |
+| **San Benito County Local Transportation Authority**                          | ✅                 | ✅       | ✅    | \*      |
+| **San Diego Metropolitan Transit System (MTS)**                               | ✅                 | ✅       | ✅    | \*      |
+| **San Francisco Bay Area Rapid Transit District (BART)**                      | ✅                 | ✅       | ✅    | \*      |
+| **San Francisco Bay Area Water Emergency Transportation Authority (WETA)**    | ✅                 | ✅       | ✅    | \*      |
+| **San Luis Obispo Regional Transit Authority**                                | ✅                 | ✅       | ✅    | \*      |
+| **San Mateo County Transit District**                                         | ✅                 | ✅       | ✅    | \*      |
+| **Santa Barbara County Association of Governments (SBCAG)**                   | ✅                 | ✅       | ✅    | \*      |
+| **Santa Barbara Metropolitan Transit District**                               | ✅                 | ✅       | ✅    | \*      |
+| **Santa Clara Valley Transportation Authority (VTA)**                         | ✅                 | ✅       | ✅    | \*      |
+| **Santa Cruz Metropolitan Transit District (Santa Cruz METRO)**               | ✅                 | ✅       | ✅    | \*      |
+| **Siskiyou County Transportation Agency**                                     | ✅                 | ✅       | ✅    | \*      |
+| **Solano County Transit (SolTrans)**                                          | ✅                 | ✅       | ✅    | \*      |
+| **Sonoma County Transit (SC Transit)**                                        | ✅                 | ✅       | ✅    | \*      |
+| **Sonoma-Marin Area Rail Transit**                                            | ✅                 | ✅       | ✅    | \*      |
+| **South County**                                                              | ✅                 | ✅       | ✅    | \*      |
+| **Stanislaus Regional Transit Authority**                                     | ✅                 | ✅       | ✅    | \*      |
+| **Sunline Transit Agency**                                                    | ✅                 | ✅       | ✅    | \*      |
+| **Transit Joint Powers Authority for Merced County**                          | ✅                 | ✅       | ✅    | \*      |
+| **Trinity County**                                                            | ✅                 | ✅       | ✅    | \*      |
+| **Tuolumne County Transit Agency (TCTA)**                                     | ✅                 | ✅       | ✅    | \*      |
+| **University of California, Davis**                                           | ✅                 | ✅       | ✅    | \*      |
+| **Ventura County Transportation Commission (VCTC)**                           | ✅                 | ✅       | ✅    | \*      |
+| **Western Contra Costa Transit Authority**                                    | ✅                 | ✅       | ✅    | \*      |
+| **Yolo County Transportation District**                                       | ✅                 | ✅       | ✅    | \*      |
+| **Yuba-Sutter Transit Authority**                                             | ✅                 | ✅       | ✅    | \*      |
+| **Yurok Tribe)**                                                              | ✅                 | ✅       | ✅    | \*      |
 
 ## Resources
 
