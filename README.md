@@ -122,7 +122,7 @@ Last updated: `3/02/2026`
 | **Western Contra Costa Transit Authority**                                    | ✅                 | ✅       | ✅    | \*      |
 | **Yolo County Transportation District**                                       | ✅                 | ✅       | ✅    | \*      |
 | **Yuba-Sutter Transit Authority**                                             | ✅                 | ✅       | ✅    | \*      |
-| **Yurok Tribe)**                                                              | ✅                 | ✅       | ✅    | \*      |
+| **Yurok Tribe**                                                              | ✅                 | ✅       | ✅    | \*      |
 
 ## Resources
 
