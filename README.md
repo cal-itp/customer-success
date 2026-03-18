@@ -26,8 +26,8 @@ Below is the full list of all agencies live, ineligible, and upcoming across all
 
 ### Product definitions
 
-><br>**Open loop payments**: Contactless payments allows riders to pay for transit by simply tapping their contactless bank card or smart device.<br><br>
-**Benefits**: Cal-ITP Benefits connects a rider’s reduced fare to their contactless credit/debit card so that they can get their reduced fare when they tap to ride.<br><br>
+<br>**Open loop payments**: Contactless payments allows riders to pay for transit by simply tapping their contactless bank card or smart device.<br><br>
+**Cal-ITP Benefits**: Cal-ITP Benefits connects a rider’s reduced fare to their contactless credit/debit card so that they can get their reduced fare when they tap to ride.<br><br>
 **Remix**: Route planning and scheduling helps streamline transit operations and provide a better transit rider experience through accessible Remix software procurement and access.<br><br>
 **GTFS-RT**: GTFS-RT allows agencies to provide transit riders with real-time vehicle arrival information.<br><br>
 
