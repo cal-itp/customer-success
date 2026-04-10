@@ -121,21 +121,3 @@ Last updated: `3/09/2026`
 | **Western Contra Costa Transit Authority**                                    | ✅ `non-MSA` _(Q4 2025)_ | ❌               | \-             | \-             |
 | **Yolo County Transportation District**                                       | Q3 2026                  | Q3 2026          | \-             | \-            |
 | **Yuba-Sutter Transit Authority**                                             | Q3 2026                  | Q3 2026          | \-             | \-            |
-
-## Resources
-
-### Customer Success Resources
-
-[Customer Success Philosophy](https://docs.google.com/document/d/1Pe4P6qoD8O-YLP0BJLpqSYaYxBv-9oOMucDbyqLzwMM/edit#heading=h.2qigru6qc5ib)
-
-[Account Manager One-Pager](https://docs.google.com/document/d/1LBxKkuugRKPFa5e3BoCQM4sIO0miJwLpxSyA8kRd14s/edit#heading=h.31pkpwiacyux)
-
-[Customer Success Documentation Catalog](https://docs.google.com/document/d/1cowfa-l3x4blDkrF8I6WmN7NHEGQHYV_8MemE0a7CUc/edit#heading=h.pyrmft6v7lss)
-
-[Menu of Services](https://docs.google.com/document/d/118-tOm14bgIWXtiBx_rZ-Picxdv9JqpD4PS7WXjkoiM/edit)
-
-### CRM Resources
-
-[CRM Guide](https://docs.calitp.org/customer-success/getting-started/what-is-a-CRM/)
-
-[Hubspot 101 Slidedeck](https://docs.google.com/presentation/d/1vp3zjclRAAnV_FJ-Yuk2409en24QzSQXSw5-vnN3b_8/edit#slide=id.g25944cd2387_0_0)
