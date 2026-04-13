@@ -36,7 +36,7 @@ qr_codes = [
 ]
 
 [build-system]
-requires = ["setuptools>=65"]
+requires = ["setuptools>=82.0.1"]
 build-backend = "setuptools.build_meta"
 
 [tool.black]
