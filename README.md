@@ -61,7 +61,7 @@ Last updated: `3/09/2026`
 | **City of Ojai**                                                              | Q2 2026                  | Q3 2026          | \-             | \-             |
 | **City of Petaluma**                                                          | ✅ `non-MSA` _(Q4 2025)_ | ❌               | \-             | \-             |
 | **City of Roseville**                                                         | Q2 2026                  | Q2 2026          | \-             | \-             |
-| **City of San Luis Obispo**                                                   | Q2 2026                  | Q2 2026          | \-             | \-             |
+| **City of San Luis Obispo**                                                   | Q2 2026                  | ✅ _(Q2 2026)_   | \-             | \-             |
 | **City of Santa Maria**                                                       | \-                       | \-               | ✅ _(Q1 2025)_ | \-             |
 | **City of Santa Rosa**                                                        | ✅ `non-MSA` _(Q4 2024)_ | ❌               | \-             | \-             |
 | **City of Simi Valley**                                                       | Q3 2026                  | Q3 2026          | \-             | \-             |
