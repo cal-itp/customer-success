@@ -39,7 +39,7 @@ def hubspot_get_all_pages(hubspot_api, page_size=10, max_pages=sys.maxsize, **kw
     return pages
 
 
-def hubspot_to_df(response: Any) -> pd.DataFrame:
+def hubspot_to_df(response: Any) -> pd.DataFrame | None:
     """
     Converts a Hubspot response like:
 
@@ -86,6 +86,13 @@ def write_json_records(df: pd.DataFrame, file_path: str):
     path = f"data/{file_path}"
     Path(path).parent.mkdir(parents=True, exist_ok=True)
     df.to_json(path, orient="records", indent=2)
+
+
+def write_csv_records(df: pd.DataFrame, file_path: str):
+    """Writes a DataFrame of records into a CSV file."""
+    path = f"data/{file_path}"
+    Path(path).parent.mkdir(parents=True, exist_ok=True)
+    df.to_csv(path)
 
 
 class HubspotUserApi:
