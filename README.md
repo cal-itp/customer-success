@@ -57,11 +57,11 @@ Last updated: `3/09/2026`
 | **City of Glendale**                                                          | Q4 2026                  | \-               | \-             | Q4 2026        |
 | **City of Lathrop**                                                           | \-                       | \-               | Q2 2026        | \-             |
 | **City of Moorpark**                                                          | Q2 2026                  | ❌               | \-             | \-             |
-| **City of Morro Bay**                                                         | Q2 2026                  | ✅ _(Q4 2025)_   | \-             | \-             |
+| **City of Morro Bay**                                                         | ✅ _(Q2 2026)_           | ✅ _(Q4 2025)_   | \-             | \-             |
 | **City of Ojai**                                                              | Q2 2026                  | Q3 2026          | \-             | \-             |
 | **City of Petaluma**                                                          | ✅ `non-MSA` _(Q4 2025)_ | ❌               | \-             | \-             |
 | **City of Roseville**                                                         | Q2 2026                  | Q2 2026          | \-             | \-             |
-| **City of San Luis Obispo**                                                   | Q2 2026                  | ✅ _(Q2 2026)_   | \-             | \-             |
+| **City of San Luis Obispo**                                                   | ✅ _(Q2 2026)_           | ✅ _(Q2 2026)_   | \-             | \-             |
 | **City of Santa Maria**                                                       | \-                       | \-               | ✅ _(Q1 2025)_ | \-             |
 | **City of Santa Rosa**                                                        | ✅ `non-MSA` _(Q4 2024)_ | ❌               | \-             | \-             |
 | **City of Simi Valley**                                                       | Q3 2026                  | Q3 2026          | \-             | \-             |
@@ -103,7 +103,7 @@ Last updated: `3/09/2026`
 | **San Diego Metropolitan Transit System (MTS)**                               | ✅ `non-MSA` _(Q3 2024)_ | ❌               | \-             | \-             |
 | **San Francisco Bay Area Rapid Transit District (BART)**                      | ✅ `non-MSA` _(Q4 2025)_ | ❌               | \-             | \-             |
 | **San Francisco Bay Area Water Emergency Transportation Authority (WETA)**    | ✅ `non-MSA` _(Q4 2025)_ | ❌               | \-             | \-             |
-| **San Luis Obispo Regional Transit Authority**                                | Q2 2026                  | ✅ _(Q4 2025)_   | \-             | \-             |
+| **San Luis Obispo Regional Transit Authority**                                | ✅ _(Q2 2026)_           | ✅ _(Q4 2025)_   | \-             | \-             |
 | **San Mateo County Transit District**                                         | ✅ `non-MSA` _(Q4 2025)_ | ❌               | \-             | \-             |
 | **Santa Barbara County Association of Governments (SBCAG)**                   | ✅ _(Q1 2023)_           | Q3 2026          | ✅ _(Q1 2025)_ | \-             |
 | **Santa Barbara Metropolitan Transit District**                               | ✅ _(Q4 2023)_           | ✅ _(Q4 2023)_   | \-             | \-             |
@@ -121,5 +121,5 @@ Last updated: `3/09/2026`
 | **University of California, Davis**                                           | \-                       | \-               | \-             | ✅ _(Q4 2025)_ |
 | **Ventura County Transportation Commission (VCTC)**                           | ✅ _(Q2 2025)_           | ✅ _(Q4 2025)_   | ✅ _(Q1 2025)_ | \-             |
 | **Western Contra Costa Transit Authority**                                    | ✅ `non-MSA` _(Q4 2025)_ | ❌               | \-             | \-             |
-| **Yolo County Transportation District**                                       | Q3 2026                  | Q3 2026          | \-             | \-            |
-| **Yuba-Sutter Transit Authority**                                             | Q3 2026                  | Q3 2026          | \-             | \-            |
+| **Yolo County Transportation District**                                       | Q3 2026                  | Q3 2026          | \-             | \-             |
+| **Yuba-Sutter Transit Authority**                                             | Q3 2026                  | Q3 2026          | \-             | \-             |
