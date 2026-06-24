@@ -353,6 +353,7 @@ def main(argv=None):
     if "GITHUB_ENV" in os.environ:
         with open(os.environ["GITHUB_ENV"], "a") as env_file:
             env_file.write(f"UPLOAD_TARGET=data/{timestamp_string}\n")
+            env_file.write(f"TIMESTAMP={timestamp_string}\n")
 
     return 0
 

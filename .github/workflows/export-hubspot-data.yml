@@ -1,0 +1,77 @@
+name: Export HubSpot Data
+
+on:
+  workflow_dispatch:
+    inputs:
+      type:
+        description: "Data type to export"
+        required: true
+        type: choice
+        options:
+          - Companies
+          - Contacts
+          - Deals
+          - Tickets
+          - Vendors
+          - Calls
+          - Emails
+          - Meetings
+          - Notes
+          - Tasks
+          - All
+      include_associations:
+        description: "Include associations? (e.g., when exporting Contacts, include a column listing their related Companies)"
+        type: boolean
+      include_email_bodies:
+        description: "If exporting email data, include body content?"
+        type: boolean
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: "pyproject.toml"
+
+      - name: Install dependencies
+        run: pip install -e .[hubspot]
+
+      - name: Run exports and download
+        env:
+          HUBSPOT_ACCESS_TOKEN: ${{ secrets.HUBSPOT_EXPORT_ACCESS_TOKEN }}
+          HUBSPOT_INSTANCE_ID: ${{ secrets.HUBSPOT_INSTANCE_ID }}
+          HUBSPOT_PAGE_SIZE: 100
+        run: python -m data.export ${{ inputs.type }} ${{ case(inputs.include_associations, '--associations', '') }} ${{ case(inputs.include_email_bodies, '--email-bodies', '') }}
+
+      - name: Install Rclone
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y rclone
+
+      - name: Upload to Google Drive
+        env:
+          RCLONE_CONFIG_CALITPDRIVE_TYPE: drive
+          RCLONE_CONFIG_CALITPDRIVE_SCOPE: drive.readonly,drive.file # prevent Rclone from modifying files it didn't create
+          RCLONE_CONFIG_CALITPDRIVE_SERVICE_ACCOUNT_CREDENTIALS: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+          RCLONE_CONFIG_CALITPDRIVE_TEAM_DRIVE: ${{ secrets.CALITP_TEAM_SHARED_DRIVE_ID }}
+          RCLONE_CONFIG_CALITPDRIVE_ROOT_FOLDER_ID: ${{ secrets.HUBSPOT_EXPORT_FOLDER_ID }}
+        run: |
+          # Ensure the variable was passed and exists
+          if [ -z "$UPLOAD_TARGET" ]; then
+            echo "Error: UPLOAD_TARGET environment variable is empty."
+            exit 1
+          elif [ -d "$UPLOAD_TARGET" ]; then
+            echo "Uploading folder $UPLOAD_TARGET to Google Drive."
+            rclone copy --progress "$UPLOAD_TARGET" calitpdrive:"$TIMESTAMP"
+          else
+            echo "Error: UPLOAD_TARGET $UPLOAD_TARGET is not a directory."
+            exit 1
+          fi

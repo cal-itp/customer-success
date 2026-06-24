@@ -4,6 +4,9 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     USER=calitp
 
+# install Rclone for testing HubSpot export-to-GDrive GHA workflow
+RUN curl https://rclone.org/install.sh | bash
+
 RUN useradd --create-home --shell /bin/bash $USER && \
     chown -R $USER /home/$USER
 
