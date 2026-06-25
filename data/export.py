@@ -246,6 +246,7 @@ def main(argv=None):
     parser.add_argument(
         "type",
         choices=DATA_TYPES + ["all"],
+        type=str.lower,  # accept any capitalization, but then normalize for later usage
         help="The HubSpot data type to export (or `all` to get them all).",
     )
     parser.add_argument(
@@ -271,13 +272,13 @@ def main(argv=None):
 
     timestamp_string = dt.datetime.now().strftime("%Y-%m-%d_%H%M%S")
 
-    if args.type.lower() == "all":
+    if args.type == "all":
         export_types = DATA_TYPES
     else:
         export_types = [args.type]
 
     for export_type in export_types:
-        nicename = export_type.lower()  # accept any capitalization, but then normalize for later usage
+        nicename = export_type
         dataclass: objects.DataType = getattr(objects, nicename)
 
         if nicename == DataTypeSlug.EMAILS and args.email_bodies:
