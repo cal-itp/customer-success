@@ -31,15 +31,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v6
+      - parallel:
+        - name: Check out code
+          uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # 7.0.0
 
-      - name: Set up Python
-        uses: actions/setup-python@v6
-        with:
-          python-version: "3.11"
-          cache: pip
-          cache-dependency-path: "pyproject.toml"
+        - name: Set up Python
+          uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1  # 6.3.0
+          with:
+            python-version: "3.11"
+            cache: "pip"
+            cache-dependency-path: "pyproject.toml"  # ignore docs/requirements.txt
+
+        - name: Install Rclone
+          run: |
+            sudo apt-get update
+            sudo apt-get install -y rclone
 
       - name: Install dependencies
         run: pip install -e .[hubspot]
@@ -51,15 +57,10 @@ jobs:
           HUBSPOT_PAGE_SIZE: 100
         run: python -m data.export ${{ inputs.type }} ${{ case(inputs.include_associations, '--associations', '') }} ${{ case(inputs.include_email_bodies, '--email-bodies', '') }}
 
-      - name: Install Rclone
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y rclone
-
       - name: Upload to Google Drive
         env:
           RCLONE_CONFIG_CALITPDRIVE_TYPE: drive
-          RCLONE_CONFIG_CALITPDRIVE_SCOPE: drive.readonly,drive.file # prevent Rclone from modifying files it didn't create
+          RCLONE_CONFIG_CALITPDRIVE_SCOPE: drive.readonly,drive.file  # prevent Rclone from modifying files it didn't create
           RCLONE_CONFIG_CALITPDRIVE_SERVICE_ACCOUNT_CREDENTIALS: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
           RCLONE_CONFIG_CALITPDRIVE_TEAM_DRIVE: ${{ secrets.CALITP_TEAM_SHARED_DRIVE_ID }}
           RCLONE_CONFIG_CALITPDRIVE_ROOT_FOLDER_ID: ${{ secrets.HUBSPOT_EXPORT_FOLDER_ID }}
