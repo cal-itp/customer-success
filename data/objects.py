@@ -1,4 +1,18 @@
 from dataclasses import dataclass, field
+from enum import StrEnum, auto
+
+
+class DataTypeSlug(StrEnum):
+    COMPANIES = auto()
+    CONTACTS = auto()
+    DEALS = auto()
+    TICKETS = auto()
+    VENDORS = "2-22517187"  # vendors objectTypeId value
+    CALLS = auto()
+    EMAILS = auto()
+    MEETINGS = auto()
+    NOTES = auto()
+    TASKS = auto()
 
 
 @dataclass
@@ -12,7 +26,7 @@ class DataType:
 
 
 companies = DataType(
-    slug="company",
+    slug=DataTypeSlug.COMPANIES,
     core_props=[
         # Automatically included:
         # hs_object_id (always the first column)
@@ -150,26 +164,26 @@ companies = DataType(
     ],
     associations=[
         [
-            "contacts",
-            "deals",
-            "tickets",
-            "2-22517187",  # vendors objectTypeId value
+            DataTypeSlug.CONTACTS,
+            DataTypeSlug.DEALS,
+            DataTypeSlug.TICKETS,
+            DataTypeSlug.VENDORS,
         ],
         [
-            "companies",
-            "calls",
-            "emails",
-            "meetings",
+            DataTypeSlug.COMPANIES,
+            DataTypeSlug.CALLS,
+            DataTypeSlug.EMAILS,
+            DataTypeSlug.MEETINGS,
         ],
         [
-            "notes",
-            "tasks",
+            DataTypeSlug.NOTES,
+            DataTypeSlug.TASKS,
         ],
     ],
 )
 
 contacts = DataType(
-    slug="contact",
+    slug=DataTypeSlug.CONTACTS,
     core_props=[
         # Automatically included:
         # hs_object_id (always the first column)
@@ -200,26 +214,26 @@ contacts = DataType(
     ],
     associations=[
         [
-            "companies",
-            "deals",
-            "tickets",
-            "2-22517187",  # vendors objectTypeId value
+            DataTypeSlug.COMPANIES,
+            DataTypeSlug.DEALS,
+            DataTypeSlug.TICKETS,
+            DataTypeSlug.VENDORS,
         ],
         [
-            "contacts",
-            "calls",
-            "emails",
-            "meetings",
+            DataTypeSlug.CONTACTS,
+            DataTypeSlug.CALLS,
+            DataTypeSlug.EMAILS,
+            DataTypeSlug.MEETINGS,
         ],
         [
-            "notes",
-            "tasks",
+            DataTypeSlug.NOTES,
+            DataTypeSlug.TASKS,
         ],
     ],
 )
 
 deals = DataType(
-    slug="deal",
+    slug=DataTypeSlug.DEALS,
     core_props=[
         # Automatically included:
         # hs_object_id (always the first column)
@@ -295,26 +309,26 @@ deals = DataType(
     ],
     associations=[
         [
-            "contacts",
-            "companies",
-            "tickets",
-            "2-22517187",  # vendors objectTypeId value
+            DataTypeSlug.CONTACTS,
+            DataTypeSlug.COMPANIES,
+            DataTypeSlug.TICKETS,
+            DataTypeSlug.VENDORS,
         ],
         [
-            "deals",
-            "calls",
-            "emails",
-            "meetings",
+            DataTypeSlug.DEALS,
+            DataTypeSlug.CALLS,
+            DataTypeSlug.EMAILS,
+            DataTypeSlug.MEETINGS,
         ],
         [
-            "notes",
-            "tasks",
+            DataTypeSlug.NOTES,
+            DataTypeSlug.TASKS,
         ],
     ],
 )
 
 tickets = DataType(
-    slug="ticket",
+    slug=DataTypeSlug.TICKETS,
     core_props=[
         # Automatically included:
         # hs_object_id (always the first column)
@@ -373,26 +387,26 @@ tickets = DataType(
     ],
     associations=[
         [
-            "contacts",
-            "companies",
-            "deals",
-            "2-22517187",  # vendors objectTypeId value
+            DataTypeSlug.CONTACTS,
+            DataTypeSlug.COMPANIES,
+            DataTypeSlug.DEALS,
+            DataTypeSlug.VENDORS,
         ],
         [
-            "tickets",
-            "calls",
-            "emails",
-            "meetings",
+            DataTypeSlug.TICKETS,
+            DataTypeSlug.CALLS,
+            DataTypeSlug.EMAILS,
+            DataTypeSlug.MEETINGS,
         ],
         [
-            "notes",
-            "tasks",
+            DataTypeSlug.NOTES,
+            DataTypeSlug.TASKS,
         ],
     ],
 )
 
 vendors = DataType(
-    slug="2-22517187",  # vendors objectTypeId value
+    slug=DataTypeSlug.VENDORS,
     core_props=[
         # Automatically included:
         # hs_object_id (always the first column)
@@ -433,24 +447,26 @@ vendors = DataType(
     ],
     associations=[
         [
-            "contacts",
-            "companies",
-            "deals",
-            "tickets",
-            # "2-22517187",  # vendors are not associated with other vendors
+            DataTypeSlug.CONTACTS,
+            DataTypeSlug.COMPANIES,
+            DataTypeSlug.DEALS,
+            DataTypeSlug.TICKETS,
         ],
         [
-            "emails",
-            "meetings",
-            "notes",
-            "tasks",
-            #### "calls",  # has association but no data present
+            DataTypeSlug.CALLS,  # has association but no data present
+            DataTypeSlug.EMAILS,
+            DataTypeSlug.MEETINGS,
+            DataTypeSlug.NOTES,
+        ],
+        [
+            DataTypeSlug.TASKS,
+            # DataTypeSlug.VENDORS,  # vendors are not associated with other vendors
         ],
     ],
 )
 
 calls = DataType(
-    slug="call",
+    slug=DataTypeSlug.CALLS,
     core_props=[
         "hs_object_id",
     ],
@@ -557,24 +573,26 @@ calls = DataType(
     ],
     associations=[
         [
-            "contacts",
-            "companies",
-            "deals",
-            "tickets",
-            #### "2-22517187",  # vendors objectTypeId value -- has association but no data present
+            DataTypeSlug.CONTACTS,
+            DataTypeSlug.COMPANIES,
+            DataTypeSlug.DEALS,
+            DataTypeSlug.TICKETS,
         ],
         [
-            "meetings",
-            #### "calls",  # has association but no data present
-            # "tasks",  # no association with calls
-            # "notes",  # no association with calls
-            # "emails",  # no association with calls
+            DataTypeSlug.VENDORS,  # has association but no data present
+            DataTypeSlug.MEETINGS,
+            DataTypeSlug.CALLS,  # has association but no data present
         ],
+        # [
+        #     # DataTypeSlug.TASKS,  # no association with calls
+        #     # DataTypeSlug.NOTES,  # no association with calls
+        #     # DataTypeSlug.EMAILS,  # no association with calls
+        # ],
     ],
 )
 
 emails = DataType(
-    slug="email",
+    slug=DataTypeSlug.EMAILS,
     core_props=[
         "hs_object_id",
     ],
@@ -712,24 +730,26 @@ emails = DataType(
     ],
     associations=[
         [
-            "contacts",
-            "companies",
-            "deals",
-            "2-22517187",  # vendors objectTypeId value
+            DataTypeSlug.CONTACTS,
+            DataTypeSlug.COMPANIES,
+            DataTypeSlug.DEALS,
+            DataTypeSlug.VENDORS,
         ],
         [
-            "tickets",
-            "meetings",
-            # "calls",  # no assocation with emails
-            # "emails",  # no association with emails
-            # "note÷s",  # no association with emails
-            # "tasks",  # no association with emails
+            DataTypeSlug.TICKETS,
+            DataTypeSlug.MEETINGS,
         ],
+        # [
+        #     # DataTypeSlug.CALLS,  # no assocation with emails
+        #     # DataTypeSlug.EMAILS,  # no association with emails
+        #     # DataTypeSlug.NOTES,  # no association with emails
+        #     # DataTypeSlug.TASKS,  # no association with emails
+        # ],
     ],
 )
 
 meetings = DataType(
-    slug="meeting",
+    slug=DataTypeSlug.MEETINGS,
     core_props=[
         "hs_object_id",
     ],
@@ -838,24 +858,26 @@ meetings = DataType(
     ],
     associations=[
         [
-            "contacts",
-            "companies",
-            "deals",
-            "tickets",
+            DataTypeSlug.CONTACTS,
+            DataTypeSlug.COMPANIES,
+            DataTypeSlug.DEALS,
+            DataTypeSlug.TICKETS,
         ],
         [
-            "2-22517187",  # vendors objectTypeId value
-            "calls",
-            "tasks",  # has association but no data present
-            "emails",  # has association but no data present
-            # "meetings",  # no association with other meetings
-            # "notes",  # no association with meetings
+            DataTypeSlug.VENDORS,
+            DataTypeSlug.CALLS,
+            DataTypeSlug.TASKS,  # has association but no data present
+            DataTypeSlug.EMAILS,  # has association but no data present
         ],
+        # [
+        #     # DataTypeSlug.MEETINGS,  # no association with other meetings
+        #     # DataTypeSlug.NOTES,  # no association with meetings
+        # ],
     ],
 )
 
 notes = DataType(
-    slug="note",
+    slug=DataTypeSlug.NOTES,
     core_props=[
         "hs_object_id",
     ],
@@ -913,26 +935,26 @@ notes = DataType(
     ],
     associations=[
         [
-            "contacts",
-            "companies",
-            "deals",
-            "tickets",
+            DataTypeSlug.CONTACTS,
+            DataTypeSlug.COMPANIES,
+            DataTypeSlug.DEALS,
+            DataTypeSlug.TICKETS,
         ],
         [
-            "2-22517187",  # vendors objectTypeId value
+            DataTypeSlug.VENDORS,
         ],
         # [
-        #     # "notes",  # no association with other notes
-        #     # "emails",  # no association with notes
-        #     # "calls",  # no association with notes
-        #     # "meetings",  # no association with notes
-        #     # "tasks",  # no association with notes
+        #     # DataTypeSlug.NOTES,  # no association with other notes
+        #     # DataTypeSlug.EMAILS,  # no association with notes
+        #     # DataTypeSlug.CALLS,  # no association with notes
+        #     # DataTypeSlug.MEETINGS,  # no association with notes
+        #     # DataTypeSlug.TASKS,  # no association with notes
         # ],
     ],
 )
 
 tasks = DataType(
-    slug="task",
+    slug=DataTypeSlug.TASKS,
     core_props=[
         "hs_object_id",
     ],
@@ -1075,20 +1097,20 @@ tasks = DataType(
     ],
     associations=[
         [
-            "contacts",
-            "companies",
-            "deals",
-            "tickets",
+            DataTypeSlug.CONTACTS,
+            DataTypeSlug.COMPANIES,
+            DataTypeSlug.DEALS,
+            DataTypeSlug.TICKETS,
         ],
         [
-            "2-22517187",  # vendors objectTypeId value
-            "meetings",  # has association but no data present
-            "tasks",  # has association but no data present
+            DataTypeSlug.VENDORS,
+            DataTypeSlug.MEETINGS,  # has association but no data present
+            DataTypeSlug.TASKS,  # has association but no data present
         ],
         # [
-        #     # "calls",  # no association with tasks
-        #     # "emails",  # no association with tasks
-        #     # "notes",  # no association with tasks
+        #     # DataTypeSlug.CALLS,  # no association with tasks
+        #     # DataTypeSlug.EMAILS,  # no association with tasks
+        #     # DataTypeSlug.NOTES,  # no association with tasks
         # ],
     ],
 )

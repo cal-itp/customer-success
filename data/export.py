@@ -11,15 +11,12 @@ import requests
 from hubspot import HubSpot
 from hubspot.crm.exports import PublicExportRequest
 
-from .utils import hubspot_get_all_pages, write_csv_records
 from . import objects
+from .objects import DataTypeSlug
+from .utils import hubspot_get_all_pages, write_csv_records
 
 ACCESS_TOKEN = os.environ["HUBSPOT_ACCESS_TOKEN"]
-CORE_OBJECT_TYPES = ["companies", "contacts", "deals", "tickets"]
-CUSTOM_OBJECT_TYPES = ["vendors"]  # vendors
-OBJECT_TYPES = CORE_OBJECT_TYPES + CUSTOM_OBJECT_TYPES
-ACTIVITY_TYPES = ["calls", "emails", "meetings", "notes", "tasks"]
-ALL_TYPES = OBJECT_TYPES + ACTIVITY_TYPES
+DATA_TYPES = [member.name.lower() for member in DataTypeSlug]
 PAGE_SIZE = int(os.environ.get("HUBSPOT_PAGE_SIZE", 10))
 
 hubspot = HubSpot(access_token=ACCESS_TOKEN)
@@ -39,28 +36,24 @@ def get_all_object_names() -> dict:
     """
 
     field_to_return = {
-        "companies": ["name", "domain"],
-        "contacts": ["firstname", "lastname", "email"],
-        "deals": ["dealname"],
-        "tickets": ["subject"],
-        "2-22517187": ["vendor_name"],
+        DataTypeSlug.COMPANIES: ["name", "domain"],
+        DataTypeSlug.CONTACTS: ["firstname", "lastname", "email"],
+        DataTypeSlug.DEALS: ["dealname"],
+        DataTypeSlug.TICKETS: ["subject"],
+        DataTypeSlug.VENDORS: ["vendor_name"],
     }
 
     object_names = {}
 
-    for object_type in OBJECT_TYPES:
-        if object_type == "vendors":
-            # HubSpot needs the unique ID for custom object types.
-            object_type = "2-22517187"
-
+    for object_type, fields in field_to_return.items():
         objects = hubspot.crm.objects.get_all(object_type, properties=field_to_return[object_type])
 
         match object_type:
-            case "companies":
+            case DataTypeSlug.COMPANIES:
                 # If no name, fall back to domain. If no domain, fall back to string to avoid None type errors.
                 objects = {o.id: o.properties.get("name") or o.properties.get("domain") or "Unknown" for o in objects}
                 object_names |= objects
-            case "contacts":
+            case DataTypeSlug.CONTACTS:
                 # Not all contacts have a first name, last name, or email.
                 # Combine names and emails for disambiguation.
                 # Even if all three are missing, we end up with a string to avoid None type errors.
@@ -252,7 +245,7 @@ def main(argv=None):
 
     parser.add_argument(
         "type",
-        choices=ALL_TYPES + ["all"],
+        choices=DATA_TYPES + ["all"],
         help="The HubSpot data type to export (or `all` to get them all).",
     )
     parser.add_argument(
@@ -279,7 +272,7 @@ def main(argv=None):
     timestamp_string = dt.datetime.now().strftime("%Y-%m-%d_%H%M%S")
 
     if args.type.lower() == "all":
-        export_types = ALL_TYPES
+        export_types = DATA_TYPES
     else:
         export_types = [args.type]
 
@@ -287,19 +280,19 @@ def main(argv=None):
         nicename = export_type.lower()  # accept any capitalization, but then normalize for later usage
         dataclass: objects.DataType = getattr(objects, nicename)
 
-        if nicename == "emails" and args.email_bodies:
+        if nicename == DataTypeSlug.EMAILS and args.email_bodies:
             # Export emails to multiple JSON files in order to handle body content.
             print("Starting export of all emails with body content.")
 
             # Results per JSON file: page_size (100) × output_chunk_size (10) = 1,000
             if args.associations:
                 associations = [
-                    "contacts",
-                    "companies",
-                    "deals",
-                    "2-22517187",  # vendors objectTypeId value
-                    "tickets",
-                    "meetings",
+                    DataTypeSlug.CONTACTS,
+                    DataTypeSlug.COMPANIES,
+                    DataTypeSlug.DEALS,
+                    DataTypeSlug.VENDORS,
+                    DataTypeSlug.TICKETS,
+                    DataTypeSlug.MEETINGS,
                 ]
             else:
                 associations = None
@@ -315,7 +308,7 @@ def main(argv=None):
                 associations=associations,
             )
 
-            print(f"Done exporting all emails with body content.")
+            print("Done exporting all emails with body content.")
 
         elif args.associations:
             print(f"Exporting all {nicename} with associations.")
