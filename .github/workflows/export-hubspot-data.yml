@@ -27,7 +27,7 @@ on:
         type: boolean
 
 jobs:
-  setup:
+  export-hubspot-data:
     runs-on: ubuntu-latest
 
     steps:
