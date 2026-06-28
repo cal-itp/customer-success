@@ -54,15 +54,10 @@ jobs:
           body-includes: "Preview url: https://"
 
       - name: Add Netlify link PR comment
-        uses: actions/github-script@v9
         if: steps.find-comment.outputs.comment-id == ''
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const hostnameSuffix = "cal-itp-previews.netlify.app"
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: `Preview url: https://${context.repo.repo}-${{ github.event.number }}--${hostnameSuffix}`,
-            })
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.number }}
+        run: |
+          gh pr comment ${{ github.event.number }} \
+            --body "Preview URL: https://${GITHUB_REPOSITORY#*/}-$PR_NUMBER--cal-itp-previews.netlify.app"

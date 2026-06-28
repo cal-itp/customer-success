@@ -1,4 +1,4 @@
-name: Create Quaterly Report issue
+name: Create Quaterly Report Issue
 
 on:
   workflow_dispatch:
@@ -13,25 +13,21 @@ jobs:
       issues: write
     steps:
       # Get last month's name as a variable
-      # https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#setting-an-output-parameter
+      # https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-commands#setting-an-output-parameter
       - id: set_output
         run: |
           echo "month=$(date -d 'last month' +%B)" >> $GITHUB_OUTPUT
 
       - id: create_issue
-        uses: imjohnbo/issue-bot@v3
-        with:
-          assignees: j-h-sullivan
-          labels: reporting
-          title: Draft and send Quarterly Report for ${{steps.set_output.outputs.month}}
-          body: |
-            ## To-Do
-
-            - [ ] Pull in information from Metabase and Hubspot
-            - [ ] Draft report in Google Doc
-            - [ ] Review from @AnthonyRollins and @o-ram
-            - [ ] Send for design to Colleen
-          pinned: false
-          close-previous: false
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # The `--body-file -` option below uses the multiline content from stdin for the body.
+        # See: https://github.com/cli/cli/issues/595
+        run: |
+          echo -e "## To-Do\n\n- [ ] Pull in information from Metabase and HubSpot\n- [ ] Draft report in Google Doc\n- [ ] Review from @AnthonyRollins and @o-ram\n- [ ] Send for design to Colleen" | \
+          gh issue create \
+            --title "Draft and send Quarterly Report for ${{ steps.set_output.outputs.month }}" \
+            --body-file - \
+            --label "reporting" \
+            --assignee j-h-sullivan \
+            --repo $GITHUB_REPOSITORY
