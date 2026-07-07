@@ -1,4 +1,4 @@
-name: Create Monthly D5 update issue
+name: Create Monthly D5 Update Issue
 
 on:
   workflow_dispatch:
@@ -13,22 +13,21 @@ jobs:
       issues: write
     steps:
       # Get last month's name as a variable
-      # https://docs.github.com/en/actions/using-workflows/workflow-commands-for-github-actions#setting-an-output-parameter
+      # https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-commands#setting-an-output-parameter
       - id: set_output
         run: |
           echo "month=$(date -d 'last month' +%B)" >> $GITHUB_OUTPUT
 
       - id: create_issue
-        uses: imjohnbo/issue-bot@v3
-        with:
-          assignees: "o-ram, laneymangan" 
-          labels: reporting
-          title: Send monthly update to D5 for ${{steps.set_output.outputs.month}}
-          body: |
-            ## To-Do
-
-            - [ ] Inform D5 transit reps of any updates regarding district agencies or relevant Cal-ITP news from ${{steps.set_output.outputs.month}}
-          pinned: false
-          close-previous: false
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        # The `--body-file -` option below uses the multiline content from stdin for the body.
+        # See: https://github.com/cli/cli/issues/595
+        run: |
+          echo -e "## To-Do\n\n- [ ] Inform D5 transit reps of any updates regarding district agencies or relevant Cal-ITP news from ${{ steps.set_output.outputs.month }}" | \
+          gh issue create \
+            --title "Send monthly update to D5 for ${{ steps.set_output.outputs.month }}" \
+            --body-file - \
+            --label "reporting" \
+            --assignee o-ram,laneymangan \
+            --repo $GITHUB_REPOSITORY

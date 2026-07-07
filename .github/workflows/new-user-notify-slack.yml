@@ -1,4 +1,4 @@
-name: Notify Slack for New User requests
+name: Notify Slack for New User Requests
 
 on:
   issues:
@@ -10,12 +10,12 @@ jobs:
     if: contains(github.event.issue.labels.*.name, 'new-user')
     steps:
       - name: Slack notification
-        uses: rtCamp/action-slack-notify@v2
+        uses: rtCamp/action-slack-notify@33ca3be66c6f378fe1610fd1d5258632dbed5e58
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_USERNAME: cal-itp-bot
           SLACK_MSG_AUTHOR: cal-itp-bot
           SLACK_ICON: https://github.com/cal-itp-bot.png?size=48
-          SLACK_MESSAGE: "A Hubspot new user request was submitted: ${{ github.event.issue.html_url }}"
+          SLACK_MESSAGE: "A HubSpot new user request was submitted: ${{ github.event.issue.html_url }}"
           SLACK_FOOTER: ""
           MSG_MINIMAL: true
