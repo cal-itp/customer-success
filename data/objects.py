@@ -97,6 +97,7 @@ companies = DataType(
         "google_maps_data",
         "gtfs_vendor",
         "help_with_product_creation",
+        "hs_additional_domains",
         "hs_object_id",
         "hubspot_owner_id",
         "itp_id",
