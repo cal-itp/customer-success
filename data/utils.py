@@ -58,7 +58,11 @@ def hubspot_get_all_pages(
     response = hubspot_api.get_page(**kwargs)
     pages.append(response)
 
-    while getattr_or_get(response, "paging") and len(pages) < max_pages:
+    while (
+        getattr_or_get(response, "paging")
+        and getattr_or_get(getattr_or_get(response, "paging"), "next")
+        and len(pages) < max_pages
+    ):
         kwargs["after"] = getattr_or_get(getattr_or_get(getattr_or_get(response, "paging"), "next"), "after")
         response = hubspot_api.get_page(**kwargs)
         pages.append(response)
