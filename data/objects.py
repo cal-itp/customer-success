@@ -54,9 +54,7 @@ companies = DataType(
         "am_support_remix",
         "applicable_fare_discounts",
         "associated_transit_organizations",
-        "benefits_form_notes",
         "benefits_marketing_assistance",
-        "benefits_onboarding_call",
         "benefits_testing_assistance",
         "board_approval",
         "bus_stop_signs_and_amenities",
@@ -74,7 +72,6 @@ companies = DataType(
         "createdate",
         "customer_journey_position",
         "customer_testimonial",
-        "date_remix_application_received",
         "description_of_caps",
         "desired_launch_timeline",
         "discount_fare_caps",
@@ -244,7 +241,7 @@ deals = DataType(
     ],
     extra_props=[
         "pipeline",
-        "dealstage",  # not "deal_stage"
+        "dealstage",
         "accepted_card_schemes",
         "hs_lastmodifieddate",
         "preferred_benefits_website_url__sync_",
@@ -260,14 +257,14 @@ deals = DataType(
         "campaign_status",
         "closed_lost_reason",
         "closedate",
+        "context_for_not_pursuing",
         "createdate",
         "date_access_agreement_was_received",
         "dedicated_product_creation_person__sync_",
         "description_of_fare_caps__sync_",
         "desired_launch_timeline__sync_",
-        "different_discount_fares__sync_",
         "discount_fare_caps",
-        "test_sync",  # "Account Manager"
+        "does_a_gantt_chart_exist_for_this_agency_",
         "does_agency_have_existing_gtfs_rt_data_",
         "does_the_agency_have_a_discounted_fare_program_",
         "engagements_last_meeting_booked",
@@ -288,25 +285,30 @@ deals = DataType(
         "notes_next_activity_date",
         "other_funding_sources",
         "pathways_to_be_enabled_for_benefits__sync_",
-        "reason_benefits_is_n_a",  # "Reason Benefits is N/A"
-        "reason_why_participation_was_declined",  # "Reason why participation was declined"
-        "remix_agreement",  # "Remix agreement"
-        "remix_research_outreach_status___round_one__onboarding_",  # "Remix Research Outreach Status - Round One (onboarding)"
-        "requested_pathways_to_enable",  # "Requested Benefits pathways to enable"
-        "requests_for_additional_support",  # "Requests for Additional Use Case Support"
-        "research_stage",  # "Research Stage"
-        "scheduling_software",  # "Scheduling Software"
-        "source_of_agency_interest",  # "Source of agency interest"
-        "stage_s__of_benefits_onboarding",  # "Benefits Onboarding Stages"
-        "survey",  # "Filled out Stop Registry Survey"
-        "tap_agency",  # "TAP Agency"
-        "targeted_launch_date",  # "Targeted Launch Date"
-        "used_msa_contracts",  # "Used MSA contracts"
-        "voms__sync_",  # VOMs (sync)"
-        "which_digital_signage_vendors_responded_",  # "Which Digital Signage vendors responded?"
-        "which_digital_signage_vendors_were_sent_proposal_",  # "Which Digital Signage vendors were sent proposal?"
-        "workstream",  # "Workstream"
-        "context_for_not_pursuing",  # "Context for not pursuing"
+        "reason_benefits_is_n_a",
+        "reason_why_participation_was_declined",
+        "remix_agreement",
+        "remix_research_outreach_status___round_one__onboarding_",
+        "requested_pathways_to_enable",
+        "requests_for_additional_support",
+        "scheduling_software",
+        "source_of_agency_interest",
+        "stage_s__of_benefits_onboarding",
+        "survey",
+        "tap_agency",
+        "targeted_launch_date",
+        "test_sync",
+        "used_msa_contracts",
+        "voms__sync_",
+        "which_digital_signage_vendors_responded_",
+        "which_digital_signage_vendors_were_sent_proposal_",
+        "context_for_not_pursuing",
+        "is_the_transit_agency_interested_in_scheduling",
+        "status_of_integration_with_agency_website",
+        "status_of_transit_app_integration",
+        "status_of_integration_with_apple_maps",
+        "status_of_google_maps_integration",
+        "is_the_transit_agency_using_the_remix_gtfs_feed",
     ],
     associations=[
         [
@@ -374,17 +376,6 @@ tickets = DataType(
         "trip_updates_feed",
         "vehicle_positions_feed",
         "what_is_the_caltrans_district_number_",
-        "trip_planners_are_notified_by_Caltrans_of_change_in_GTFS_URL",
-        "payments_team_is_notified_by_Caltrans_of_change_in_GTFS_URL",
-        "other_stakeholders_identified_by_agency_are_notified_by_Caltrans_or_agency_of_change_in_GTFS_URL",
-        "notes",
-        "ntd_is_notified_by_caltrans_or_agency_re_gtfs_url_updates",
-        "mtc_511_is_notified_of_change_in_GTFS_URL",
-        "gtfsrt_provider_is_notified_by_caltrans_or_agency_re_updated_gtfs_url",
-        "gtfs_aggregators_are_notified_by_Caltrans_of_change_in_GTFS_URL",
-        "deployment_date_for_gtfs_to_be_live",
-        "airtable_gtfs_dataset_records_created_for_new_links",
-        "airtable_gtfs_service_data_records_set_to_customer_facing",
     ],
     associations=[
         [
@@ -607,6 +598,7 @@ emails = DataType(
         #### "hs_at_mentioned_owner_ids",
         "hs_attachment_ids",
         "hs_body_preview",
+        # "hs_body_preview_html",  # only exported to JSON via body_props list below
         "hs_body_preview_is_truncated",
         #### "hs_campaign_guid",
         #### "hs_campaign_guids",
@@ -642,6 +634,7 @@ emails = DataType(
         "hs_email_from_raw",
         #### "hs_email_has_inline_images_stripped",
         "hs_email_headers",
+        # "hs_email_html",  # only exported to JSON via body_props list below
         "hs_email_logged_from",
         "hs_email_media_processing_status",
         "hs_email_member_of_forwarded_subthread",
@@ -666,6 +659,7 @@ emails = DataType(
         "hs_email_status",
         #### "hs_email_stripped_attachment_count",
         "hs_email_subject",
+        # "hs_email_text",  # only exported to JSON via body_props list below
         "hs_email_thread_id",
         #### "hs_email_thread_summary",
         "hs_email_to_email",
@@ -976,16 +970,6 @@ tasks = DataType(
         "hs_created_by",
         "hs_created_by_user_id",
         "hs_createdate",
-        # "hs_date_entered_60b5c368_04c4_4d32_9b4a_457e159f49b7_13292096",
-        # "hs_date_entered_61bafb31_e7fa_46ed_aaa9_1322438d6e67_1866552342",
-        # "hs_date_entered_af0e6a5c_2ea3_4c72_b69f_7c6cb3fdb591_1652950531",
-        # "hs_date_entered_dd5826e4_c976_4654_a527_b59ada542e52_2144133616",
-        # "hs_date_entered_fc8148fb_3a2d_4b59_834e_69b7859347cb_1813133675",
-        # "hs_date_exited_60b5c368_04c4_4d32_9b4a_457e159f49b7_13292096",
-        # "hs_date_exited_61bafb31_e7fa_46ed_aaa9_1322438d6e67_1866552342",
-        # "hs_date_exited_af0e6a5c_2ea3_4c72_b69f_7c6cb3fdb591_1652950531",
-        # "hs_date_exited_dd5826e4_c976_4654_a527_b59ada542e52_2144133616",
-        # "hs_date_exited_fc8148fb_3a2d_4b59_834e_69b7859347cb_1813133675",
         "hs_engagement_source",
         "hs_engagement_source_id",
         "hs_engagements_last_contacted",
@@ -999,7 +983,6 @@ tasks = DataType(
         "hs_modified_by",
         #### "hs_msteams_message_id",
         "hs_obj_coords",
-        "hs_object_id",
         "hs_object_source",
         "hs_object_source_detail_1",
         #### "hs_object_source_detail_2",
@@ -1012,8 +995,6 @@ tasks = DataType(
         #### "hs_partner_map_year",
         #### "hs_pinned_engagement_id",
         "hs_pipeline",
-        "hs_pipeline_stage",
-        #### "hs_product_name",
         "hs_queue_membership_ids",
         #### "hs_read_only",
         "hs_repeat_status",
@@ -1077,12 +1058,6 @@ tasks = DataType(
         "hs_task_subject",
         "hs_task_template_id",
         "hs_task_type",
-        #### "hs_task_uncompleted_sub_task_ids",
-        # "hs_time_in_60b5c368_04c4_4d32_9b4a_457e159f49b7_13292096",
-        # "hs_time_in_61bafb31_e7fa_46ed_aaa9_1322438d6e67_1866552342",
-        # "hs_time_in_af0e6a5c_2ea3_4c72_b69f_7c6cb3fdb591_1652950531",
-        # "hs_time_in_dd5826e4_c976_4654_a527_b59ada542e52_2144133616",
-        # "hs_time_in_fc8148fb_3a2d_4b59_834e_69b7859347cb_1813133675",
         "hs_timestamp",
         #### "hs_unique_creation_key",
         "hs_unique_id",
