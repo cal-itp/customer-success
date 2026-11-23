@@ -60,10 +60,10 @@ Last updated: `3/09/2026`
 | **City of Carson**                                                            | ✅ `non-MSA` _(Q2 2026)_ | ❌               | \-             | \-             |
 | **City of Clovis**                                                            | \-                       | \-               | ✅ _(Q3 2026)_ | \-             |
 | **City of Compton**                                                           | ✅ `non-MSA` _(Q2 2026)_ | ❌               | \-             | \-             |
-| **City of Corona**                                                            | \-                       | \-               | Q3 2026        | \-             |
+| **City of Corona**                                                            | \-                       | \-               | Q4 2026        | \-             |
 | **City of Culver City**                                                       | ✅ `non-MSA` _(Q2 2026)_ | ❌               | \-             | \-             |
 | **City of Escalon**                                                           | \-                       | \-               | ✅ _(Q1 2025)_ | \-             |
-| **City of Fairfield**                                                         | ✅ `non-MSA` _(Q4 2025)_ | ❌               | Q3 2026        | \-             |
+| **City of Fairfield**                                                         | ✅ `non-MSA` _(Q4 2025)_ | ❌               | Q4 2026        | \-             |
 | **City of Gardena**                                                           | ✅ `non-MSA` _(Q2 2026)_ | ❌               | \-             | \-             |
 | **City of Glendale**                                                          | ✅ `non-MSA` _(Q2 2026)_ | ❌               | \-             | \-             |
 | **City of Glendora**                                                          | ✅ `non-MSA` _(Q2 2026)_ | ❌               | \-             | \-             |
@@ -80,8 +80,9 @@ Last updated: `3/09/2026`
 | **City of Pasadena**                                                          | ✅ `non-MSA` _(Q2 2026)_ | ❌               | \-             | \-             |
 | **City of Petaluma**                                                          | ✅ `non-MSA` _(Q4 2025)_ | ❌               | ✅ _(Q3 2026)_ | \-             |
 | **City of Redondo Beach**                                                     | ✅ `non-MSA` _(Q2 2026)_ | ❌               | \-             | \-             |
-| **City of Roseville**                                                         | Q3 2026                  | Q3 2026          | \-             | \-             |
-| **City of San Luis Obispo**                                                   | ✅ _(Q2 2026)_           | ✅ _(Q2 2026)_   | Q3 2026        | \-             |
+| **City of Ripon**                                                             | \-                       | \-               | ✅ _(Q3 2026)_ | \-             |
+| **City of Roseville**                                                         | Q4 2026                  | Q4 2026          | \-             | \-             |
+| **City of San Luis Obispo**                                                   | ✅ _(Q2 2026)_           | ✅ _(Q2 2026)_   | ✅ _(Q3 2026)_ | \-             |
 | **City of Santa Clarita**                                                     | ✅ `non-MSA` _(Q2 2026)_ | ❌               | \-             | \-             |
 | **City of Santa Maria**                                                       | 2027                     | 2027             | ✅ _(Q1 2025)_ | \-             |
 | **City of Santa Monica**                                                      | ✅ `non-MSA` _(Q2 2026)_ | ❌               | \-             | \-             |
@@ -92,7 +93,7 @@ Last updated: `3/09/2026`
 | **City of Torrance (Torrance Transit)**                                       | ✅ `non-MSA` _(Q2 2026)_ | ❌               | \-             | \-             |
 | **City of Union City**                                                        | ✅ `non-MSA` _(Q4 2025)_ | ❌               | \-             | \-             |
 | **City of Vacaville**                                                         | ✅ `non-MSA` _(Q4 2025)_ | ❌               | \-             | \-             |
-| **City of Wasco**                                                             | Q3 2026                  | Q3 2026          | \-             | \-             |
+| **City of Wasco**                                                             | Q4 2026                  | Q4 2026          | \-             | \-             |
 | **Cloverdale Transit**                                                        | ✅ `non-MSA` _(Q4 2025)_ | ❌               | \-             | \-             |
 | **County of Kern**                                                            | \-                       | \-               | ✅ _(Q1 2025)_ | \-             |
 | **County of Los Angeles - Department of Public Works**                        | ✅ `non-MSA` _(Q2 2026)_ | ❌               |                | \-             |
@@ -100,15 +101,15 @@ Last updated: `3/09/2026`
 | **Dumbarton Bridge Regional Operations Consortium**                           | ✅ `non-MSA` _(Q2 2026)_ | ❌               | \-             | \-             |
 | **County of Sacramento (SCT Link)**                                           | Q3 2026                  | Q3 2026          | ✅ _(Q1 2025)_ | 2026           |
 | **Eastern Contra Costa Transit Authority**                                    | ✅ `non-MSA` _(Q4 2025)_ | ❌               | ✅ _(Q1 2026)_ | \-             |
-| **Eastern Sierra Transit Authority**                                          | \-                       | \-               | ✅ _(Q2 2026)_ | \-            |
-| **El Dorado Transit Authority**                                               | ✅ _(Q1 2026)_           | ✅ _(Q1 2026)_   | ✅ _(Q2 2026)_ | 2026           |
+| **Eastern Sierra Transit Authority**                                          | \-                       | \-               | ✅ _(Q2 2026)_ | \-             |
+| **El Dorado Transit Authority**                                               | ✅ _(Q1 2026)_           | ✅ _(Q1 2026)_   | ✅ _(Q2 2026)_ | \-             |
 | **Foothill Transit**                                                          | ✅ `non-MSA` _(Q2 2026)_ | ❌               | \-             | \-             |
 | **Glenn County Transportation Commission**                                    | Q4 2026                  | ❌               | ✅ _(Q4 2025)_ | \-             |
 | **Gold Coast Transit District**                                               | ✅ _(Q3 2026)_           | ✅ _(Q3 2026)_   | \-             | \-             |
 | **Golden Empire Transit District**                                            | 2027                     | 2027             | \-             | \-             |
 | **Golden Gate Bridge, Highway & Transportation District**                     | ✅ `non-MSA` _(Q4 2025)_ | ❌               | \-             | \-             |
 | **Humboldt Transit Authority**                                                | ✅ _(Q1 2023)_           | ❌               | ✅ _(Q1 2025)_ | \-             |
-| **Imperial County Transportation Commission**                                 | 2027                     | 2027             | \-             | Q2 2026        |
+| **Imperial County Transportation Commission**                                 | 2027                     | 2027             | \-             | Q4 2026        |
 | **Kings County Area Public Transit Agency**                                   | \-                       | \-               | ✅ _(Q1 2026)_ | \-             |
 | **LADOT**                                                                     | ✅ `non-MSA` _(Q2 2026)_ | ❌               | \-             | \-             |
 | **Lake Transit Authority**                                                    | ✅ _(Q1 2023)_           | \-               | ✅ _(Q1 2025)_ | \-             |
@@ -119,7 +120,7 @@ Last updated: `3/09/2026`
 | **Los Angeles World Airports**                                                | ✅ `non-MSA` _(Q2 2026)_ | ❌               | \-             | \-             |
 | **Madera County**                                                             | 2027                     | 2027             | \-             | \-             |
 | **Marin Transit**                                                             | ✅ `non-MSA` _(Q4 2025)_ | ❌               | \-             | \-             |
-| **Mendocino Transit Authority**                                               | ✅ _(Q1 2023)_           | \-               | ✅ _(Q1 2025)_ | \-             |
+| **Mendocino Transit Authority**                                               | ✅ _(Q1 2023)_           | Q4 2026          | ✅ _(Q1 2025)_ | \-             |
 | **Monterey-Salinas Transit**                                                  | ✅ _(Q2 2021)_           | ✅ _(Q4 2021)_   | ✅ _(Q1 2026)_ | \-             |
 | **Mountain Transit (MARTA)**                                                  | \-                       | \-               | ✅ _(Q1 2025)_ | \-             |
 | **Napa Valley Transportation Authority (NVTA)**                               | ✅ `non-MSA` _(Q4 2025)_ | ❌               | ✅ _(Q1 2026)_ | \-             |
@@ -130,33 +131,36 @@ Last updated: `3/09/2026`
 | **Placer County**                                                             | \-                       | \-               | \-             | \-             |
 | **Redding Area Bus Authority**                                                | ✅ _(Q1 2026)_           | ✅ _(Q1 2026)_   | ✅ _(Q1 2025)_ | \-             |
 | **Redwood Coast Transit Authority**                                           | ✅ _(Q1 2023)_           | ❌               | ✅ _(Q1 2025)_ | \-             |
-| **Sacramento County (SCT Link / South County Transit)**                       | 2027                     | 2027             | ✅ _(Q1 2025)_ | 2026           |
+| **Riverside Transit Agency**                                                  | ✅ `non-MSA`             | ❌               | \-             | \-             |
+| **Sacramento County (SCT Link / South County Transit)**                       | 2027                     | 2027             | ✅ _(Q1 2025)_ | \-             |
 | **Sacramento Regional Transit District (SacRT)**                              | ✅ _(Q1 2025)_           | ✅ _(Q4 2024)_   | \-             | \-             |
 | **San Benito County Local Transportation Authority**                          | \-                       | \-               | ✅ _(Q1 2025)_ | \-             |
 | **San Diego Metropolitan Transit System (MTS)**                               | ✅ `non-MSA` _(Q3 2024)_ | ❌               | \-             | \-             |
 | **San Francisco Bay Area Rapid Transit District (BART)**                      | ✅ `non-MSA` _(Q4 2025)_ | ❌               | \-             | \-             |
 | **San Francisco Bay Area Water Emergency Transportation Authority (WETA)**    | ✅ `non-MSA` _(Q4 2025)_ | ❌               | \-             | \-             |
 | **San Francisco MTA (City and County of San Francisco)**                      | ✅ `non-MSA` _(Q4 2024)_ | ❌               | \-             | \-             |
+| **San Joaquin Regional Transit District**                                     | ✅ `non-MSA` _(Q2 2026)_ | ❌               | \-             | \-             |
 | **San Luis Obispo Regional Transit Authority**                                | ✅ _(Q2 2026)_           | ✅ _(Q4 2025)_   | \-             | \-             |
 | **San Mateo County Transit District**                                         | ✅ `non-MSA` _(Q4 2025)_ | ❌               | \-             | \-             |
-| **Santa Barbara County Association of Governments (SBCAG)**                   | ✅ _(Q3 2021)_           | Q3 2026          | ✅ _(Q1 2025)_ | \-             |
+| **Santa Barbara County Association of Governments (SBCAG)**                   | ✅ _(Q3 2021)_           | 2027             | ✅ _(Q1 2025)_ | \-             |
 | **Santa Barbara Metropolitan Transit District**                               | ✅ _(Q3 2021)_           | ✅ _(Q4 2023)_   | ✅ _(Q3 2026)_ | \-             |
 | **Santa Clara Valley Transportation Authority (VTA)**                         | ✅ `non-MSA` _(Q4 2025)_ | ❌               | \-             | \-             |
-| **Santa Cruz Metropolitan Transit District (Santa Cruz METRO)**               | Q3 2026                  | Q3 2026          | ✅ _(Q4 2025)_ | \-             |
-| **Siskiyou County Transportation Agency**                                     | 2027                     | 2027             | 2026           | Q3 2026        |
+| **Santa Cruz Metropolitan Transit District (Santa Cruz METRO)**               | ✅ _(Q3 2026)_           | ✅ _(Q3 2026)_   | ✅ _(Q4 2025)_ | \-             |
+| **Siskiyou County Transportation Agency**                                     | 2027                     | 2027             | 2026           | 2026           |
 | **Solano County Transit (SolTrans)**                                          | ✅ `non-MSA` _(Q4 2025)_ | ❌               | \-             | \-             |
 | **Sonoma County Transit (SC Transit)**                                        | ✅ `non-MSA` _(Q4 2025)_ | ❌               | ✅ _(Q1 2026)_ | \-             |
-| **Sonoma-Marin Area Rail Transit**                                            | ✅ `non-MSA` _(Q4 2025)_ | ❌               | Q3 2026        | \-             |
+| **Sonoma-Marin Area Rail Transit**                                            | ✅ `non-MSA` _(Q4 2025)_ | ❌               | Q4 2026        | \-             |
 | **Southern California Regional Rail Authority (SCRRA Metrolink)**             | ✅ _(Q2 2026)_           | ❌               | \-             | \-             |
 | **Stanislaus Regional Transit Authority**                                     | 2027                     | 2027             | ✅ _(Q1 2026)_ | \-             |
-| **Sunline Transit Agency**                                                    | Q4 2026                  | Q4 2026          | ✅ _(Q1 2026)_ | \-             |
+| **Sunline Transit Agency**                                                    | 2027                     | 2027             | ✅ _(Q1 2026)_ | \-             |
 | **Tahoe Transportation District**                                             | \-                       | \-               | ✅ _(Q3 2026)_ | \-             |
 | **Transit Joint Powers Authority for Merced County**                          | \-                       | \-               | ✅ _(Q2 2025)_ | \-             |
-| **Trinity County**                                                            | 2027                     | 2027             | ✅ _(Q2 2025)_ | Q3 2026        |
+| **Trinity County**                                                            | 2027                     | 2027             | ✅ _(Q2 2025)_ | Q4 2026        |
 | **Tuolumne County Transit Agency (TCTA)**                                     | \-                       | \-               | ✅ _(Q3 2025)_ | \-             |
 | **University of California, Davis**                                           | \-                       | \-               | \-             | ✅ _(Q4 2025)_ |
 | **Valley Express (VCTC)**                                                     | ✅ _(Q1 2026)_           | ✅ _(Q3 2026)_   | \-             | \-             |
 | **Ventura County Transportation Commission (VCTC)**                           | ✅ _(Q2 2025)_           | ✅ _(Q4 2025)_   | ✅ _(Q1 2025)_ | \-             |
 | **Western Contra Costa Transit Authority**                                    | ✅ `non-MSA` _(Q4 2025)_ | ❌               | \-             | \-             |
-| **Yolo County Transportation District**                                       | Q3 2026                  | Q3 2026          | \-             | \-             |
+| **Yolo County Transportation District**                                       | ✅ _(Q3 2026)_           | ✅ _(Q3 2026)_   | \-             | \-             |
 | **Yuba-Sutter Transit Authority**                                             | 2027                     | 2027             | \-             | \-             |
+| **Yurok Tribe**                                                               | \-                       | \-               | Q4 2026        | \-             |
